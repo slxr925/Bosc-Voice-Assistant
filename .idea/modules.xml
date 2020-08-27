@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Bosc-Voice-Assistant.iml" filepath="$PROJECT_DIR$/.idea/Bosc-Voice-Assistant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bosc_Voice_Assistant.iml" filepath="$PROJECT_DIR$/Bosc_Voice_Assistant.iml" />
     </modules>
   </component>
 </project>
