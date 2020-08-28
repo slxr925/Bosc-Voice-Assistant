@@ -67,8 +67,8 @@ public class WebSocketServer {
      * @param msg
      * @param fylm
      */
-    public static String sendMessage(String msg, long fylm) {
-        boolean success = false;
-
-    }
+//    public static String sendMessage(String msg, long fylm) {
+//        boolean success = false;
+//
+//    }
 }
