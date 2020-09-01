@@ -23,5 +23,11 @@ public class UserInfo {
     private String userName;
 
     @Column
-    private String
+    private String email;
+
+    @Column
+    private String userImg;
+
+    @Column
+    private String password;
 }
