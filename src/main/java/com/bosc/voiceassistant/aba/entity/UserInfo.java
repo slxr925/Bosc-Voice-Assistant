@@ -1,10 +1,6 @@
 package com.bosc.voiceassistant.aba.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Cleanup;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
 
@@ -17,17 +13,17 @@ import javax.persistence.*;
 public class UserInfo {
     @Id
     @GeneratedValue
-    private int userId;
+    private Integer userId;
 
-    @Column
+    @Column(nullable = false)
     private String userName;
 
-    @Column
+    @Column(nullable = false)
     private String email;
 
     @Column
     private String userImg;
 
-    @Column
+    @Column(nullable = false)
     private String password;
 }
