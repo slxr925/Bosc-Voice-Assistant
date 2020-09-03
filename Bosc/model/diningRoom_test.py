@@ -13,8 +13,9 @@ def dict_to_trie(slot_value):
     slot_value: 词典类型(menu/date/time)
     return: t['面条'] = ‘menu’
     '''
+    root=os.path.abspath(os.path.dirname(__file__))
     t = pygtrie.StringTrie()
-    with open('slot-dictionaries/'+slot_value+'.txt', 'r', encoding='utf-8') as fin:
+    with open(root+'/slot-dictionaries/'+slot_value+'.txt', 'r', encoding='utf-8') as fin:
         for line in fin:
             line = line.strip('\n').strip('\t')
             t[line] = slot_value
@@ -63,7 +64,7 @@ def find_dict(sentence,res):
 
     return res
 
-def get_dinningRoom(sentence, res):
+def get_dinningRoom(sentence):
 	res = {}
 	res = judge_intent(sentence, res)
 	res = find_dict(sentence, res)
@@ -73,10 +74,10 @@ def get_dinningRoom(sentence, res):
 if __name__ == '__main__':
     sentence = '面条多少钱？'
     # dict_to_trie('menu')
-    res = {}
+
     # res = judge_intent(sentence, res)
     # res = find_dict(sentence, res)
-    res = get_dinningRoom(sentence, res)
+    res = get_dinningRoom(sentence)
     print(res)
 
 
