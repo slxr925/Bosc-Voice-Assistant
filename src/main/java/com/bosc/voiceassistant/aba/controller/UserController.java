@@ -2,10 +2,11 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.bosc.voiceassistant.aba.entity.UserInfo;
 import com.bosc.voiceassistant.aba.service.i.UserServiceImpl;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Xu Ran
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/user")
-@EnableAutoConfiguration
 public class UserController {
 
     @Autowired
@@ -25,11 +25,13 @@ public class UserController {
         return userService.getUserByEmail(email);
     }
 
-    @RequestMapping("/get")
+    @RequestMapping("get")
     @ResponseBody
-    public Integer get() {
+    public Integer getEmail() {
         String email = "xuran@bosc.cn";
         UserInfo user = userService.getUserByEmail(email);
+        System.out.println(email);
         return user.getUserId();
     }
 }
+

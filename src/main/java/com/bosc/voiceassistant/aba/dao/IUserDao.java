@@ -40,6 +40,7 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
      * @return
      */
     UserInfo findByEmail(String email);
+
     /**
      * 根据用户名找多个用户
      *

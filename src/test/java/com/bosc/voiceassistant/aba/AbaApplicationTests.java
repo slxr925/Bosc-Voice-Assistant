@@ -23,9 +23,6 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.http.Cookie;
 
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = {AbaApplication.class})
 public class AbaApplicationTests {
 
     @Autowired
@@ -39,7 +36,7 @@ public class AbaApplicationTests {
     public void before() throws Exception {
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
         session = new MockHttpSession();
-        cookies[0] = new Cookie("mykey","myvalue");
+        cookies[0] = new Cookie("mykey", "myvalue");
     }
 
     @After
@@ -54,6 +51,6 @@ public class AbaApplicationTests {
     @Test
     public void testGet() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("localhost:8080" + "/getUserByEmail")
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)).andExpect(MockMvcResultMatchers.status().isOk());
+                .contentType(MediaType.APPLICATION_JSON_UTF8)).andExpect(MockMvcResultMatchers.status().isOk());
     }
 }

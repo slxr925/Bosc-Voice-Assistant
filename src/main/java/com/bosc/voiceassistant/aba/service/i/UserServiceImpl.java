@@ -7,6 +7,8 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * @author Xu Ran
  * @since 2020/9/2 下午7:38
@@ -16,11 +18,6 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private IUserDao userDao;
-
-//    public UserInfo findUserById(Integer userId) {
-//
-//        return userDao.findById(userId);
-//    }
 
     @Override
     public UserInfo getUserById(Integer userId) {
