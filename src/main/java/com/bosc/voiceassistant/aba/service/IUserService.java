@@ -38,7 +38,7 @@ public interface IUserService {
      *
      * @param userInfo
      */
-    void deleteUserByUserId(UserInfo userInfo);
+    void deleteUser(UserInfo userInfo);
 
     /**
      * 查询所有用户
