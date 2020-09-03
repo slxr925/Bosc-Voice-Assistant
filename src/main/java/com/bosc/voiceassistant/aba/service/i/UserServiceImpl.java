@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author Xu Ran
@@ -35,9 +36,13 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void deleteUserByUserId(UserInfo userInfo) {
+    public void deleteUser(UserInfo userInfo) {
         userDao.delete(userInfo);
     }
 
+    @Override
+    public List<UserInfo> getAllUsers() {
+        return null;
+    }
 
 }

@@ -21,17 +21,12 @@ public class UserController {
 
     @RequestMapping(value = "/getUserByEmail", method = RequestMethod.GET)
     @ResponseBody
-    public UserInfo getUserByEmail(@RequestParam(value = "email") String email) {
-        return userService.getUserByEmail(email);
+    public Integer getUserByEmail(@RequestParam(value = "email") String email) {
+        return userService.getUserByEmail("xuran@bosc.cn").getUserId();
     }
 
-    @RequestMapping("get")
-    @ResponseBody
-    public Integer getEmail() {
-        String email = "xuran@bosc.cn";
-        UserInfo user = userService.getUserByEmail(email);
-        System.out.println(email);
-        return user.getUserId();
-    }
+//    @RequestMapping(value = "/getUserByUserId", method =  = RequestMethod.GET)
+//    @ResponseBody
+//    public UserInfo getUserByUserId(@RequestParam(value = ""))
 }
 
