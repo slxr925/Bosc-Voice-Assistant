@@ -1,4 +1,5 @@
-#encoding=utf-8
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 import re
 import os
 import numpy as np
