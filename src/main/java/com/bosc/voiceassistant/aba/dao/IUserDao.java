@@ -17,6 +17,14 @@ import java.util.List;
 public interface IUserDao extends JpaRepository<UserInfo, Integer> {
 
     /**
+     * 根据用户id找用户
+     *
+     * @param userId
+     * @return
+     */
+    UserInfo findByUserId(Integer userId);
+
+    /**
      * 根据用户名找用户
      *
      * @param userName
@@ -24,14 +32,14 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
      */
     UserInfo findByUserName(String userName);
 
-//    /**
-//     * 根据用户名与邮箱找用户
-//     *
-//     * @param userName
-//     * @param email
-//     * @return
-//     */
-//    UserInfo findByUserNameAndEmail(String userName, String email);
+    /**
+     * 根据用户名与邮箱找用户
+     *
+     * @param userName
+     * @param email
+     * @return
+     */
+    UserInfo findByUserNameAndEmail(String userName, String email);
 
     /**
      * 根据email找用户

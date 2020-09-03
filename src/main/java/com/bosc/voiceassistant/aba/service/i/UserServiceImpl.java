@@ -21,7 +21,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserInfo getUserById(Integer userId) {
-        return null;
+        return userDao.findByUserId(userId);
     }
 
     @Override
