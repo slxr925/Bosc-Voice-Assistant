@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 from flask import Flask,json,request
 app = Flask(__name__)
 from model.diningRoom_test import get_dinningRoom
