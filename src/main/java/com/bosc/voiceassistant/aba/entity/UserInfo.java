@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity(name = "User")
 public class UserInfo {
+
     @Id
     @GeneratedValue
     private Integer userId;
