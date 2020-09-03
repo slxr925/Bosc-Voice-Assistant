@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 from flask import Flask,json,request
 app = Flask(__name__)
-from model.diningRoom_test import get_dinningRoom
+from model import get_dinningRoom
 @app.route('/')
 def hello_world():
     return '欢迎来到 上银语音助手！'
