@@ -35,11 +35,19 @@ public interface IUserService {
     UserInfo getUserByUserName(String userName);
 
     /**
-     * 增加用户
+     * 添加用户
+     *
+     * @param userInfo
+     * @return
+     */
+    UserInfo addUser(UserInfo userInfo);
+
+    /**
+     * 修改用户
      *
      * @param userInfo
      */
-    void addUser(UserInfo userInfo);
+    UserInfo updateUser(UserInfo userInfo);
 
     /**
      * 删除用户

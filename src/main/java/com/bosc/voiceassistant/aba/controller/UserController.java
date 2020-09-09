@@ -5,9 +5,7 @@ import com.bosc.voiceassistant.aba.service.i.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Xu Ran
@@ -38,16 +36,27 @@ public class UserController {
         return userService.getUserByUserName(userName);
     }
 
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @ResponseBody
+    public UserInfo addUser(UserInfo userInfo) {
+        return userService.addUser(userInfo);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @ResponseBody
+    public UserInfo updateUser(UserInfo userInfo) {
+        return userService.updateUser(userInfo);
+    }
+    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteUser(UserInfo userInfo) {
+        userService.deleteUser(userInfo);
+    }
+
     @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
     @ResponseBody
     public List<UserInfo> getAllUsers() {
         return userService.getAllUsers();
-    }
-
-    @RequestMapping(value = "/addUser", method = RequestMethod.PUT)
-    @ResponseBody
-    public void addUser() {
-
     }
 }
 

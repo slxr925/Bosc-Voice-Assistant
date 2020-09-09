@@ -64,7 +64,4 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
      */
     List<UserInfo> findAllByUserName(String userName);
 
-    @Query("update user set user_name = ?1 where id = ")
-    @Modifying
-    int updateUserInfoByUserId(Integer userId);
 }

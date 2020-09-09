@@ -34,17 +34,32 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<UserInfo> getAllUsers() {
-        return userDao.findAll();
+    public UserInfo addUser(UserInfo userInfo) {
+        UserInfo existUser = getUserByUserName(userInfo.getUserName());
+        if (existUser != null) {
+            return null;
+        } else {
+            return userDao.save(userInfo);
+        }
     }
 
     @Override
-    public void addUser(UserInfo userInfo) {
-        userDao.save(userInfo);
+    public UserInfo updateUser(UserInfo userInfo) {
+        UserInfo existUser = getUserByUserName(userInfo.getUserName());
+        if (existUser != null) {
+            return null;
+        }
+        return userDao.save(userInfo);
     }
 
     @Override
     public void deleteUser(UserInfo userInfo) {
         userDao.delete(userInfo);
+    }
+
+
+    @Override
+    public List<UserInfo> getAllUsers() {
+        return userDao.findAll();
     }
 }
