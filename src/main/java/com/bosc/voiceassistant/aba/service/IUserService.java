@@ -27,6 +27,14 @@ public interface IUserService {
     UserInfo getUserByEmail(String email);
 
     /**
+     * 通过姓名找用户
+     *
+     * @param userName
+     * @return
+     */
+    UserInfo getUserByUserName(String userName);
+
+    /**
      * 增加用户
      *
      * @param userInfo
@@ -34,7 +42,7 @@ public interface IUserService {
     void addUser(UserInfo userInfo);
 
     /**
-     * 通过用户id删除用户
+     * 删除用户
      *
      * @param userInfo
      */

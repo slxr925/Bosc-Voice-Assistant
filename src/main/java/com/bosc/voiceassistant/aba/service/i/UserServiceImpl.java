@@ -3,11 +3,9 @@ package com.bosc.voiceassistant.aba.service.i;
 import com.bosc.voiceassistant.aba.dao.IUserDao;
 import com.bosc.voiceassistant.aba.entity.UserInfo;
 import com.bosc.voiceassistant.aba.service.IUserService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -31,6 +29,16 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public UserInfo getUserByUserName(String userName) {
+        return userDao.findByUserName(userName);
+    }
+
+    @Override
+    public List<UserInfo> getAllUsers() {
+        return userDao.findAll();
+    }
+
+    @Override
     public void addUser(UserInfo userInfo) {
         userDao.save(userInfo);
     }
@@ -39,10 +47,4 @@ public class UserServiceImpl implements IUserService {
     public void deleteUser(UserInfo userInfo) {
         userDao.delete(userInfo);
     }
-
-    @Override
-    public List<UserInfo> getAllUsers() {
-        return null;
-    }
-
 }

@@ -50,6 +50,13 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
     UserInfo findByEmail(String email);
 
     /**
+     * 查询所有用户
+     *
+     * @return
+     */
+    List<UserInfo> findAll();
+
+    /**
      * 根据用户名找多个用户
      *
      * @param userName
@@ -57,5 +64,7 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
      */
     List<UserInfo> findAllByUserName(String userName);
 
-
+    @Query("update user set user_name = ?1 where id = ")
+    @Modifying
+    int updateUserInfoByUserId(Integer userId);
 }
