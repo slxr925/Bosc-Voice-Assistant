@@ -41,10 +41,13 @@ public class ApiController {
             //首先解析问题类型
             if (jsonObject.get("type").equals(Integer.parseInt("1"))) {
                 //问菜单问题
+
             } else if (jsonObject.get("type").equals(Integer.parseInt("2"))) {
                 //问价格问题
+
             } else {
                 //是否类问题
+
             }
         } catch (URISyntaxException e) {
             e.printStackTrace();
