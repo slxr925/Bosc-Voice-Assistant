@@ -9,7 +9,7 @@ import javax.persistence.*;
  * @since 2020/9/1 下午6:26
  */
 @Data
-@Entity(name = "User")
+@Entity(name = "user")
 public class UserInfo {
 
     @Id
