@@ -3,6 +3,7 @@ package com.bosc.voiceassistant.aba.controller.api;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.annotation.JsonAlias;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -18,6 +19,7 @@ import java.net.URISyntaxException;
 @RestController
 @RequestMapping(value = "send")
 public class ApiController {
+
     @RequestMapping(value = "/send")
     @ResponseBody
     public void send(@RequestBody String question) {
