@@ -1,11 +1,9 @@
 package com.bosc.voiceassistant.aba.entity.foodMenu;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,7 +15,7 @@ import java.util.Date;
 public class FoodMenuInfo {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer foodId;
 
     @Column(nullable = false)
