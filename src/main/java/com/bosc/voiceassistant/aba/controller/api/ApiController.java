@@ -1,4 +1,4 @@
-package com.bosc.voiceassistant.aba.controller;
+package com.bosc.voiceassistant.aba.controller.api;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

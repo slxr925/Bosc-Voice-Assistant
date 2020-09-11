@@ -1,4 +1,4 @@
-package com.bosc.voiceassistant.aba.entity;
+package com.bosc.voiceassistant.aba.entity.user;
 
 import lombok.Data;
 
