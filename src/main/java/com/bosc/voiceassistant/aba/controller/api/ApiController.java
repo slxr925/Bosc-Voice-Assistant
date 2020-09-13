@@ -48,8 +48,11 @@ public class ApiController {
             } else if (jsonObject.get("type").equals(Integer.parseInt("2"))) {
                 //问价格问题
 
-            } else {
+            } else if (jsonObject.get("type").equals(Integer.parseInt("3"))) {
                 //是否类问题
+
+            } else {
+                //时间问题
 
             }
         } catch (URISyntaxException e) {
