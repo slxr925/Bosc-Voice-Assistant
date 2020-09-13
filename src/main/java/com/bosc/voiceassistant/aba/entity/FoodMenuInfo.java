@@ -28,7 +28,7 @@ public class FoodMenuInfo {
     private String foodName;
 
     @Column(nullable = false)
-    private String dish;
+    private String category;
 
     @Column(nullable = false)
     private Double foodPrice;
