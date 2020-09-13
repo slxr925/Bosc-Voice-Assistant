@@ -1,6 +1,6 @@
-package com.bosc.voiceassistant.aba.dao.foodMenu;
+package com.bosc.voiceassistant.aba.repository;
 
-import com.bosc.voiceassistant.aba.entity.foodMenu.FoodMenuInfo;
+import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

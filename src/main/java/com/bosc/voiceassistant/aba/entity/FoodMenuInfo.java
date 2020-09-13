@@ -1,4 +1,4 @@
-package com.bosc.voiceassistant.aba.entity.foodMenu;
+package com.bosc.voiceassistant.aba.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;

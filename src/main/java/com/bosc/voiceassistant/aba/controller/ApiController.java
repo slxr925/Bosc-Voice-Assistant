@@ -1,4 +1,4 @@
-package com.bosc.voiceassistant.aba.controller.api;
+package com.bosc.voiceassistant.aba.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -31,7 +31,7 @@ public class ApiController {
             headers.setContentType(MediaType.APPLICATION_JSON);
             //添加参数,因为HttpEntity里面的参数是MultiValueMap类型的，所以使用这个map集合
             MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
-            System.out.println(question);
+            //System.out.println(question);
             map.add("question", question);
             //添加请求的实体类，第一个参数是要发送的参数，第二个参数是请求头里的数据
             HttpEntity<Object> requestEntity = new HttpEntity<>(map, headers);
@@ -42,17 +42,14 @@ public class ApiController {
             Object obj = tempJson.get("obj");
             JSONObject jsonObject = JSON.parseObject(obj.toString());
             //首先解析问题类型
-            if (jsonObject.get("type").equals(Integer.parseInt("1"))) {
-                //问菜单问题
+            if (jsonObject.get("intent").equals("qa_dining")) {
+                //食堂问题
 
-            } else if (jsonObject.get("type").equals(Integer.parseInt("2"))) {
-                //问价格问题
-
-            } else if (jsonObject.get("type").equals(Integer.parseInt("3"))) {
-                //是否类问题
+            } else if (jsonObject.get("intent").equals("qa_bus")) {
+                //班车问题
 
             } else {
-                //时间问题
+                //报修问题
 
             }
         } catch (URISyntaxException e) {

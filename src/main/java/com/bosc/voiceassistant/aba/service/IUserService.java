@@ -1,6 +1,6 @@
-package com.bosc.voiceassistant.aba.service.user;
+package com.bosc.voiceassistant.aba.service;
 
-import com.bosc.voiceassistant.aba.entity.user.UserInfo;
+import com.bosc.voiceassistant.aba.entity.UserInfo;
 
 import java.util.List;
 

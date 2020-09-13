@@ -1,6 +1,6 @@
-package com.bosc.voiceassistant.aba.dao.user;
+package com.bosc.voiceassistant.aba.repository;
 
-import com.bosc.voiceassistant.aba.entity.user.UserInfo;
+import com.bosc.voiceassistant.aba.entity.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

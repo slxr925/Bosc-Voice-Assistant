@@ -1,7 +1,7 @@
-package com.bosc.voiceassistant.aba.controller.user;
+package com.bosc.voiceassistant.aba.controller;
 
-import com.bosc.voiceassistant.aba.entity.user.UserInfo;
-import com.bosc.voiceassistant.aba.service.user.i.UserServiceImpl;
+import com.bosc.voiceassistant.aba.entity.UserInfo;
+import com.bosc.voiceassistant.aba.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserServiceImpl userService;
+    private IUserService userService;
 
     @RequestMapping(value = "/getUserByEmail/{email}", method = RequestMethod.GET)
     @ResponseBody
