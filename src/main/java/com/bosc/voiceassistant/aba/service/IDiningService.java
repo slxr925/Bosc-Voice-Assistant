@@ -1,8 +1,6 @@
 package com.bosc.voiceassistant.aba.service;
 
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
-import com.bosc.voiceassistant.aba.repository.IFoodMenuDao;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
@@ -55,6 +53,7 @@ public interface IDiningService {
 
     /**
      * 通过date找food
+     *
      * @param date
      * @return
      */
@@ -70,6 +69,7 @@ public interface IDiningService {
 
     /**
      * 通过价格找food
+     *
      * @param foodPrice
      * @return
      */
@@ -83,10 +83,21 @@ public interface IDiningService {
      */
     List<FoodMenuInfo> getFoodListByFoodPrice(Double foodPrice);
 
-    FoodMenuInfo getFoodByCategory(String Category);
+    /**
+     * 通过类别找food
+     *
+     * @param category
+     * @return
+     */
+    FoodMenuInfo getFoodByCategory(String category);
 
-    List<FoodMenuInfo> getFoodListByCategory(String Category);
-
+    /**
+     * 通过类别找多个food
+     *
+     * @param category
+     * @return
+     */
+    List<FoodMenuInfo> getFoodListByCategory(String category);
 
     /**
      * 找所有的food记录
@@ -94,6 +105,7 @@ public interface IDiningService {
      * @return
      */
     List<FoodMenuInfo> getAllFoods();
+
 
 
 }

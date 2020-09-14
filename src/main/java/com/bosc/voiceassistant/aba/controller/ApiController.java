@@ -2,7 +2,7 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.bosc.voiceassistant.aba.service.IDiningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -19,6 +19,9 @@ import java.net.URISyntaxException;
 @RestController
 @RequestMapping(value = "send")
 public class ApiController {
+
+    @Autowired
+    private IDiningService diningService;
 
     @RequestMapping(value = "/send")
     @ResponseBody

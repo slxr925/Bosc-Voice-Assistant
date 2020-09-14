@@ -101,11 +101,12 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer> {
 
     /**
      * 通过价格找多个菜
-     * @param category
+     *
+     * @param foodPrice
      * @return
      */
     @Query(value = "select * from foodmenu where foodmenu.foodPrice = ?1", nativeQuery = true)
-    List<FoodMenuInfo> findListByFoodPrice(String category);
+    List<FoodMenuInfo> findListByFoodPrice(Double foodPrice);
 
     /**
      * 找所有的菜
