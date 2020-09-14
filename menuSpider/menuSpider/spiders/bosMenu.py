@@ -5,6 +5,7 @@ from urllib import request
 import urllib.parse
 from urllib.parse import urlparse
 from menuSpider.settings import root_path
+from Util.ocr_util import func
 class CnkiSpider(scrapy.Spider):
     name = 'menuSpider'
     start_urls = [ "https://www.baidu.com"]
@@ -34,6 +35,7 @@ class CnkiSpider(scrapy.Spider):
             key1= query.get('from')
             key2=dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(key1).query))
             key=key2.get('query')
+        self.key=key
         links = response.xpath('//div[@class="txt-box"]/h3/a')
         for link in links:
             text=link.xpath('./em/text()').extract()
@@ -65,6 +67,9 @@ class CnkiSpider(scrapy.Spider):
             request.urlretrieve(url,fileName)
     @staticmethod
     def close(spider, reason):
+
+        path = "D://tmp/"+spider.key+"/"
+        func(path)
 
         closed = getattr(spider, 'closed', None)
         if callable(closed):
