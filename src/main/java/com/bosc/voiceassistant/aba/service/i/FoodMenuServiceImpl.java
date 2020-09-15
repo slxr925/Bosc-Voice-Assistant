@@ -1,8 +1,9 @@
 package com.bosc.voiceassistant.aba.service.i;
 
+import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
 import com.bosc.voiceassistant.aba.repository.IFoodMenuDao;
-import com.bosc.voiceassistant.aba.service.IDiningService;
+import com.bosc.voiceassistant.aba.service.IFoodMenuService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * @since 2020/9/13 11:12 上午
  */
 @Service
-public class DiningServiceImpl implements IDiningService {
+public class FoodMenuServiceImpl implements IFoodMenuService {
 
     @Resource
     private IFoodMenuDao foodMenuDao;

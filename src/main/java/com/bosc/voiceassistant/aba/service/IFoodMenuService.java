@@ -9,7 +9,7 @@ import java.util.List;
  * @author Xu Ran
  * @since 2020/9/13 10:44 上午
  */
-public interface IDiningService {
+public interface IFoodMenuService {
 
     /**
      * 通过foodID找food
@@ -105,7 +105,5 @@ public interface IDiningService {
      * @return
      */
     List<FoodMenuInfo> getAllFoods();
-
-
 
 }

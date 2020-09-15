@@ -88,7 +88,7 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer> {
      * @param category
      * @return
      */
-    @Query(value = "select * from foodmenu where foodmenu.category = ?1", nativeQuery = true)
+    @Query(value = "select * from foodmenu where category = ?1", nativeQuery = true)
     List<FoodMenuInfo> findListByCategory(String category);
 
     /**
@@ -105,7 +105,7 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer> {
      * @param foodPrice
      * @return
      */
-    @Query(value = "select * from foodmenu where foodmenu.foodPrice = ?1", nativeQuery = true)
+    @Query(value = "select * from foodmenu where food_price = ?1", nativeQuery = true)
     List<FoodMenuInfo> findListByFoodPrice(Double foodPrice);
 
     /**
@@ -114,4 +114,12 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer> {
      * @return
      */
     List<FoodMenuInfo> findAll();
+
+    /**
+     * 查菜单sql
+     */
+    @Query(value = "select * from foodmenu where date = ?1 and (brunch = ?2 or food_name = ?3 " +
+            "or category = ?4)", nativeQuery = true)
+    List<FoodMenuInfo> findListOrderByFoodMenu(Date date, String brunch, String menu, String category);
+
 }
