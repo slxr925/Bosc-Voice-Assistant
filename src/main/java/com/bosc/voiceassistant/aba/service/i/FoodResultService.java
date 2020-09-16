@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -17,6 +18,7 @@ import java.util.List;
  * @author Xu Ran
  * @since 2020/9/14 3:13 下午
  */
+@Service
 public class FoodResultService {
 
     @Autowired

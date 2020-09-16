@@ -3,6 +3,8 @@ package com.bosc.voiceassistant.aba.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.service.IFoodMenuService;
+import com.bosc.voiceassistant.aba.service.i.FoodResultService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -15,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.ParseException;
 
 @RestController
 @RequestMapping(value = "send")
@@ -22,6 +25,9 @@ public class ApiController {
 
     @Autowired
     private IFoodMenuService foodMenuService;
+
+    @Autowired
+    private FoodResultService foodResultService;
 
     @RequestMapping(value = "/send")
     @ResponseBody
@@ -47,7 +53,7 @@ public class ApiController {
             //首先解析问题类型
             if (jsonObject.get("intent").equals("qa_dining")) {
                 //食堂问题
-
+                String str = foodResultService.getResult(jsonObject);
             } else if (jsonObject.get("intent").equals("qa_bus")) {
                 //班车问题
 
@@ -55,7 +61,7 @@ public class ApiController {
                 //报修问题
 
             }
-        } catch (URISyntaxException e) {
+        } catch (URISyntaxException | ParseException e) {
             e.printStackTrace();
         }
     }
