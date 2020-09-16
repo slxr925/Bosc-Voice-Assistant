@@ -2,9 +2,12 @@ package com.bosc.voiceassistant.aba.repository;
 
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +16,7 @@ import java.util.List;
  * @since 2020/9/11 9:56 上午
  */
 @Repository
-public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer> {
+public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaSpecificationExecutor<FoodMenuInfo> {
 
     /**
      * 通过foodId查菜
@@ -115,11 +118,5 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer> {
      */
     List<FoodMenuInfo> findAll();
 
-    /**
-     * 查菜单sql
-     */
-    @Query(value = "select * from foodmenu where date = ?1 and (brunch = ?2 or food_name = ?3 " +
-            "or category = ?4)", nativeQuery = true)
-    List<FoodMenuInfo> findListOrderByFoodMenu(Date date, String brunch, String menu, String category);
 
 }
