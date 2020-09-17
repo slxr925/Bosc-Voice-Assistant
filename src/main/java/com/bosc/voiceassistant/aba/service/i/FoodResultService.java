@@ -79,7 +79,7 @@ public class FoodResultService {
             dateList.sort(Date::compareTo);
             long msec = System.currentTimeMillis();
             for (Date date : dateList) {
-                if (date.after(convertToDate(msec))) {
+                if (date.after(convertToDate())) {
                     sb.append(date.toString());
                     break;
                 }
@@ -115,11 +115,13 @@ public class FoodResultService {
     public Date stringToDate(String str) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = sdf.parse(str);
-        return date;
+        String strDate = sdf.format(date);
+        Date date2 = sdf.parse(strDate);
+        return new java.sql.Date(date2.getTime());
     }
 
     //时间戳转Date
-    public Date convertToDate(long mesc) throws ParseException {
+    public Date convertToDate() throws ParseException {
         SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
         String dateStr = dateformat.format(System.currentTimeMillis());
         return stringToDate(dateStr);
