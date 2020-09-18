@@ -60,9 +60,9 @@ public class FoodController {
 //    @RequestMapping(value = "/getFoodTrueFalseResult")
 //    @ResponseBody
 //    public String getFoodTFResult() throws ParseException {
-//        Date resultDate = foodResultService.stringToDate("2020-09-18");
-//        List<FoodMenuInfo> list3 = foodResultService.getFoodTrueFalseResult(resultDate, resultDate, menu, brunch,
-//                category, price);
+//        Date resultDate = foodResultService.stringToDate("2020-09-17");
+//        List<FoodMenuInfo> list3 = foodResultService.getFoodTrueFalseResult(resultDate, resultDate, "", "brunch",
+//                "category", 0.0);
 //        if (price > 0 && price.equals(list3.get(0).getFoodPrice())) {
 //            return "是的";
 //        } else if (price > 0 && !price.equals(list3.get(0).getFoodPrice())) {
