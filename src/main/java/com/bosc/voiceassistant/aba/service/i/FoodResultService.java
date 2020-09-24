@@ -77,7 +77,6 @@ public class FoodResultService {
                 dateList.add(food.getDate());
             }
             dateList.sort(Date::compareTo);
-            long msec = System.currentTimeMillis();
             for (Date date : dateList) {
                 if (date.after(convertToDate())) {
                     sb.append(date.toString());

@@ -3,6 +3,7 @@ package com.bosc.voiceassistant.aba.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Xu Ran
@@ -27,4 +28,7 @@ public class UserInfo {
 
     @Column(nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "logerInfo")
+    private List<LogInfo> logInfoList;
 }
