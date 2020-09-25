@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.ParseException;
@@ -51,14 +56,22 @@ public class ApiController {
                 String str = foodResultService.getResult(jsonObject);
             } else if (jsonObject.get("intent").equals("qa_bus")) {
                 //班车问题
+                String url = "";
+                BufferedImage bufferedImage = getBusImage(url);
 
             } else {
                 //报修问题
 
             }
-        } catch (URISyntaxException | ParseException e) {
+        } catch (URISyntaxException | ParseException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @RequestMapping(value = "/getBusImage", produces = MediaType.IMAGE_JPEG_VALUE)
+    @ResponseBody
+    public BufferedImage getBusImage(String url) throws IOException {
+        return ImageIO.read(new FileInputStream(new File(url)));
     }
 }
 
