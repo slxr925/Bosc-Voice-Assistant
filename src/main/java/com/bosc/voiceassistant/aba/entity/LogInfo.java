@@ -10,7 +10,7 @@ import java.util.Date;
  * @since 2020/9/23 7:49 下午
  */
 @Data
-@Entity(name = "logs")
+@Entity(name = "log")
 public class LogInfo {
 
     @Id
@@ -23,7 +23,7 @@ public class LogInfo {
     @Column
     private String question;
 
-    @ManyToOne
-    @JoinColumn(name = "uid")
-    private UserInfo userInfo;
+//    @ManyToOne
+//    @JoinColumn(name = "uid")
+//    private UserInfo userInfo;
 }
