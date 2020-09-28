@@ -59,7 +59,7 @@ public class ApiController {
                 String url = "";
                 BufferedImage bufferedImage = getBusImage(url);
 
-            } else {
+            } else if (jsonObject.get("intent").equals("qa_")) {
                 //报修问题
 
             }
