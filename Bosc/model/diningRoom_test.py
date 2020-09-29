@@ -13,8 +13,10 @@ def read_file(filename):
     template = {}
     with open(filename, 'r', encoding='utf-8') as fin:
         for line in fin:
+            print(line)
             line = line.strip('\n').split('\t')
             template[line[0]] = line[1]
+
     return template
             
 # 1.获取意图 
@@ -38,7 +40,7 @@ def tf_similarity(sentence, example):
 
 def get_type(sentence, res):
     score = 0
-    res['type'] = None
+    res['type'] = 'None'
     template = read_file(project_dir+'/model/question_template/dinging.txt')
     for tmp in template:
         sim = tf_similarity(sentence, tmp)
@@ -111,17 +113,19 @@ def get_date(sentence, res):
             res['start_date'] = (now_time - datetime.timedelta(days=6)).strftime('%Y-%m-%d')
             res['end_date'] = (now_time - datetime.timedelta(days=2)).strftime('%Y-%m-%d')
     else:
-        res['start_date'] = None
-        res['end_date'] = None
+        res['start_date'] = 'None'
+        res['end_date'] = 'None'
 
     return res
 
 # 4.匹配早餐、午餐
 def get_brunch(sentence, res):
-    if '早上' or '早' in sentence:
+    if '早上' in sentence or '早' in sentence:
         res['brunch'] = '早餐'
-    elif '下午' or '中午' in sentence:
+    elif '下午' in sentence or '中午' in sentence:
         res['brunch'] = '午餐'
+    elif '晚上' in sentence or '今晚' in sentence:
+        res['brunch'] = '晚餐'
     else:
         res['brunch'] = 'None'
     return res
@@ -142,10 +146,9 @@ def dict_to_trie(slot_value):
     return t 
 
 def get_category(sentence, res):
-    slot_values = ['主荤','半荤', '蔬菜', '汤', '点心', 
-    '粗粮']
-    res['category'] = None
-    res['menu'] = None
+    slot_values = ['主荤','半荤', '蔬菜', '汤', '点心', '粗粮', '水果','面食']
+    res['category'] = []
+    res['menu'] = []
 
     for slot_value in slot_values:
         t_trie = dict_to_trie(slot_value)
@@ -156,8 +159,8 @@ def get_category(sentence, res):
             if t_trie.has_key(dict_word):
                 j = j + 1
                 if slot_value not in res.keys():
-                    res['category'] = slot_value 
-                    res['menu'] = dict_word
+                    res['category'].append(slot_value)
+                    res['menu'].append(dict_word)
                 else:
                     continue
             else:
@@ -166,19 +169,26 @@ def get_category(sentence, res):
                     dict_word = sentence[i:j+1]
                     if t_trie.has_key(dict_word):
                         if slot_value not in res.keys():
-                            res['category'] = slot_value
-                            res['menu'] = dict_word
+                            res['category'].append(slot_value)
+                            res['menu'].append(dict_word)
                         else:
                             continue
-                        break 
                     i = i + 1
                     j = 0
 
+    for slot_value in slot_values:
+        if slot_value in sentence:
+            res['category'].append(slot_value)
+
+    if '荤菜' in sentence:
+        res['category'] .extend(['主荤', '半荤'])
+    res['category']=list(set(res['category']))
+    res['menu'] = list(set(res['menu']))
     return res
 
 # 6.返回菜名，如果未说具体菜名，并且是问菜单类的问题，则返回全部菜单 
 def get_menu(sentence, res):
-    if res['menu'] is None and ('菜' in sentence or '菜单' in sentence):
+    if res['menu'] is 'None' and ('菜' in sentence or '菜单' in sentence):
         res['menu'] = '全部菜单'
     return res
 
@@ -199,14 +209,9 @@ def get_dinningRoom(sentence):
     res = get_menu(sentence, res)
     return res
 
-
 if __name__ == '__main__':
     res = {}
-    sentence = '上周的饼干多少钱'
+    sentence = '面条是不是5快？'
     res = get_dinningRoom(sentence)
     print(res)
-
-
-
-
 

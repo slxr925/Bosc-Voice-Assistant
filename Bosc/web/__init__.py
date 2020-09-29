@@ -9,6 +9,7 @@ def hello_world():
 
 @app.route('/search',methods=['GET','POST'])
 def index():
+    print(1)
     t = request.data
     if len(t)==0:
         t=request.values['data']

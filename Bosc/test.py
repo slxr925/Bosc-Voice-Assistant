@@ -1,7 +1,7 @@
 import jieba
 import jieba.analyse
 import jieba.posseg
-
+import re
 
 def dosegment_all(sentence):
     '''
@@ -16,4 +16,9 @@ def dosegment_all(sentence):
     # 上面的for循环可以用python递推式构造生成器完成
     # outstr = ",".join([("%s/%s" %(x.word,x.flag)) for x in sentence_seged])
     print(outstr)
-dosegment_all("今天有没有面条?")
+dosegment_all("面条是不是五元？")
+
+def re_test(text):
+    t=re.compile(r'[1-9]\d{0,9}')
+    i
+    pass
