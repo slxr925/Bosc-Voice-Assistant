@@ -29,6 +29,6 @@ public class UserInfo {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "logInfo")
-    private List<LogInfo> logInfoList;
+//    @OneToMany(mappedBy = "logInfo")
+//    private List<LogInfo> logInfoList;
 }
