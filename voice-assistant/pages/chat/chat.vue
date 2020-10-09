@@ -1,45 +1,40 @@
 <template>
-
-	<view >
-         <button @click="openVoice">语音输入</button>
-		 <text >{{title}}</text>
+<view >
+	<uni-nav-bar status-bar='false' @clickLeft="back('/pages/index/index')" left-icon="back" left-text="返回"  right-icon="more" title="上银生活助手"></uni-nav-bar>
+		
+<!-- 
+		<button  @click="openCamera">拍照</button> -->
+		<cul-chat anotherAvatar="/static/images/robt.png" meAvatar="/static/images/user/avatar.jpg" :question='question'  @submit="sendMsg"></cul-chat>
+			
 	</view>
 </template>
 
 <script>
-
+import culchat from "@/components/cul-chat/cul-chat"
  export default {
+		components: {
 
+			culchat
+		},
  	data() {
  		return {
-			"title":''
+			question:''
 		   }
  	},
- 	onLoad() {
- 
- 	},
- 	methods: {
+onLoad: function (option) { //option为object类型，会序列化上个页面传递的参数 
+		 this.question=option.question; //打印出上个页面传递的参数。
 
- 		//语音识别
-         openVoice() {
- 			let vm = this;
- 			let options = {};
- 			//#ifdef APP-PLUS || APP-PLUS-NVUE
- 			options.engine = 'iFly';
- 			options.punctuation = false; // 是否需要标点符号 
- 			options.timeout = 10 * 1000;
- 			plus.speech.startRecognize(options, function(s) {
- 				vm.title = s;
- 				console.log(vm.title) //拿到语音识别的结果
- 				//下面是逻辑  
- 		
- 				plus.speech.stopRecognize();
- 			});
- 			//#endif
- 			// #ifdef H5
- 			  //  alert("只有h5平台才有alert方法")
- 			// #endif
- 		}
+	 },
+	created(){
+		//this.question=this.$route.query.question;
+	},
+ 	methods: {
+ 
+        sendMsg(message){
+			let val=message.message;
+			return message.callback(val+"："+"阿巴阿巴阿巴");
+		},
+
  	}
  }
 </script>

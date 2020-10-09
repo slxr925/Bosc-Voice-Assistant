@@ -1,7 +1,24 @@
 <script>
+	import Vue from 'vue'
+	Vue.prototype.back=function(path){
+		 uni.redirectTo({
+			 url:path
+		 });
+	 }
+	
 	export default {
+		globalData: {  
+            login: false 
+        },  
 		onLaunch: function() {
 			console.log('App Launch')
+			uni.onTabBarMidButtonTap(function(e){
+				uni.showToast({
+					title:'点我干嘛',
+					duration: 1500,
+					icon:'none'
+				});
+			})
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -14,4 +31,5 @@
 
 <style>
 	/*每个页面公共css */
+	@import "/common/css/iconfont.css";
 </style>

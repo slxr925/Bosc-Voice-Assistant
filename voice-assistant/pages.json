@@ -3,21 +3,51 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app",
-				"titleNView":false
-			},
-			"navigationStyle": "custom"
+				// "navigationStyle": "custom",
+			//	"navigationBarTitleText": "uni-app",
+				// "titleNView":false
+			}
 		},
 		{
-			"path": "pages/chat/chat"
-
+			"path": "pages/chat/chat",
+			"style": {}
+		},
+		{
+			"path": "pages/camera/camera",
+			"style": {}
+		},
+        {
+            "path": "pages/login/login",
+			"style": {}
+        }, {
+            "path": "pages/login/forget",
+			"style": {}
+        }, {
+            "path": "pages/login/register",
+			"style": { }
+        },
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/new/index",
+			"style": {
+			}
+		},
+		{
+			"path": "pages/new/details",
+			"style": {
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-		
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
 	}
 }
