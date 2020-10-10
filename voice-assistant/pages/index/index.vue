@@ -138,7 +138,7 @@
 				   // 分类菜单
 				   categoryList: [
 				   	{ id: 1, name: '新闻', img: '/static/img/category/1.png',url:'/pages/new/index' },
-				   	{ id: 2, name: '家电', img: '/static/img/category/2.png' },
+				   	{ id: 2, name: '饮食', img: '/static/img/category/2.png' ,url:'/pages/diet/index' },
 				   	{ id: 3, name: '服饰', img: '/static/img/category/3.png' },
 				   	{ id: 4, name: '日用', img: '/static/img/category/4.png' },
 				   	{ id: 5, name: '蔬果', img: '/static/img/category/5.png' },
@@ -169,29 +169,7 @@
 			selectedBanner(item, index) {
 			    console.log('🥒', item, index)
 			},
-            openCamera(){
-				uni.chooseImage({
-				    count: 6,
-				    sizeType: ['original', 'compressed'],
-				    sourceType: ['camera','album'],
-				    success: function(res) {
-				        // 预览图片
-				        uni.previewImage({
-				            urls: res.tempFilePaths,
-				            longPressActions: {
-				                itemList: ['发送给朋友', '保存图片', '收藏'],
-				                success: function(data) {
-				                    console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
-				                },
-				                fail: function(err) {
-				                    console.log(err.errMsg);
-				                }
-				            }
-				        });
-				    }
-				    });
-				
-			}
+
 
 
 	

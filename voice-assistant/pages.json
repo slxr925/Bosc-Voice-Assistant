@@ -12,10 +12,7 @@
 			"path": "pages/chat/chat",
 			"style": {}
 		},
-		{
-			"path": "pages/camera/camera",
-			"style": {}
-		},
+
         {
             "path": "pages/login/login",
 			"style": {}
@@ -46,7 +43,11 @@
 			"path": "pages/uni-feedback/uni-feedback",
 			"style": { }
 		}
-	],
+	    ,{
+            "path" : "pages/diet/index",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

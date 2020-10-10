@@ -73,6 +73,7 @@
 				phoneData:'', //用户/电话
 				passData:'', //密码
 				isRotate: false, //是否加载旋转
+				global:getApp().globalData
 			};
 		},
 		components:{
@@ -133,6 +134,7 @@
 				uni.showLoading({
 					title: '登录中'
 				});
+
 				getApp().globalData.login=true;
 				uni.showToast({
 					icon: 'success',
