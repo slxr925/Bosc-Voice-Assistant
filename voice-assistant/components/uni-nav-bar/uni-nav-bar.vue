@@ -128,6 +128,9 @@
 
 	.uni-navbar {
 		width: 750rpx;
+		// position: fixed;
+		// top:0px;
+		z-index: 10000000000000;
 	}
 
 	.uni-navbar__content {
@@ -207,6 +210,7 @@
 
 	.uni-navbar--fixed {
 		position: fixed;
+		
 		z-index: 998;
 	}
 

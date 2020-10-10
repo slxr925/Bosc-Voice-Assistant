@@ -1,6 +1,12 @@
 <template>
 	<view>
-		<uni-nav-bar status-bar='false' @clickLeft="back('/pages/index/index')" left-icon="back" left-text="返回"  right-icon="more" title="个人中心"></uni-nav-bar>
+		<uni-nav-bar status-bar='false' @clickLeft="back('/pages/index/index')" left-icon="back" left-text="返回"  title="个人中心">
+			<view slot="right" class='info'>
+						   <navigator url="/pages/uni-feedback/uni-feedback" open-type="navigate">
+					  <uni-icons  type="more" size="24" />
+						   </navigator>
+			</view>
+		</uni-nav-bar>
 			
 	
 	<view class="content">
@@ -267,7 +273,7 @@ page {
 	flex: 1;
 	position: relative;
 	background-color: #f8f8f8;
-	height: 0;
+	height: 100%;
 }
 .scroll-content {
 	display: flex;
@@ -472,8 +478,11 @@ page {
 	height: 90upx;
 	padding: 0 30upx;
 	box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04);
-	position: relative;
+	// position: relative;
+	position:fixed ; bottom:0px;
+	width:100%;
 	z-index: 1;
+	background-color:white;
 
 	.input-box {
 		display: flex;

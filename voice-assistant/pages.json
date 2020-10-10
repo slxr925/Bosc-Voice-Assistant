@@ -41,6 +41,10 @@
 			"path": "pages/new/details",
 			"style": {
 			}
+		},
+		{
+			"path": "pages/uni-feedback/uni-feedback",
+			"style": { }
 		}
 	],
 	"globalStyle": {

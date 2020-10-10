@@ -1,8 +1,13 @@
 <template>
 	<view>
-		<uni-nav-bar status-bar='false' right-icon="more" title="上银生活助手">
+		<uni-nav-bar status-bar='false'  title="上银生活助手">
 		   <view slot="left" class='info'>
 				<face></face>
+		   </view>
+		   <view slot="right" class='info'>
+			   <navigator url="/pages/uni-feedback/uni-feedback" open-type="navigate">
+		   		  <uni-icons  type="more" size="24" />
+			   </navigator>
 		   </view>
 		</uni-nav-bar>
 	
