@@ -35,6 +35,6 @@ public class FoodMenuInfo {
     @Column
     private String foodImg;
 
-    @Column
-    private Double calorie;
+    @Column(nullable = false)
+    private Double avgMark;
 }
