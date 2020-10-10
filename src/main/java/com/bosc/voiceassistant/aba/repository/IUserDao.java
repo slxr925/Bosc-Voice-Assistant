@@ -61,4 +61,6 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
      */
     List<UserInfo> findAllByUserName(String userName);
 
+
+
 }

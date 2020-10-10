@@ -34,4 +34,7 @@ public class FoodMenuInfo {
 
     @Column
     private String foodImg;
+
+    @Column
+    private Double calorie;
 }
