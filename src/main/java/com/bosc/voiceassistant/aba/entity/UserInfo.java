@@ -1,6 +1,8 @@
 package com.bosc.voiceassistant.aba.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
  * @since 2020/9/1 下午6:26
  */
 @Data
+@DynamicUpdate
+@DynamicInsert
 @Entity(name = "user")
 public class UserInfo {
 
@@ -19,7 +23,7 @@ public class UserInfo {
     @Column(unique = true, nullable = false)
     private Integer userId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = " varchar(255) default'[]'")
     private String userName;
 
     @Column(nullable = false)
