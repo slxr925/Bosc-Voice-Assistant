@@ -22,12 +22,15 @@
 			@touchstart="$emit('touchstart', $event)"
 		/>
 		<!-- 是否可见密码 -->
-		<image 
-			v-if="_isShowPass&&type==='password'&&!_isShowCode"
-			class="img cuIcon" 
-			:class="showPassword?'cuIcon-attention':'cuIcon-attentionforbid'" 
-			@tap="showPass"
-		></image>
+		<view class="passwd">
+			<image
+				v-if="_isShowPass&&type==='password'&&!_isShowCode"
+				class="img cuIcon" 
+				:class="showPassword?'cuIcon-attention':'cuIcon-attentionforbid'" 
+				@tap="showPass"
+			></image>
+		</view>
+		
 		<!-- 倒计时 -->
 		<view 
 			v-if="_isShowCode&&!_isShowPass"
@@ -204,5 +207,8 @@
 	    border-radius: 2.5rem ;
 	    -webkit-box-shadow: 0 0 60rpx 0 rgba(43,86,112,.1) ;
 	    box-shadow: 0 0 60rpx 0 rgba(43,86,112,.1) ;
+	}
+	.passwd{
+		
 	}
 </style>

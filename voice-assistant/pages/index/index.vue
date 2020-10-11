@@ -40,9 +40,9 @@
 					<view class="chat-img flex-row-center">
 						<image style="height: 75rpx;width: 75rpx;" src="/static/images/register/robot.png" mode="aspectFit"></image>
 					</view>
-					<view  class="flex"  style="width: 500rpx;">
+					<view  class="flex"  style="width: 550rpx;">
 						<view class="margin-left padding-chat flex-column-start" style="border-radius: 35rpx;background-color: #f9f9f9;">
-							<text  style="word-break: break-all;" >你好?我是上行员工助理,请问有什么问题可以帮助您?</text>
+							<text  style="word-break: break-all;" >您好!我是您的智能语音助理,请问有什么需要帮助的吗？</text>
 							<!-- 消息模板 =>初次问候 -->
 							
 
@@ -50,17 +50,26 @@
 					</view>
 					
 				</view>
-				<view class="flex-column-start"  style="color: #2fa39b;margin-left: 155rpx;margin-top: 10rpx;">
-					<text style="color: #838383;font-size: 30rpx;margin-top: 5rpx;">你可以这样问我:</text>
-					<text @click="answer(item)" style="margin-top: 10rpx;" 
-					v-for="(item,index) in questionList" :key="index" >{{item}}</text>
+				<view class="flex-column-start answercontent" >
+					<view class="answerleft">
+						<text style="color: #838383;font-size: 30rpx;margin-top: 5rpx;">你可以这样问我:</text>	
+					</view>
+					<view class="answerRight">
+						<view v-for="(item,index) in questionList">
+							<text @click="answer(item)" style="margin-top: 10rpx;" 
+					 :key="index" >{{item}}</text>	
+					 <hr class="hrcss">
+						</view>	
 					<view class="flex-row-start  padding-top-sm">
 						<text class="my-neirong-sm" style="font-size: 25rpx;">没有你要的答案?</text>
 						<text class="padding-left" style="color: #007AFF;" @click="changeQuestion">换一批</text>
+				
 					</view>
+						<hr class="hrcss">
 					<view class="flex-row-start  padding-top-sm">
 						<text class="my-neirong-sm" style="font-size: 25rpx;">也可以在下方输入你想问的问题</text>
 					</view>
+					</view>	
 				</view>
 		</view>
         <footbar :urlList='urlList' :currentIndex='1' ></footbar>
@@ -195,24 +204,26 @@
 	}
 
 .category-list {
-	width: 92%;
+	width: 95%;
 	margin: 0 4%;
 	padding: 0 0 30upx 0;
 	border-bottom: solid 2upx #f6f6f6;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	border: #000000 1rpx solid;
+	
 	border-radius: 10rpx;
 	background-color: #FFFFFF;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+	margin-top: 15rpx;
 	}
 	.category{
 		width: 33%;
 		margin-top: 30upx;
 		display: flex;
 		flex-wrap: wrap;
-	display: flex;
-	justify-content: center;
+		display: flex;
+		justify-content: center;
 		}
 		.img {
 			width: 100%;
@@ -234,14 +245,37 @@
 		}
 
 	.robotclass{
-		width: 92%;
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 30rpx;
+		margin-top: 20rpx;
 		padding-top: 20rpx;
-		padding-bottom: 30rpx;
-		border: #000000 1rpx solid;
+		padding-bottom: 30rpx;	
 		border-radius: 10rpx;
 		background-color: #FFFFFF;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 	}
+	.answercontent{
+		color: #2fa39b;
+		margin-left: 40rpx;
+		margin-right: 40rpx;
+		margin-top: 10rpx;
+		background-color: #f9f9f9;
+		position: relative;
+	}
+	.answerleft{
+		width: 100rpx;
+		height: 100%;
+		position: absolute;
+		border-right: #C0C0C0 dashed 1rpx;
+	}
+	.answerRight{
+		margin-left: 110rpx;
+	}
+	.hrcss{
+		width: 98%;
+		border: #C0C0C0 dashed 1rpx;
+		
+	}
+	
 </style>

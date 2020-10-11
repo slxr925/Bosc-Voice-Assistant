@@ -93,20 +93,26 @@
 	}
 
 	.nav-tab-active .circle {
-		height: 38px;
-		width: 38px;
-		line-height: 38px;
-		position: relative;
-		top: -14px;
-		left: calc(50% - 19px);
-		border-radius: 50%;
-		background: $dominantHue;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-	}
-	.nav-tab-active .img{
 		height: 50px;
 		width: 50px;
-		line-height: 50px;
+		line-height: 60px;
+		position: relative;
+		top: -35px;
+		left: calc(50% - 39px);
+		border-radius: 50%;
+		background: $dominantHue;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		padding: 15px;
+		text-align: center;
+		background-color: #FFFFFF;
+	}
+	.nav-tab-active .img{
+		height: 110%;
+		width: 80%;
+		margin-left:auto;
+		margin-right:auto;
+		// line-height: 50px;
+		
 	}
     .img{
 		height: 38px;

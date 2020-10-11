@@ -80,32 +80,6 @@ export default {
 				headPicUrl: '/static/images/user/avatar.jpg',
 				nickName: '史蒂芬.林'
 			},
-			orderStatusList: [
-				{ name: '待付款', icon: 'iconfont icon31daifukuan', status: 10 },
-				{ name: '待发货', icon: 'iconfont icon31daifahuo', status: 30 },
-				{ name: '待收货', icon: 'iconfont icon31daishouhuo', status: 40 },
-				{ name: '待评价', icon: 'iconfont icon31daipingjia', status: 50 },
-				{ name: '已完成', icon: 'iconfont icon31yiguanzhudianpu', status: 55 }
-			],
-			currentIndex: 0,
-			list: [
-				{
-					icon: '/static/images/user/class-01.png',
-					text: '我的电子券'
-				},
-				{
-					icon: '/static/images/user/class-02.png',
-					text: '退换/售后'
-				},
-				{
-					icon: '/static/images/user/class-03.png',
-					text: '我的积分'
-				},
-				{
-					icon: '/static/images/user/class-04.png',
-					text: '送礼提醒'
-				}
-			],
 			userList: [
 				{
 					title: '昵称',

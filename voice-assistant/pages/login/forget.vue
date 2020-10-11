@@ -11,6 +11,12 @@
 		<view class="forget">
 		
 		<view class="content">
+			<!-- 头部logo -->
+			<view class="headback">
+				<view class="header" >
+					<image src="/static/images/register/robot.png"></image>
+				</view>
+			</view>
 			<!-- 主体 -->
 			<view class="main">
 				<view class="tips">若你忘记了密码，可在此重置新密码。</view>
@@ -47,6 +53,7 @@
 				text="重置密码"
 				:rotate="isRotate" 
 				@click.native="startRePass()"
+				bgColor="#007AFF"
 			></wButton>
 
 		</view>

@@ -41,14 +41,16 @@
 <style scoped>
 	.image-container {
 		width: 750rpx;
-		height: 350rpx;
+		height: 380rpx;
+	
 	}
 
 	.item-img {
 		width: 630rpx;
-		height: 300rpx;
+		height: 360rpx;
 		border-radius: 14rpx;
 		animation: to-big .3s;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 	}
 
 	.swiper-item {
