@@ -24,8 +24,8 @@ public class DailyFoodRecordInfo {
     @Column
     private Date date;
 
-    @ManyToOne
-    @JoinColumn
-    private UserInfo userInfo;
+//    @ManyToOne
+//    @JoinColumn
+//    private UserInfo userInfo;
 
 }
