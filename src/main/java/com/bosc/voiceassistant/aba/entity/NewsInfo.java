@@ -27,8 +27,8 @@ public class NewsInfo {
     private String newsTitle;
 
     @Column
-    private Date date;
+    private Date newsDate;
 
     @Column
-    private String category;
+    private String newsCategory;
 }
