@@ -99,8 +99,58 @@
 						</vrow>
 				</vcol>
 			</vrow>
-			<view>
-				
+			<view class='contents'>
+				<text style='font-size: 40upx;'>经典均衡饮食</text>
+				<p>
+					<text>
+					日常注意食物多样化，可以保证更全面的营养摄入。促进免疫系统良好运行。
+				    </text>
+				</p>
+				<p>
+					<text>
+					推荐一天吃12样食物，一周吃25样食物。
+				    </text>
+				</p>
+			</view>
+
+		</view>
+		<view class='card'>
+			<vrow class="row" >
+				<vcol span="60"><view class="col title">食堂热门菜品推荐</view></vcol>
+				<vcol span="15" ></vcol>
+				<vcol span="15" >
+					<navigator url="/pages/diet/food" open-type="navigate">
+						<vrow style="justify-content:flex-end; ">
+							<vcol span="10"><view class="col">更多</view></vcol>
+							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
+						</vrow>
+						</navigator>
+				</vcol>
+			</vrow>
+			<view class='contents'>
+				<vrow class="row" >
+					<vcol span="40">
+						<view class="col">
+							<view class="wf-item-page">
+								<image src="/static/diet/1.jpg" mode="widthFix" class="item-img" />
+								<view class="item-info">
+									<view class="info-nickname">xxx菜</view>
+								</view>
+							</view>
+					</view>
+					</vcol>
+					<vcol span="40"><view class="col">
+					<view class="wf-item-page">
+						<image src="/static/diet/3.jpg"  mode="widthFix" class="item-img" />
+						<view class="item-info">
+							
+							<view class="info-nickname">yyy菜</view>
+						</view>
+					</view>
+					</view></vcol>		        
+				</vrow>
+
+
 			</view>
 		</view>
 	</view>
@@ -210,7 +260,7 @@ page{
 	margin-bottom: -140upx;
 }
 .camera{
-     margin-top: 20upx;
+    margin-top: 20upx;
 	display: flex;
 	align-items:center;
 	justify-content: center;  
@@ -221,5 +271,38 @@ page{
 	border :2rpx solid #D9D9D9;
 	border-radius: 20upx;
 }
-
+.contents{
+	text-align: left;
+	text-indent:2em;
+    padding: 20upx;
+	color: #666666;
+}
+	.wf-item-page{
+		background: #fff;
+		overflow: hidden;
+		border-radius: 5px;
+		width:100%
+	}
+	
+	.item-img{
+		width: 100%;
+	}
+	
+	.item-info{
+		display: flex;
+		align-items: center;
+		padding: 5px;
+	}
+	
+	.info-avatar{
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		margin-right: 5px;
+	}
+	
+	.info-nickname{
+		font-size: 12px;
+		color: #333;
+	}
 </style>

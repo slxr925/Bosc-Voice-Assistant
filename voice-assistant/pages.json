@@ -46,7 +46,11 @@
 	    ,{
             "path" : "pages/diet/index",
             "style" : {}
+        }	    ,{
+            "path" : "pages/diet/food",
+            "style" : {}
         }
+
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
