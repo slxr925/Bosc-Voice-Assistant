@@ -29,31 +29,31 @@
 				requiredData:[
 					{
 						image:'/static/diet/1.jpg',
-						sorce:5,
+						score:'4.5',
 						nickName:'rFonz'
 					},
 					{
 						image:'/static/diet/2.jpg',
-						sorce:5,
+						score:2,
 						nickName:'rFonz'
 					},
 					{
 						image:'/static/diet/3.jpg',
-						sorce:5,
+						score:1.5,
 						nickName:'rFonz'
 					},
 					{
 						image:'/static/diet/4.jpg',
-						sorce:5,
+						score:2.5,
 						nickName:'dds'
 					},
 					{
 						image:'/static/diet/5.jpg',
-						sorce:4,
+						score:4,
 						nickName:'rFonz'
 					},					{
 						image:'/static/diet/6.jpg',
-						sorce:3.5,
+						score:3.5,
 						nickName:'小炒肉'
 					}
 				]

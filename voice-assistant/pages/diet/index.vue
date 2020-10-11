@@ -13,10 +13,12 @@
 				<vcol span="50"><view class="col title">基本信息</view></vcol>
 				<vcol span="30" ></vcol>
 				<vcol span="15" >
+					<navigator url="/pages/user/user" open-type="navigate">
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col">返回</view></vcol>
+							<vcol span="10"><view class="col">修改</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
+					</navigator>
 				</vcol>
 			</vrow>
 			<vrow class="row" >

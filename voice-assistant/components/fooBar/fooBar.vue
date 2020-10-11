@@ -8,7 +8,6 @@
 							<image class='img' :src="item.src"></image>
 						</view>
 					</view>
-
 				</navigator>
 			</view>
 		</view>

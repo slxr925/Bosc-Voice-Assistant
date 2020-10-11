@@ -12,10 +12,10 @@
 			</view>
 		</view>
 
-		<!-- 订单状态 -->
+	<!-- 	订单状态
 		<view class="order-status">
 			<view class="status-wrap">
-				<!-- 单元格 -->
+				单元格
 				<view class="cell">
 					<view class="cell-left">
 						<image class="cell-icon" src="/static/images/user/icon-order.png" mode="aspectFill"></image>
@@ -24,7 +24,7 @@
 					<view class="iconfont iconmore1"></view>
 				</view>
 
-				<!-- 订单状态 -->
+				订单状态
 				<view class="status-list">
 					<view class="status-item" hover-class="btn-hover" v-for="(item, index) in orderStatusList" :key="index">
 						<view class="item-icon" :class="item.icon"></view>
@@ -34,11 +34,11 @@
 			</view>
 		</view>
 
-		<!-- 滑动导航 -->
+		滑动导航
 		<view style="border-radius: 20rpx; overflow: hidden; margin: 0 20rpx;">
 			<com-nav :list="list" :col="4"></com-nav>
 		</view>
-
+ -->
 		<!-- 用户功能 -->
 		<view class="com-item">
 			<view class="com-wrap">
@@ -108,36 +108,51 @@ export default {
 			],
 			userList: [
 				{
-					title: '收货地址',
+					title: '昵称',
 					icon: '/static/images/user/icon-address.png',
 					path: 'address-list'
 				},
 				{
-					title: '我的收藏',
+					title: '性别',
 					icon: '/static/images/user/icon-collect.png',
 					path: 'collect-list'
 				},
 				{
-					title: '我的足迹',
+					title: '年龄',
 					icon: '/static/images/user/icon-foot.png',
 					path: 'browse-list'
-				}
+				},
+								{
+					title: '身高',
+					icon: '/static/images/user/icon-address.png',
+					path: 'address-list'
+				},
+				{
+					title: '体重',
+					icon: '/static/images/user/icon-collect.png',
+					path: 'collect-list'
+				},
 			],
 			serverList: [
 				{
-					title: '客服中心',
+					title: '饮食目标',
 					icon: '/static/images/user/icon-kefu.png',
 					path: 'kefu'
 				},
 				{
-					title: '帮助中心',
+					title: '饮食偏好',
 					icon: '/static/images/user/icon-help.png',
 					path: 'help'
 				},
 				{
-					title: '版本',
+					title: '手机',
 					icon: '/static/images/user/icon-about.png',
 					text: '1.0.0'
+				},
+				{
+					title: '邮箱',
+					icon: '/static/images/user/icon-kefu.png',
+					path: 'kefu'
 				}
 			]
 		};
@@ -227,7 +242,7 @@ page {
 		}
 	}
 	.cell {
-		height: 80rpx;
+		height: 100rpx;
 		padding-left: 20rpx;
 		padding-right: 20rpx;
 		display: flex;
