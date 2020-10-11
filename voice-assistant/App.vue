@@ -8,7 +8,10 @@
 	
 	export default {
 		globalData: {  
-            login: false 
+            login: false,
+			serive:{
+				url:'http://192.168.43.198:8081'
+			}
         },  
 		onLaunch: function() {
 			console.log('App Launch')

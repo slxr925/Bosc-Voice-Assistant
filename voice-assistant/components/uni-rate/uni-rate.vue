@@ -178,9 +178,9 @@
 			this._oldValue = null
 		},
 		mounted() {
-			setTimeout(() => {
-				this._getSize()
-			}, 100)
+				setTimeout(() => {
+					this._getSize()
+				}, 100)
 		},
 		methods: {
 			touchstart(e) {
@@ -205,13 +205,9 @@
 			 */
 			_getRateCount(clientX) {
 				const rateMoveRange = clientX - this._rateBoxLeft
-				let index = parseInt(rateMoveRange / (this.size + this.margin))
-				index = index < 0 ? 0 : index;
-				index = index > this.max ? this.max : index;
-				const range = parseInt(rateMoveRange - (this.size + this.margin) * index);
-				let value = 0;
-				if (this._oldValue === index) return;
-				this._oldValue = index;
+				const index = parseInt(rateMoveRange / (this.size + this.margin))
+				const range = parseInt(rateMoveRange - ((this.size + this.margin) * index))
+				let value = 0
 
 				if (this.allowHalf) {
 					if (range > (this.size / 2)) {
@@ -224,8 +220,11 @@
 				}
 
 				value = Math.max(0.5, Math.min(value, this.max))
-				this.valueSync = value
-				this._onChange()
+				if (this.valueSync !== value) {
+					this.valueSync = value
+					this._onChange()
+				}
+				// const rateCount = parseInt(rateMoveRange / (this.size / 2)) + 1
 			},
 
 			/**
