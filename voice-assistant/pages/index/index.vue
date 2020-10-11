@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="mainContent">
 		<uni-nav-bar status-bar='false'  title="上银生活助手">
 		   <view slot="left" class='info'>
 				<face></face>
@@ -10,7 +10,6 @@
 			   </navigator>
 		   </view>
 		</uni-nav-bar>
-	
 		<view class="content">
 
 		   <carousel :img-list="imgList" url-key="url" @selected="selectedBanner"/>
@@ -36,29 +35,31 @@
 
 		
 		</view>
-		<view>
+		<view class="robotclass">
 				<view  class="flex-row-start margin-left margin-top one-show" >
 					<view class="chat-img flex-row-center">
-						<image style="height: 75rpx;width: 75rpx;" src="/static/images/robt.png" mode="aspectFit"></image>
+						<image style="height: 75rpx;width: 75rpx;" src="/static/images/register/robot.png" mode="aspectFit"></image>
 					</view>
 					<view  class="flex"  style="width: 500rpx;">
 						<view class="margin-left padding-chat flex-column-start" style="border-radius: 35rpx;background-color: #f9f9f9;">
 							<text  style="word-break: break-all;" >你好?我是上行员工助理,请问有什么问题可以帮助您?</text>
 							<!-- 消息模板 =>初次问候 -->
-							<view class="flex-column-start"  style="color: #2fa39b;">
-								<text style="color: #838383;font-size: 30rpx;margin-top: 5rpx;">你可以这样问我:</text>
-								<text @click="answer(item)" style="margin-top: 10rpx;" 
-								v-for="(item,index) in questionList" :key="index" >{{item}}</text>
-								<view class="flex-row-start  padding-top-sm">
-									<text class="my-neirong-sm" style="font-size: 25rpx;">没有你要的答案?</text>
-									<text class="padding-left" style="color: #007AFF;" @click="changeQuestion">换一批</text>
-								</view>
-								<view class="flex-row-start  padding-top-sm">
-									<text class="my-neirong-sm" style="font-size: 25rpx;">也可以在下方输入你想问的问题</text>
-								</view>
-							</view>
+							
 
 						</view>
+					</view>
+					
+				</view>
+				<view class="flex-column-start"  style="color: #2fa39b;margin-left: 155rpx;margin-top: 10rpx;">
+					<text style="color: #838383;font-size: 30rpx;margin-top: 5rpx;">你可以这样问我:</text>
+					<text @click="answer(item)" style="margin-top: 10rpx;" 
+					v-for="(item,index) in questionList" :key="index" >{{item}}</text>
+					<view class="flex-row-start  padding-top-sm">
+						<text class="my-neirong-sm" style="font-size: 25rpx;">没有你要的答案?</text>
+						<text class="padding-left" style="color: #007AFF;" @click="changeQuestion">换一批</text>
+					</view>
+					<view class="flex-row-start  padding-top-sm">
+						<text class="my-neirong-sm" style="font-size: 25rpx;">也可以在下方输入你想问的问题</text>
 					</view>
 				</view>
 		</view>
@@ -117,9 +118,9 @@
 					'x号线班车到哪个地铁站'
 				],
 				urlList:[
-					{url:'/pages/index/index',src:'/static/footBar/home.jpg'},
-					{url:'/pages/chat/chat',src:'/static/footBar/voice.jpg'},
-					{url:'/pages/user/user',src:'/static/footBar/user.jpg'}
+					{url:'/pages/index/index',src:'/static/footBar/主页.png'},
+					{url:'/pages/chat/chat',src:'/static/footBar/语音.png'},
+					{url:'/pages/user/user',src:'/static/footBar/个人信息.png'}
 				],
 				title: 'Hello',
 				imgList: [{
@@ -137,12 +138,12 @@
 				   }],
 				   // 分类菜单
 				   categoryList: [
-				   	{ id: 1, name: '新闻', img: '/static/img/category/1.png',url:'/pages/new/index' },
-				   	{ id: 2, name: '家电', img: '/static/img/category/2.png' },
-				   	{ id: 3, name: '服饰', img: '/static/img/category/3.png' },
-				   	{ id: 4, name: '日用', img: '/static/img/category/4.png' },
-				   	{ id: 5, name: '蔬果', img: '/static/img/category/5.png' },
-				   	{ id: 6, name: '运动', img: '/static/img/category/6.png' },
+				   	{ id: 1, name: '饮食健康', img: '/static/images/index/饮食.png'},
+				   	{ id: 2, name: '班车时刻', img: '/static/images/index/班车.png' },
+				   	{ id: 3, name: '设备报修', img: '/static/images/index/报修.png' },
+				   	{ id: 4, name: '今日要闻', img: '/static/images/index/新闻.png',url:'/pages/new/index'  },
+				   	{ id: 5, name: '金融知识', img: '/static/images/index/知识.png' },
+				   	{ id: 6, name: '等多服务', img: '/static/images/index/更多.png' },
 
 				   ],
 			}
@@ -201,11 +202,16 @@
 
 <style>
 	@import "/static/css/index-chat.css";
+	.mainContent{
+		background-color: #E5E5E5;
+		padding-bottom: 100rpx;
+	}
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		
 	}
 
 	.title {
@@ -221,11 +227,13 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-
+	border: #000000 1rpx solid;
+	border-radius: 10rpx;
+	background-color: #FFFFFF;
 	}
 	.category{
 		width: 33%;
-		margin-top: 50upx;
+		margin-top: 30upx;
 		display: flex;
 		flex-wrap: wrap;
 	display: flex;
@@ -250,5 +258,15 @@
 			color: #3c3c3c;
 		}
 
-	
+	.robotclass{
+		width: 92%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 30rpx;
+		padding-top: 20rpx;
+		padding-bottom: 30rpx;
+		border: #000000 1rpx solid;
+		border-radius: 10rpx;
+		background-color: #FFFFFF;
+	}
 </style>

@@ -6,27 +6,30 @@
 }
 
 /* 头部 logo */
+.headback{
+	background-size: cover;
+	background-image: url(/static/images/register/head3.jpeg);
+}
 .header {
-	width:161rpx;
-	height:161rpx;
-	box-shadow:0rpx 0rpx 60rpx 0rpx rgba(0,0,0,0.1);
+	width:155rpx;
+	height:288rpx;
 	border-radius:50%;
-	background-color: #000000; 
-	margin-top: 128rpx;
+	background-color: #88888; 
+	margin-top: 72rpx;
 	margin-bottom: 72rpx;
 	margin-left: auto;
 	margin-right: auto;
 }
 .header image{
-	width:161rpx;
-	height:161rpx;
-	border-radius:50%;
+	width:155rpx;
+	height:155rpx;
 }
 
 /* 主体 */
 .main {
 	display: flex;
 	flex-direction: column;
+	margin-top: 40px;
 	padding-left: 70rpx;
 	padding-right: 70rpx;
 }
@@ -36,10 +39,28 @@
 	margin-top: 64rpx;
 	margin-left: 48rpx;
 }
-
+.line1{
+	display:flex;
+	justify-content:center;
+}
+.icon1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+}
+.icon1 image{
+	
+	height: 37px;
+	width: 30px;
+}
+.input1{
+	width: 500px;
+}
 /* 登录按钮 */
 .wbutton{
 	margin-top: 96rpx;
+
 }
 
 /* 其他登录方式 */
@@ -48,8 +69,9 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin-top: 256rpx;
+	margin-top: 220rpx;
 	text-align: center;
+	margin-bottom:36rpx ;
 }
 .login_icon{
 	border: none;

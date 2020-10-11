@@ -11,30 +11,55 @@
 	<view class="login">
 		<view class="content">
 			<!-- 头部logo -->
-			<view class="header">
-				<image :src="logoImage"></image>
+			<view class="headback">
+				<view class="header" >
+					<image src="/static/images/register/robot.png"></image>
+				</view>
 			</view>
+			
 			<!-- 主体表单 -->
 			<view class="main">
-				<wInput
-					v-model="phoneData"
-					type="text"
-					maxlength="11"
-					placeholder="用户名/电话"
-				></wInput>
-				<wInput
-					v-model="passData"
-					type="password"
-					maxlength="11"
-					placeholder="密码"
-				></wInput>
+				<view class="line1">
+					<view class="icon1"> 
+						<image src="/static/images/register/icon-phone.jpg"></image>
+					</view>
+					<view class="input1">
+						<wInput
+							v-model="phoneData"
+							type="text"
+							maxlength="11"
+							placeholder="用户名/电话"
+						></wInput>
+					</view>
+				</view>
+				<view class="line1">
+					<view class="icon1"> 
+						<image src="/static/images/register/icon-code.jpg"></image>
+					</view>
+					<view class="input1">
+						<wInput
+							v-model="passData"
+							type="password"
+							maxlength="11"
+							placeholder="密码"
+						></wInput>
+					</view>
+				</view>
+				
 			</view>
 			<wButton 
-				class="wbutton"
+				class="wbutton" 
 				text="登 录"
 				:rotate="isRotate" 
-				@click="startLogin"
+				@click="startLogin" 
+				bgColor="#007AFF"
 			></wButton>
+			
+			<view class="footer">
+				<navigator url="forget" open-type="navigate">找回密码</navigator>
+				<text>|</text>
+				<navigator url="register" open-type="navigate">注册账号</navigator>
+			</view>
 			
 			<!-- 其他登录 -->
 			<view class="other_login cuIcon">
@@ -50,11 +75,7 @@
 			</view>
 			
 			<!-- 底部信息 -->
-			<view class="footer">
-				<navigator url="forget" open-type="navigate">找回密码</navigator>
-				<text>|</text>
-				<navigator url="register" open-type="navigate">注册账号</navigator>
-			</view>
+
 		</view>
 	</view>
 	</view>
