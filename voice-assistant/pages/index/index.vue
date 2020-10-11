@@ -124,17 +124,14 @@
 				],
 				title: 'Hello',
 				imgList: [{
-					   url: 'https://img9.51tietu.net/pic/2019-091200/vgkpidei2tjvgkpidei2tj.jpg',
+					   url: '/static/images/index/1.jpg',
 					   id: 1
 				   },{
-					   url: 'https://img9.51tietu.net/pic/2019-091200/euzekmi5m23euzekmi5m23.jpg',
+					   url: '/static/images/index/2.jpg',
 					   id: 2
 				   },{
-					   url: 'https://img9.51tietu.net/pic/2019-091200/143tt0ta4sr143tt0ta4sr.jpg',
+					   url: '/static/images/index/3.jpg',
 					   id: 3
-				   },{
-					   url: 'https://img9.51tietu.net/pic/2019-091200/ff1vqwm3q33ff1vqwm3q33.jpg',
-					   id: 4
 				   }],
 				   // 分类菜单
 				   categoryList: [
