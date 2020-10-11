@@ -38,14 +38,22 @@ public interface INewsDao extends JpaRepository<NewsInfo, Integer> {
     NewsInfo findByNewsContent(NewsInfo newsInfo);
 
     /**
-     * 
+     * 根据日期查新闻
      *
      * @param newsInfo
      * @return
      */
     NewsInfo findByNewsDate(NewsInfo newsInfo);
 
+    List<NewsInfo> findAllByNewsDate(NewsInfo newsInfo);
+
+    /**
+     * 根据类别查新闻
+     *
+     * @param newsInfo
+     * @return
+     */
     NewsInfo findByNewsCategory(NewsInfo newsInfo);
 
-    List<NewsInfo>
+    List<NewsInfo> findAllByNewsCategory(NewsInfo newsInfo);
 }
