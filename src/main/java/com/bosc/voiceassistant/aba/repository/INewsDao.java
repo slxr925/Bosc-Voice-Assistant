@@ -4,6 +4,7 @@ import com.bosc.voiceassistant.aba.entity.NewsInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,44 +17,56 @@ public interface INewsDao extends JpaRepository<NewsInfo, Integer> {
     /**
      * 根据newsid找新闻
      *
-     * @param newsInfo
+     * @param newsId
      * @return
      */
-    NewsInfo findByNewsId(NewsInfo newsInfo);
+    NewsInfo findByNewsId(Integer newsId);
 
     /**
      * 根据题目找新闻
      *
-     * @param newsInfo
+     * @param newsTitle
      * @return
      */
-    NewsInfo findByNewsTitle(NewsInfo newsInfo);
+    NewsInfo findByNewsTitle(String newsTitle);
 
     /**
-     * 根据内容找新闻
+     * 根据内容找新闻 （不会真有人用这个接口吧
      *
-     * @param newsInfo
+     * @param newsContent
      * @return
      */
-    NewsInfo findByNewsContent(NewsInfo newsInfo);
+    NewsInfo findByNewsContent(String newsContent);
 
     /**
      * 根据日期查新闻
      *
-     * @param newsInfo
+     * @param newsDate
      * @return
      */
-    NewsInfo findByNewsDate(NewsInfo newsInfo);
+    NewsInfo findByNewsDate(Date newsDate);
 
-    List<NewsInfo> findAllByNewsDate(NewsInfo newsInfo);
+    /**
+     * 根据日期查多个新闻
+     *
+     * @param newsDate
+     * @return
+     */
+    List<NewsInfo> findAllByNewsDate(Date newsDate);
 
     /**
      * 根据类别查新闻
      *
-     * @param newsInfo
+     * @param newsCategory
      * @return
      */
-    NewsInfo findByNewsCategory(NewsInfo newsInfo);
+    NewsInfo findByNewsCategory(String newsCategory);
 
-    List<NewsInfo> findAllByNewsCategory(NewsInfo newsInfo);
+    /**
+     *根据类别找多个新闻
+     *
+     * @param newsCategory
+     * @return
+     */
+    List<NewsInfo> findAllByNewsCategory(String newsCategory);
 }
