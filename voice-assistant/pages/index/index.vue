@@ -1,6 +1,6 @@
 <template>
 	<view class="mainContent">
-		<uni-nav-bar status-bar='false'  title="上银生活助手">
+		<uni-nav-bar status-bar='false'  title="上银智能助理">
 		   <view slot="left" class='info'>
 				<face></face>
 		   </view>
@@ -51,23 +51,27 @@
 					
 				</view>
 				<view class="flex-column-start answercontent" >
-					<view class="answerleft">
-						<text style="color: #838383;font-size: 30rpx;margin-top: 5rpx;">你可以这样问我:</text>	
+					<view class="answerleft" style="margin-left: 13px;">
+						<text style="color: #838383;font-size: 30rpx;margin-top: 5rpx;">猜你
+						想问</text>	
+						<image src="/static/images/index/问答.png">
+							
+						</image>
 					</view>
 					<view class="answerRight">
 						<view v-for="(item,index) in questionList">
-							<text @click="answer(item)" style="margin-top: 10rpx;" 
+							<text @click="answer(item)" style="margin-top: 10rpx;color: #0A98D5;" 
 					 :key="index" >{{item}}</text>	
 					 <hr class="hrcss">
 						</view>	
 					<view class="flex-row-start  padding-top-sm">
-						<text class="my-neirong-sm" style="font-size: 25rpx;">没有你要的答案?</text>
+						<text class="my-neirong-sm" style="font-size: 25rpx;">没有你想问的问题?</text>
 						<text class="padding-left" style="color: #007AFF;" @click="changeQuestion">换一批</text>
 				
 					</view>
 						<hr class="hrcss">
 					<view class="flex-row-start  padding-top-sm">
-						<text class="my-neirong-sm" style="font-size: 25rpx;">也可以在下方输入你想问的问题</text>
+						<text class="my-neirong-sm" style="font-size: 25rpx;">也可以在下方自由输入</text>
 					</view>
 					</view>	
 				</view>
@@ -188,7 +192,7 @@
 	@import "/static/css/index-chat.css";
 	.mainContent{
 		background-color: #E5E5E5;
-		padding-bottom: 100rpx;
+		padding-bottom: 130rpx;
 	}
 	.content {
 		display: flex;
@@ -259,18 +263,19 @@
 		color: #2fa39b;
 		margin-left: 40rpx;
 		margin-right: 40rpx;
-		margin-top: 10rpx;
+		margin-top: 30rpx;
 		background-color: #f9f9f9;
 		position: relative;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 	}
 	.answerleft{
-		width: 100rpx;
+		width: 80rpx;
 		height: 100%;
 		position: absolute;
 		border-right: #C0C0C0 dashed 1rpx;
 	}
 	.answerRight{
-		margin-left: 110rpx;
+		margin-left: 105rpx;
 	}
 	.hrcss{
 		width: 98%;

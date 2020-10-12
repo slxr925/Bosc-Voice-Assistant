@@ -7,18 +7,17 @@
 						   </navigator>
 			</view>
 		</uni-nav-bar>
-   <view class="page">
+	<view class="all">
+    <view class="page" >
 	    <view class='infos'>
 			<vrow class="row" >
 				<vcol span="50"><view class="col title">基本信息</view></vcol>
 				<vcol span="30" ></vcol>
 				<vcol span="15" >
-					<navigator url="/pages/user/user" open-type="navigate">
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col">修改</view></vcol>
+							<vcol span="10"><view class="col">返回</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
-					</navigator>
 				</vcol>
 			</vrow>
 			<vrow class="row" >
@@ -36,11 +35,11 @@
 		</view>
     </view>
 	    <view class="content">
-        <view style="margin-top: 20upx;">
-             <zzx-tabs :items="items" :current="current" @clickItem="onClickItem" ref="mytabs">
-         </zzx-tabs>
+        <view style="margin-top: -20upx;">
+            <zzx-tabs :items="items" :current="current" @clickItem="onClickItem" ref="mytabs">
+			</zzx-tabs>
         </view> 
-        <view class='tabs' style="margin-top: 20upx;color:#999999;font-size: 24upx;height: 300upx;">
+        <view class='tabs' style="margin-top: 0upx;color:#999999;font-size: 24upx;height: 250upx;">
             <view v-show="current === 0" >
                 <vrow  style="border: none;">
                 	<vcol span="47">
@@ -50,7 +49,9 @@
                 	<vcol span="47">
 						<view class="col">
 							<view class='text'>拍照识别卡路里</view>
-							<view class='camera' @click="openCamera"><uni-icons class='cicon' type="camera" size="55" /></view>
+							<view class='camera' @click="openCamera">
+								<image src="/static/images/diet/照相机.png"></image>
+							</view>
 						</view>
 					</vcol>
                 </vrow>
@@ -156,6 +157,7 @@
 			</view>
 		</view>
 	</view>
+	</view>
 	
 </template>
 
@@ -259,7 +261,7 @@ page{
 	color: #000000;
 }
 .text{
-	margin-bottom: -140upx;
+	margin-bottom: -10upx;
 }
 .camera{
     margin-top: 20upx;
@@ -267,6 +269,11 @@ page{
 	align-items:center;
 	justify-content: center;  
 	width: 100%;
+}
+.camera image{
+	object-fit: cover;
+	width: 70px;
+	height: 55px;
 }
 .card{
 	margin:20upx;
@@ -306,5 +313,19 @@ page{
 	.info-nickname{
 		font-size: 12px;
 		color: #333;
+	}
+	.content{
+		
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20rpx;
+		padding-top: 20rpx;
+		padding-bottom: 30rpx;	
+		border-radius: 10rpx;
+		background-color: #FFFFFF;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+	}
+	.all{
+		
 	}
 </style>

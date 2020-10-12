@@ -415,7 +415,11 @@ var render = function() {
             [
               _c(
                 "v-uni-view",
-                { attrs: { _i: 23 } },
+                {
+                  staticClass: _vm._$g(23, "sc"),
+                  staticStyle: { "margin-left": "13px" },
+                  attrs: { _i: 23 }
+                },
                 [
                   _c(
                     "v-uni-text",
@@ -427,80 +431,108 @@ var render = function() {
                       },
                       attrs: { _i: 24 }
                     },
-                    [_vm._v("你可以这样问我:")]
-                  )
+                    [_vm._v("猜你\n\t\t\t\t\t\t想问")]
+                  ),
+                  _c("v-uni-image", {
+                    attrs: { src: "/static/images/index/问答.png", _i: 25 }
+                  })
                 ],
                 1
               ),
-              _vm._l(_vm._$g(25, "f"), function(item, index, $21, $31) {
-                return _c(
-                  "v-uni-text",
-                  {
-                    key: item,
-                    staticStyle: { "margin-top": "10rpx" },
-                    attrs: { _i: "25-" + $31 },
-                    on: {
-                      click: function($event) {
-                        return _vm.$handleViewEvent($event)
-                      }
-                    }
-                  },
-                  [_vm._v(_vm._$g("25-" + $31, "t0-0"))]
-                )
-              }),
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
                 [
+                  _vm._l(_vm._$g(27, "f"), function(item, index, $21, $31) {
+                    return _c(
+                      "v-uni-view",
+                      { key: item, attrs: { _i: "27-" + $31 } },
+                      [
+                        _c(
+                          "v-uni-text",
+                          {
+                            key: _vm._$g("28-" + $31, "a-key"),
+                            staticStyle: {
+                              "margin-top": "10rpx",
+                              color: "#0A98D5"
+                            },
+                            attrs: { _i: "28-" + $31 },
+                            on: {
+                              click: function($event) {
+                                return _vm.$handleViewEvent($event)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._$g("28-" + $31, "t0-0"))]
+                        ),
+                        _c("hr", {
+                          staticClass: _vm._$g("29-" + $31, "sc"),
+                          attrs: { _i: "29-" + $31 }
+                        })
+                      ],
+                      1
+                    )
+                  }),
                   _c(
-                    "v-uni-text",
-                    {
-                      staticClass: _vm._$g(27, "sc"),
-                      staticStyle: { "font-size": "25rpx" },
-                      attrs: { _i: 27 }
-                    },
-                    [_vm._v("没有你要的答案?")]
+                    "v-uni-view",
+                    { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+                    [
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(31, "sc"),
+                          staticStyle: { "font-size": "25rpx" },
+                          attrs: { _i: 31 }
+                        },
+                        [_vm._v("没有你想问的问题?")]
+                      ),
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(32, "sc"),
+                          staticStyle: { color: "#007AFF" },
+                          attrs: { _i: 32 },
+                          on: {
+                            click: function($event) {
+                              return _vm.$handleViewEvent($event)
+                            }
+                          }
+                        },
+                        [_vm._v("换一批")]
+                      )
+                    ],
+                    1
                   ),
+                  _c("hr", {
+                    staticClass: _vm._$g(33, "sc"),
+                    attrs: { _i: 33 }
+                  }),
                   _c(
-                    "v-uni-text",
-                    {
-                      staticClass: _vm._$g(28, "sc"),
-                      staticStyle: { color: "#007AFF" },
-                      attrs: { _i: 28 },
-                      on: {
-                        click: function($event) {
-                          return _vm.$handleViewEvent($event)
-                        }
-                      }
-                    },
-                    [_vm._v("换一批")]
+                    "v-uni-view",
+                    { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
+                    [
+                      _c(
+                        "v-uni-text",
+                        {
+                          staticClass: _vm._$g(35, "sc"),
+                          staticStyle: { "font-size": "25rpx" },
+                          attrs: { _i: 35 }
+                        },
+                        [_vm._v("也可以在下方自由输入")]
+                      )
+                    ],
+                    1
                   )
                 ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                [
-                  _c(
-                    "v-uni-text",
-                    {
-                      staticClass: _vm._$g(30, "sc"),
-                      staticStyle: { "font-size": "25rpx" },
-                      attrs: { _i: 30 }
-                    },
-                    [_vm._v("也可以在下方输入你想问的问题")]
-                  )
-                ],
-                1
+                2
               )
             ],
-            2
+            1
           )
         ],
         1
       ),
-      _c("footbar", { attrs: { _i: 31 } })
+      _c("footbar", { attrs: { _i: 36 } })
     ],
     1
   )
@@ -2806,7 +2838,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".status_bar {\n\t     height: var(--status-bar-height);\n\t\t background-color: #f1f1f1;\n\t     width: 100%;\n}\n.status_bar-nobg {\n\t     height: var(--status-bar-height);\n\t     width: 100%;\n}\n/* 转圈动画 */\n.turn-load{\n  -webkit-animation:turnmy 1s linear infinite;\n          animation:turnmy 1s linear infinite;\n}\n@-webkit-keyframes turnmy{\n0%{-webkit-transform:rotate(0deg);}\n25%{-webkit-transform:rotate(90deg);}\n50%{-webkit-transform:rotate(180deg);}\n75%{-webkit-transform:rotate(270deg);}\n100%{-webkit-transform:rotate(360deg);}\n}\n@keyframes turnmy{\n0%{-webkit-transform:rotate(0deg);}\n25%{-webkit-transform:rotate(90deg);}\n50%{-webkit-transform:rotate(180deg);}\n75%{-webkit-transform:rotate(270deg);}\n100%{-webkit-transform:rotate(360deg);}\n}\n.one-show{\n\t-webkit-animation: oneshow 0.8s ease 1;\n\t        animation: oneshow 0.8s ease 1;\n}\n@-webkit-keyframes oneshow{\nfrom{opacity: 0;}\nto{opacity: 1;}\n}\n@keyframes oneshow{\nfrom{opacity: 0;}\nto{opacity: 1;}\n}\n.status_bar-fixed{\n\theight: var(--status-bar-height);\n\twidth: 100%;\n\tposition: fixed;\n\tbackground-color: #f1f1f1;\n\tz-index: 20;\n}\n.head-dh-my{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tposition: fixed;\n\t-webkit-justify-content: space-around;\n\t        justify-content: space-around;\n\t-webkit-box-align: end;\n\t-webkit-align-items: flex-end;\n\t        align-items: flex-end;\n\tpadding-bottom: 10rpx;\n\tz-index: 15;\n\tbackground-color: #e3e3e3;\n\twidth: 750rpx;\n}\n.border-bom{\n\t\t border-bottom:0.5rpx solid #DDDDDD ;\n}\n.border-red{\n\t \t\t border-bottom:1rpx solid #d33e18;\n}\n.border-bom-big{\n\t \t\t border-bottom:8rpx solid #DDDDDD ;\n}\n.border-bom-white{\n\t \t\t border-bottom:2rpx solid #FFFFFF ;\n}\n.border-bom-green{\n\t \t\t border-bottom:4rpx solid #f8f9bd;\n}\n.border-bom-index{\n\t \t\t border-bottom:4rpx solid #27d9b3;\n}\n.padding-left{\n\t\t padding-left: 20rpx;\n}\n.padding-left-top{\n\t \t\t padding-left: 20rpx;\n\t\t\t padding-top: 20rpx;\n}\n.padding-right{\n\t \t\t padding-right: 20rpx;\n}\n.input-my{\n\t\tpadding-left: 20rpx;\n\t \t-webkit-border-radius: 40rpx;\n\t \t        border-radius: 40rpx;\n\t \theight: 50rpx;\n\t \tmargin: 10rpx;\n}\n.tb-tag-absolute{\n\t \tposition: absolute;\n\t \tz-index: 5;\n\t \t-webkit-border-radius: 25rpx;\n\t \t        border-radius: 25rpx;\n\t \tfont-size: 16rpx;\n\t \tmargin-left: 25rpx;\n\t \tmargin-top:-35rpx;\n}\n.lk-tag{\n\t\t height: 50rpx;\n\t\t padding: 0 10rpx;\n\t\t display: -webkit-box;\n\t\t display: -webkit-flex;\n\t\t display: flex;\n\t\t -webkit-box-pack: center;\n\t\t -webkit-justify-content: center;\n\t\t         justify-content: center;\n\t\t -webkit-box-align: center;\n\t\t -webkit-align-items: center;\n\t\t         align-items: center;\n\t\t border: 2rpx solid #24bd9f;\n\t\t -webkit-border-radius: 6rpx;\n\t\t         border-radius: 6rpx;\n\t\t color: #1c947a;\n\t\t font-weight: 500;\n}\n.tb-tag-my{\n\t \t-webkit-border-radius: 15rpx;\n\t \t        border-radius: 15rpx;\n\t \tfont-size: 16rpx;\n\t \tmargin-left: 5rpx;\n}\n.my-green{\n\t\t color: #29c7a5;\n}\n.my-hui{\n\t\t color: #585858;\n\t\t font-size: 22rpx;\n}\n.flex-column-center{\n\t\t display: -webkit-box;\n\t\t display: -webkit-flex;\n\t\t display: flex;\n\t\t -webkit-box-orient: vertical;\n\t\t -webkit-box-direction: normal;\n\t\t -webkit-flex-direction: column;\n\t\t         flex-direction: column;\n\t\t -webkit-box-pack: center;\n\t\t -webkit-justify-content: center;\n\t\t         justify-content: center;\n\t\t -webkit-box-align: center;\n\t\t -webkit-align-items: center;\n\t\t         align-items: center;\n}\n.flex-column-between{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: vertical;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: column;\n\t \t\t         flex-direction: column;\n\t \t\t -webkit-box-pack: justify;\n\t \t\t -webkit-justify-content: space-between;\n\t \t\t         justify-content: space-between;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-column-start{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: vertical;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: column;\n\t \t\t         flex-direction: column;\n\t\t\t -webkit-box-pack: center;\n\t\t\t -webkit-justify-content: center;\n\t\t\t         justify-content: center;\n}\n.flex-column-around{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: vertical;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: column;\n\t \t\t         flex-direction: column;\n\t\t\t -webkit-justify-content: space-around;\n\t\t\t         justify-content: space-around;\n\t\t\t -webkit-box-align: center;\n\t\t\t -webkit-align-items: center;\n\t\t\t         align-items: center;\n}\n.flex-row-start{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-row-around{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-justify-content: space-around;\n\t \t\t         justify-content: space-around;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-row-center{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-box-pack: center;\n\t \t\t -webkit-justify-content: center;\n\t \t\t         justify-content: center;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-row-between{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-box-pack: justify;\n\t \t\t -webkit-justify-content: space-between;\n\t \t\t         justify-content: space-between;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.my-title{\n\t\t font-size: 35rpx;\n\t\t font-weight: bold;\n}\n.my-neirong{\n\t\t font-size: 26rpx;\n\t\t color: #6d6d6d;\n}\n.my-neirong-sm{\n\t \t\t font-size: 23rpx;\n\t \t\t color: #616161;\n}\n.my-tag-text{\n\t\t font-size: 22rpx;\n\t\t padding-top: 20rpx;\n\t\t color: #bababa;\n}\n.padding-top{\n\t\t padding-top: 35rpx;\n}\n.padding-top-sm{\n\t \t padding-top: 20rpx;\n}\n.bottom-dh{\n\t \tbackground-color: #f1f1f1;\n\t \tposition: fixed;\n\t\tz-index: 10;\n\t \tbottom: 0;\n\t \twidth: 750rpx;\n\t \theight: 110rpx;\n}\n.tb-text{\n\t \tdisplay: -webkit-box;\n\t \tdisplay: -webkit-flex;\n\t \tdisplay: flex;\n\t \t-webkit-box-orient: vertical;\n\t \t-webkit-box-direction: normal;\n\t \t-webkit-flex-direction: column;\n\t \t        flex-direction: column;\n\t \t-webkit-box-pack: center;\n\t \t-webkit-justify-content: center;\n\t \t        justify-content: center;\n\t \t-webkit-box-align: center;\n\t \t-webkit-align-items: center;\n\t \t        align-items: center;\n}\n.bottom-text{\n\t\t width: 750rpx;\n\t\t position: fixed;\n\t\t text-align: center;\n\t\t font-size: 26rpx;\n\t\t color: #9d9d9d;\n\t\t bottom: 70rpx;\n}\n.white-box{\n\t \t\tpadding: 0 20rpx;\n\t \t\tmargin-bottom: 15rpx;\n\t \t\tmargin-top: 5rpx;\n\t \t\twidth: 715rpx;\n\t \t\tbackground-color: #FFFFFF;\n\t \t\t-webkit-border-radius: 30rpx;\n\t \t\t        border-radius: 30rpx;\n}\n.green-box{\n\t\t\tpadding: 0 20rpx;\n\t\t\tmargin-bottom: 15rpx;\n\t\t\tmargin-top: 5rpx;\n\t\t\twidth: 715rpx;\n\t\t\tbackground-color: #FFFFFF;\n\t\t\t-webkit-border-radius: 30rpx;\n\t\t\t        border-radius: 30rpx;\n\t\t\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#1faf97), to(#29c7a5));\n\t\t\tbackground-image: -webkit-linear-gradient(#1faf97, #29c7a5);\n\t\t\tbackground-image: linear-gradient(#1faf97, #29c7a5);\n}\n.yuan-sm{\n\t\twidth: 13rpx;\n\t\theight: 13rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #1fc189;\n\t\tmargin-left: 10rpx;\n}\n.yuan-normal{\n\t\twidth: 14rpx;\n\t\theight: 14rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #159f3c;\n\t\tmargin-left: 10rpx;\n}\n.yuan-normal-red{\n\t\twidth: 14rpx;\n\t\theight: 14rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #bc3c11;\n\t\tmargin-left: 10rpx;\n}\n.yuan-sm-red{\n\t\twidth: 13rpx;\n\t\theight: 13rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #de410d;\n\t\tmargin-left: 10rpx;\n}\n.white-box-all{\n\t\tmargin-top: 5rpx;\n\t\twidth: 750rpx;\n\t\tbackground-color: #FFFFFF;\n\t\t-webkit-border-radius: 13px;\n\t\t        border-radius: 13px;\n}\n.moneycolor{\n\t \tcolor: #ea5002;\n}\n.text-bold-sm{\n\t\t font-weight: 425;\n}\n.sm-moneycolor{\n\t\t color: #e3793b;\n}\n.margin-top{\n\t\t margin-top: 20rpx;\n}\n.margin-top-sm{\n\t \t\t margin-top: 12rpx;\n}\n.margin{\n\t\t margin: 20rpx;\n}\n.margin-left{\n\t\t margin-left: 20rpx;\n}\n.margin-left-top{\n\t\t margin-left: 20rpx;\n\t\t margin-top: 20rpx;\n}\n.margin-right{\n\t\t margin-right: 20rpx;\n}\n.my-absolute{\n\t\t position: absolute;\n}\n.my-fixed{\n\t  \t\t position: fixed;\n}\n.my-seach{\n\t\t width: 450rpx;\n\t\t height: 55rpx;\n\t\t background-color: #f8f8f8;\n\t\t -webkit-border-radius: 30rpx;\n\t\t         border-radius: 30rpx;\n\t\t padding-left: 20rpx;\n}\n.move-view{\n\t\t width: 48rpx;\n\t\t height: 10rpx;\n\t\t background-color: #28ba91;\n\t\t -webkit-border-radius: 4rpx;\n\t\t         border-radius: 4rpx;\n\t\t margin-left: 100rpx;\n}\n.move-view-p{\n\t\t width: 45rpx;\n\t\t height: 10rpx;\n\t\t background-color: #28ba91;\n\t\t -webkit-border-radius: 4rpx;\n\t\t         border-radius: 4rpx;\n}\n.header-dh{\n\t \tposition: fixed;\n\t \tpadding-top: 20rpx;\n\t\tpadding-bottom: 15rpx;\n\t \theight: 70rpx;\n\t \twidth: 750rpx;\n\t \tbackground-color: #f1f1f1;\n\t \tz-index: 20;\n}\n.tp-normal{\n\t\t width: 60rpx;\n\t\t height: 60rpx;\n}\n.tp-sm{\n\t\t width: 45rpx;\n\t\t height: 45rpx;\n}\n.tp-big{\n\t\t width: 70rpx;\n\t\t height: 70rpx;\n\t\t -webkit-border-radius: 50%;\n\t\t         border-radius: 50%;\n}\n.main-color{\n\t\t color: #07D188;\n}\n.bottom-dh-char{\n\t \t \tbackground-color: #f9f9f9;\n\t \t \twidth: 750rpx;\n\t \t \theight: 110rpx;\n}\n.center-box{\n\t \twidth: 720rpx;\n\t \tpadding-left: 25rpx;\n}\n.hui-box{\n\t \twidth: 750rpx;\n\t \theight: 100%;\n}\n.dh-input{\n\t \twidth: 500rpx;\n\t \theight: 65rpx;\n\t \t-webkit-border-radius: 30rpx;\n\t \t        border-radius: 30rpx;\n\t \tpadding-left: 15rpx;\n\t \tbackground-color: #FFFFFF;\n}\n.box-normal{\n\t \twidth: 750rpx;\n\t \theight: 180px;\n\t \tbackground-color: #FFFFFF;\n}\n.tb-text uni-view{\n\t \tfont-size: 65rpx;\n}\n.tb-text uni-text{\n\t \tfont-size: 25rpx;\n\t \tcolor: #737373;\n}\n.chat-img{\n\t \t-webkit-border-radius: 50%;\n\t \t        border-radius: 50%;\n\t \twidth: 100rpx;\n\t \theight: 100rpx;\n\t \tbackground-color: #f7f7f7;\n}\n.padding-chat{\n\t \tpadding: 17rpx 20rpx;\n}\n.tb-nv{\n\t \twidth: 50rpx;\n\t \theight: 50rpx;\n}\n.mainContent{\n\t\tbackground-color: #E5E5E5;\n\t\tpadding-bottom: 100rpx;\n}\n.content {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -webkit-flex;\n\t\tdisplay: flex;\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t-webkit-flex-direction: column;\n\t\t        flex-direction: column;\n\t\t-webkit-box-align: center;\n\t\t-webkit-align-items: center;\n\t\t        align-items: center;\n\t\t-webkit-box-pack: center;\n\t\t-webkit-justify-content: center;\n\t\t        justify-content: center;\n}\n.title {\n\t\tfont-size: 36rpx;\n\t\tcolor: #8f8f94;\n}\n.category-list {\n\twidth: 95%;\n\tmargin: 0 4%;\n\tpadding: 0 0 30upx 0;\n\tborder-bottom: solid 2upx #f6f6f6;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t\n\t-webkit-border-radius: 10rpx;\n\t\n\t        border-radius: 10rpx;\n\tbackground-color: #FFFFFF;\n\t-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\t        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\tmargin-top: 15rpx;\n}\n.category{\n\t\twidth: 33%;\n\t\tmargin-top: 30upx;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -webkit-flex;\n\t\tdisplay: flex;\n\t\t-webkit-flex-wrap: wrap;\n\t\t        flex-wrap: wrap;\n\t\tdisplay: flex;\n\t\t-webkit-box-pack: center;\n\t\t-webkit-justify-content: center;\n\t\t        justify-content: center;\n}\n.img {\n\t\t\twidth: 100%;\n\t\t\tdisplay: -webkit-box;\n\t\t\tdisplay: -webkit-flex;\n\t\t\tdisplay: flex;\n\t\t\t-webkit-box-pack: center;\n\t\t\t-webkit-justify-content: center;\n\t\t\t        justify-content: center;\n}\nuni-image {\n\t\t\t\twidth: 9vw;\n\t\t\t\theight: 9vw;\n}\n.text {\n\t\t\tmargin-top: 16upx;\n\t\t\twidth: 100%;\n\t\t\tdisplay: -webkit-box;\n\t\t\tdisplay: -webkit-flex;\n\t\t\tdisplay: flex;\n\t\t\t-webkit-box-pack: center;\n\t\t\t-webkit-justify-content: center;\n\t\t\t        justify-content: center;\n\t\t\tfont-size: 24upx;\n\t\t\tcolor: #3c3c3c;\n}\n.robotclass{\n\t\twidth: 95%;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t\tmargin-top: 20rpx;\n\t\tpadding-top: 20rpx;\n\t\tpadding-bottom: 30rpx;\t\n\t\t-webkit-border-radius: 10rpx;\t\n\t\t        border-radius: 10rpx;\n\t\tbackground-color: #FFFFFF;\n\t\t-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\t\t        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n}\n.answercontent{\n\t\tcolor: #2fa39b;\n\t\tmargin-left: 40rpx;\n\t\tmargin-right: 40rpx;\n\t\tmargin-top: 10rpx;\n\t\tbackground-color: #f9f9f9;\n}\n\t\n", ""]);
+exports.push([module.i, ".status_bar {\n\t     height: var(--status-bar-height);\n\t\t background-color: #f1f1f1;\n\t     width: 100%;\n}\n.status_bar-nobg {\n\t     height: var(--status-bar-height);\n\t     width: 100%;\n}\n/* 转圈动画 */\n.turn-load{\n  -webkit-animation:turnmy 1s linear infinite;\n          animation:turnmy 1s linear infinite;\n}\n@-webkit-keyframes turnmy{\n0%{-webkit-transform:rotate(0deg);}\n25%{-webkit-transform:rotate(90deg);}\n50%{-webkit-transform:rotate(180deg);}\n75%{-webkit-transform:rotate(270deg);}\n100%{-webkit-transform:rotate(360deg);}\n}\n@keyframes turnmy{\n0%{-webkit-transform:rotate(0deg);}\n25%{-webkit-transform:rotate(90deg);}\n50%{-webkit-transform:rotate(180deg);}\n75%{-webkit-transform:rotate(270deg);}\n100%{-webkit-transform:rotate(360deg);}\n}\n.one-show{\n\t-webkit-animation: oneshow 0.8s ease 1;\n\t        animation: oneshow 0.8s ease 1;\n}\n@-webkit-keyframes oneshow{\nfrom{opacity: 0;}\nto{opacity: 1;}\n}\n@keyframes oneshow{\nfrom{opacity: 0;}\nto{opacity: 1;}\n}\n.status_bar-fixed{\n\theight: var(--status-bar-height);\n\twidth: 100%;\n\tposition: fixed;\n\tbackground-color: #f1f1f1;\n\tz-index: 20;\n}\n.head-dh-my{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\tposition: fixed;\n\t-webkit-justify-content: space-around;\n\t        justify-content: space-around;\n\t-webkit-box-align: end;\n\t-webkit-align-items: flex-end;\n\t        align-items: flex-end;\n\tpadding-bottom: 10rpx;\n\tz-index: 15;\n\tbackground-color: #e3e3e3;\n\twidth: 750rpx;\n}\n.border-bom{\n\t\t border-bottom:0.5rpx solid #DDDDDD ;\n}\n.border-red{\n\t \t\t border-bottom:1rpx solid #d33e18;\n}\n.border-bom-big{\n\t \t\t border-bottom:8rpx solid #DDDDDD ;\n}\n.border-bom-white{\n\t \t\t border-bottom:2rpx solid #FFFFFF ;\n}\n.border-bom-green{\n\t \t\t border-bottom:4rpx solid #f8f9bd;\n}\n.border-bom-index{\n\t \t\t border-bottom:4rpx solid #27d9b3;\n}\n.padding-left{\n\t\t padding-left: 20rpx;\n}\n.padding-left-top{\n\t \t\t padding-left: 20rpx;\n\t\t\t padding-top: 20rpx;\n}\n.padding-right{\n\t \t\t padding-right: 20rpx;\n}\n.input-my{\n\t\tpadding-left: 20rpx;\n\t \t-webkit-border-radius: 40rpx;\n\t \t        border-radius: 40rpx;\n\t \theight: 50rpx;\n\t \tmargin: 10rpx;\n}\n.tb-tag-absolute{\n\t \tposition: absolute;\n\t \tz-index: 5;\n\t \t-webkit-border-radius: 25rpx;\n\t \t        border-radius: 25rpx;\n\t \tfont-size: 16rpx;\n\t \tmargin-left: 25rpx;\n\t \tmargin-top:-35rpx;\n}\n.lk-tag{\n\t\t height: 50rpx;\n\t\t padding: 0 10rpx;\n\t\t display: -webkit-box;\n\t\t display: -webkit-flex;\n\t\t display: flex;\n\t\t -webkit-box-pack: center;\n\t\t -webkit-justify-content: center;\n\t\t         justify-content: center;\n\t\t -webkit-box-align: center;\n\t\t -webkit-align-items: center;\n\t\t         align-items: center;\n\t\t border: 2rpx solid #24bd9f;\n\t\t -webkit-border-radius: 6rpx;\n\t\t         border-radius: 6rpx;\n\t\t color: #1c947a;\n\t\t font-weight: 500;\n}\n.tb-tag-my{\n\t \t-webkit-border-radius: 15rpx;\n\t \t        border-radius: 15rpx;\n\t \tfont-size: 16rpx;\n\t \tmargin-left: 5rpx;\n}\n.my-green{\n\t\t color: #29c7a5;\n}\n.my-hui{\n\t\t color: #585858;\n\t\t font-size: 22rpx;\n}\n.flex-column-center{\n\t\t display: -webkit-box;\n\t\t display: -webkit-flex;\n\t\t display: flex;\n\t\t -webkit-box-orient: vertical;\n\t\t -webkit-box-direction: normal;\n\t\t -webkit-flex-direction: column;\n\t\t         flex-direction: column;\n\t\t -webkit-box-pack: center;\n\t\t -webkit-justify-content: center;\n\t\t         justify-content: center;\n\t\t -webkit-box-align: center;\n\t\t -webkit-align-items: center;\n\t\t         align-items: center;\n}\n.flex-column-between{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: vertical;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: column;\n\t \t\t         flex-direction: column;\n\t \t\t -webkit-box-pack: justify;\n\t \t\t -webkit-justify-content: space-between;\n\t \t\t         justify-content: space-between;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-column-start{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: vertical;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: column;\n\t \t\t         flex-direction: column;\n\t\t\t -webkit-box-pack: center;\n\t\t\t -webkit-justify-content: center;\n\t\t\t         justify-content: center;\n}\n.flex-column-around{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: vertical;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: column;\n\t \t\t         flex-direction: column;\n\t\t\t -webkit-justify-content: space-around;\n\t\t\t         justify-content: space-around;\n\t\t\t -webkit-box-align: center;\n\t\t\t -webkit-align-items: center;\n\t\t\t         align-items: center;\n}\n.flex-row-start{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-row-around{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-justify-content: space-around;\n\t \t\t         justify-content: space-around;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-row-center{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-box-pack: center;\n\t \t\t -webkit-justify-content: center;\n\t \t\t         justify-content: center;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.flex-row-between{\n\t \t\t display: -webkit-box;\n\t \t\t display: -webkit-flex;\n\t \t\t display: flex;\n\t \t\t -webkit-box-orient: horizontal;\n\t \t\t -webkit-box-direction: normal;\n\t \t\t -webkit-flex-direction: row;\n\t \t\t         flex-direction: row;\n\t \t\t -webkit-box-pack: justify;\n\t \t\t -webkit-justify-content: space-between;\n\t \t\t         justify-content: space-between;\n\t \t\t -webkit-box-align: center;\n\t \t\t -webkit-align-items: center;\n\t \t\t         align-items: center;\n}\n.my-title{\n\t\t font-size: 35rpx;\n\t\t font-weight: bold;\n}\n.my-neirong{\n\t\t font-size: 26rpx;\n\t\t color: #6d6d6d;\n}\n.my-neirong-sm{\n\t \t\t font-size: 23rpx;\n\t \t\t color: #616161;\n}\n.my-tag-text{\n\t\t font-size: 22rpx;\n\t\t padding-top: 20rpx;\n\t\t color: #bababa;\n}\n.padding-top{\n\t\t padding-top: 35rpx;\n}\n.padding-top-sm{\n\t \t padding-top: 20rpx;\n}\n.bottom-dh{\n\t \tbackground-color: #f1f1f1;\n\t \tposition: fixed;\n\t\tz-index: 10;\n\t \tbottom: 0;\n\t \twidth: 750rpx;\n\t \theight: 110rpx;\n}\n.tb-text{\n\t \tdisplay: -webkit-box;\n\t \tdisplay: -webkit-flex;\n\t \tdisplay: flex;\n\t \t-webkit-box-orient: vertical;\n\t \t-webkit-box-direction: normal;\n\t \t-webkit-flex-direction: column;\n\t \t        flex-direction: column;\n\t \t-webkit-box-pack: center;\n\t \t-webkit-justify-content: center;\n\t \t        justify-content: center;\n\t \t-webkit-box-align: center;\n\t \t-webkit-align-items: center;\n\t \t        align-items: center;\n}\n.bottom-text{\n\t\t width: 750rpx;\n\t\t position: fixed;\n\t\t text-align: center;\n\t\t font-size: 26rpx;\n\t\t color: #9d9d9d;\n\t\t bottom: 70rpx;\n}\n.white-box{\n\t \t\tpadding: 0 20rpx;\n\t \t\tmargin-bottom: 15rpx;\n\t \t\tmargin-top: 5rpx;\n\t \t\twidth: 715rpx;\n\t \t\tbackground-color: #FFFFFF;\n\t \t\t-webkit-border-radius: 30rpx;\n\t \t\t        border-radius: 30rpx;\n}\n.green-box{\n\t\t\tpadding: 0 20rpx;\n\t\t\tmargin-bottom: 15rpx;\n\t\t\tmargin-top: 5rpx;\n\t\t\twidth: 715rpx;\n\t\t\tbackground-color: #FFFFFF;\n\t\t\t-webkit-border-radius: 30rpx;\n\t\t\t        border-radius: 30rpx;\n\t\t\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#1faf97), to(#29c7a5));\n\t\t\tbackground-image: -webkit-linear-gradient(#1faf97, #29c7a5);\n\t\t\tbackground-image: linear-gradient(#1faf97, #29c7a5);\n}\n.yuan-sm{\n\t\twidth: 13rpx;\n\t\theight: 13rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #1fc189;\n\t\tmargin-left: 10rpx;\n}\n.yuan-normal{\n\t\twidth: 14rpx;\n\t\theight: 14rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #159f3c;\n\t\tmargin-left: 10rpx;\n}\n.yuan-normal-red{\n\t\twidth: 14rpx;\n\t\theight: 14rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #bc3c11;\n\t\tmargin-left: 10rpx;\n}\n.yuan-sm-red{\n\t\twidth: 13rpx;\n\t\theight: 13rpx;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tbackground-color: #de410d;\n\t\tmargin-left: 10rpx;\n}\n.white-box-all{\n\t\tmargin-top: 5rpx;\n\t\twidth: 750rpx;\n\t\tbackground-color: #FFFFFF;\n\t\t-webkit-border-radius: 13px;\n\t\t        border-radius: 13px;\n}\n.moneycolor{\n\t \tcolor: #ea5002;\n}\n.text-bold-sm{\n\t\t font-weight: 425;\n}\n.sm-moneycolor{\n\t\t color: #e3793b;\n}\n.margin-top{\n\t\t margin-top: 20rpx;\n}\n.margin-top-sm{\n\t \t\t margin-top: 12rpx;\n}\n.margin{\n\t\t margin: 20rpx;\n}\n.margin-left{\n\t\t margin-left: 20rpx;\n}\n.margin-left-top{\n\t\t margin-left: 20rpx;\n\t\t margin-top: 20rpx;\n}\n.margin-right{\n\t\t margin-right: 20rpx;\n}\n.my-absolute{\n\t\t position: absolute;\n}\n.my-fixed{\n\t  \t\t position: fixed;\n}\n.my-seach{\n\t\t width: 450rpx;\n\t\t height: 55rpx;\n\t\t background-color: #f8f8f8;\n\t\t -webkit-border-radius: 30rpx;\n\t\t         border-radius: 30rpx;\n\t\t padding-left: 20rpx;\n}\n.move-view{\n\t\t width: 48rpx;\n\t\t height: 10rpx;\n\t\t background-color: #28ba91;\n\t\t -webkit-border-radius: 4rpx;\n\t\t         border-radius: 4rpx;\n\t\t margin-left: 100rpx;\n}\n.move-view-p{\n\t\t width: 45rpx;\n\t\t height: 10rpx;\n\t\t background-color: #28ba91;\n\t\t -webkit-border-radius: 4rpx;\n\t\t         border-radius: 4rpx;\n}\n.header-dh{\n\t \tposition: fixed;\n\t \tpadding-top: 20rpx;\n\t\tpadding-bottom: 15rpx;\n\t \theight: 70rpx;\n\t \twidth: 750rpx;\n\t \tbackground-color: #f1f1f1;\n\t \tz-index: 20;\n}\n.tp-normal{\n\t\t width: 60rpx;\n\t\t height: 60rpx;\n}\n.tp-sm{\n\t\t width: 45rpx;\n\t\t height: 45rpx;\n}\n.tp-big{\n\t\t width: 70rpx;\n\t\t height: 70rpx;\n\t\t -webkit-border-radius: 50%;\n\t\t         border-radius: 50%;\n}\n.main-color{\n\t\t color: #07D188;\n}\n.bottom-dh-char{\n\t \t \tbackground-color: #f9f9f9;\n\t \t \twidth: 750rpx;\n\t \t \theight: 110rpx;\n}\n.center-box{\n\t \twidth: 720rpx;\n\t \tpadding-left: 25rpx;\n}\n.hui-box{\n\t \twidth: 750rpx;\n\t \theight: 100%;\n}\n.dh-input{\n\t \twidth: 500rpx;\n\t \theight: 65rpx;\n\t \t-webkit-border-radius: 30rpx;\n\t \t        border-radius: 30rpx;\n\t \tpadding-left: 15rpx;\n\t \tbackground-color: #FFFFFF;\n}\n.box-normal{\n\t \twidth: 750rpx;\n\t \theight: 180px;\n\t \tbackground-color: #FFFFFF;\n}\n.tb-text uni-view{\n\t \tfont-size: 65rpx;\n}\n.tb-text uni-text{\n\t \tfont-size: 25rpx;\n\t \tcolor: #737373;\n}\n.chat-img{\n\t \t-webkit-border-radius: 50%;\n\t \t        border-radius: 50%;\n\t \twidth: 100rpx;\n\t \theight: 100rpx;\n\t \tbackground-color: #f7f7f7;\n}\n.padding-chat{\n\t \tpadding: 17rpx 20rpx;\n}\n.tb-nv{\n\t \twidth: 50rpx;\n\t \theight: 50rpx;\n}\n.mainContent{\n\t\tbackground-color: #E5E5E5;\n\t\tpadding-bottom: 130rpx;\n}\n.content {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -webkit-flex;\n\t\tdisplay: flex;\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t-webkit-flex-direction: column;\n\t\t        flex-direction: column;\n\t\t-webkit-box-align: center;\n\t\t-webkit-align-items: center;\n\t\t        align-items: center;\n\t\t-webkit-box-pack: center;\n\t\t-webkit-justify-content: center;\n\t\t        justify-content: center;\n}\n.title {\n\t\tfont-size: 36rpx;\n\t\tcolor: #8f8f94;\n}\n.category-list {\n\twidth: 95%;\n\tmargin: 0 4%;\n\tpadding: 0 0 30upx 0;\n\tborder-bottom: solid 2upx #f6f6f6;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-webkit-justify-content: space-between;\n\t        justify-content: space-between;\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t\n\t-webkit-border-radius: 10rpx;\n\t\n\t        border-radius: 10rpx;\n\tbackground-color: #FFFFFF;\n\t-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\t        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\tmargin-top: 15rpx;\n}\n.category{\n\t\twidth: 33%;\n\t\tmargin-top: 30upx;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -webkit-flex;\n\t\tdisplay: flex;\n\t\t-webkit-flex-wrap: wrap;\n\t\t        flex-wrap: wrap;\n\t\tdisplay: flex;\n\t\t-webkit-box-pack: center;\n\t\t-webkit-justify-content: center;\n\t\t        justify-content: center;\n}\n.img {\n\t\t\twidth: 100%;\n\t\t\tdisplay: -webkit-box;\n\t\t\tdisplay: -webkit-flex;\n\t\t\tdisplay: flex;\n\t\t\t-webkit-box-pack: center;\n\t\t\t-webkit-justify-content: center;\n\t\t\t        justify-content: center;\n}\nuni-image {\n\t\t\t\twidth: 9vw;\n\t\t\t\theight: 9vw;\n}\n.text {\n\t\t\tmargin-top: 16upx;\n\t\t\twidth: 100%;\n\t\t\tdisplay: -webkit-box;\n\t\t\tdisplay: -webkit-flex;\n\t\t\tdisplay: flex;\n\t\t\t-webkit-box-pack: center;\n\t\t\t-webkit-justify-content: center;\n\t\t\t        justify-content: center;\n\t\t\tfont-size: 24upx;\n\t\t\tcolor: #3c3c3c;\n}\n.robotclass{\n\t\twidth: 95%;\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t\tmargin-top: 20rpx;\n\t\tpadding-top: 20rpx;\n\t\tpadding-bottom: 30rpx;\t\n\t\t-webkit-border-radius: 10rpx;\t\n\t\t        border-radius: 10rpx;\n\t\tbackground-color: #FFFFFF;\n\t\t-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\t\t        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n}\n.answercontent{\n\t\tcolor: #2fa39b;\n\t\tmargin-left: 40rpx;\n\t\tmargin-right: 40rpx;\n\t\tmargin-top: 30rpx;\n\t\tbackground-color: #f9f9f9;\n\t\tposition: relative;\n\t\t-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\t\t        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n}\n.answerleft{\n\t\twidth: 80rpx;\n\t\theight: 100%;\n\t\tposition: absolute;\n\t\tborder-right: #C0C0C0 dashed 1rpx;\n}\n.answerRight{\n\t\tmargin-left: 105rpx;\n}\n.hrcss{\n\t\twidth: 98%;\n\t\tborder: #C0C0C0 dashed 1rpx;\n}\n\t\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -8070,35 +8102,32 @@ var render = function() {
             { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
             [
               _c(
-                "vrow",
+                "v-uni-view",
                 { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
                 [
                   _c(
-                    "vcol",
-                    { attrs: { _i: 8 } },
+                    "vrow",
+                    { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
                     [
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-                        [_vm._v("基本信息")]
-                      )
-                    ],
-                    1
-                  ),
-                  _c("vcol", { attrs: { _i: 10 } }),
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 11 } },
-                    [
+                        "vcol",
+                        { attrs: { _i: 9 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(10, "sc"),
+                              attrs: { _i: 10 }
+                            },
+                            [_vm._v("基本信息")]
+                          )
+                        ],
+                        1
+                      ),
+                      _c("vcol", { attrs: { _i: 11 } }),
                       _c(
-                        "v-uni-navigator",
-                        {
-                          attrs: {
-                            url: "/pages/user/user",
-                            "open-type": "navigate",
-                            _i: 12
-                          }
-                        },
+                        "vcol",
+                        { attrs: { _i: 12 } },
                         [
                           _c(
                             "vrow",
@@ -8117,7 +8146,7 @@ var render = function() {
                                       staticClass: _vm._$g(15, "sc"),
                                       attrs: { _i: 15 }
                                     },
-                                    [_vm._v("修改")]
+                                    [_vm._v("返回")]
                                   )
                                 ],
                                 1
@@ -8146,113 +8175,137 @@ var render = function() {
                       )
                     ],
                     1
-                  )
-                ],
-                1
-              ),
-              _c(
-                "vrow",
-                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
-                [
+                  ),
                   _c(
-                    "vcol",
-                    { attrs: { _i: 20 } },
+                    "vrow",
+                    { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                     [
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
-                        [_vm._v("阶段")]
+                        "vcol",
+                        { attrs: { _i: 20 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(21, "sc"),
+                              attrs: { _i: 21 }
+                            },
+                            [_vm._v("阶段")]
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vcol",
+                        { attrs: { _i: 22 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(23, "sc"),
+                              attrs: { _i: 23 }
+                            },
+                            [_vm._v("目标体重")]
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vcol",
+                        { attrs: { _i: 24 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(25, "sc"),
+                              attrs: { _i: 25 }
+                            },
+                            [_vm._v("现在体重")]
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vcol",
+                        { attrs: { _i: 26 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(27, "sc"),
+                              attrs: { _i: 27 }
+                            },
+                            [_vm._v("BMI")]
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
                   ),
                   _c(
-                    "vcol",
-                    { attrs: { _i: 22 } },
+                    "vrow",
+                    { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
                     [
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
-                        [_vm._v("目标体重")]
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 24 } },
-                    [
+                        "vcol",
+                        { attrs: { _i: 29 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(30, "sc"),
+                              attrs: { _i: 30 }
+                            },
+                            [_vm._v("减重")]
+                          )
+                        ],
+                        1
+                      ),
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
-                        [_vm._v("现在体重")]
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 26 } },
-                    [
+                        "vcol",
+                        { attrs: { _i: 31 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(32, "sc"),
+                              attrs: { _i: 32 }
+                            },
+                            [_vm._v("70kg")]
+                          )
+                        ],
+                        1
+                      ),
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
-                        [_vm._v("BMI")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _c(
-                "vrow",
-                { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
-                [
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 29 } },
-                    [
+                        "vcol",
+                        { attrs: { _i: 33 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(34, "sc"),
+                              attrs: { _i: 34 }
+                            },
+                            [_vm._v("74kg")]
+                          )
+                        ],
+                        1
+                      ),
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
-                        [_vm._v("减重")]
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 31 } },
-                    [
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
-                        [_vm._v("70kg")]
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 33 } },
-                    [
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
-                        [_vm._v("74kg")]
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 35 } },
-                    [
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
-                        [_vm._v("26.1")]
+                        "vcol",
+                        { attrs: { _i: 35 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(36, "sc"),
+                              attrs: { _i: 36 }
+                            },
+                            [_vm._v("26.1")]
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
@@ -8262,604 +8315,144 @@ var render = function() {
               )
             ],
             1
-          )
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
-        [
-          _c(
-            "v-uni-view",
-            { staticStyle: { "margin-top": "20upx" }, attrs: { _i: 38 } },
-            [
-              _c("zzx-tabs", {
-                ref: "mytabs",
-                attrs: { _i: 39 },
-                on: {
-                  clickItem: function($event) {
-                    return _vm.$handleViewEvent($event)
-                  }
-                }
-              })
-            ],
-            1
           ),
           _c(
             "v-uni-view",
-            {
-              staticClass: _vm._$g(40, "sc"),
-              staticStyle: {
-                "margin-top": "20upx",
-                color: "#999999",
-                "font-size": "24upx",
-                height: "300upx"
-              },
-              attrs: { _i: 40 }
-            },
+            { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
             [
               _c(
                 "v-uni-view",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm._$g(41, "v-show"),
-                      expression: "_$g(41,'v-show')"
+                { staticStyle: { "margin-top": "-20upx" }, attrs: { _i: 38 } },
+                [
+                  _c("zzx-tabs", {
+                    ref: "mytabs",
+                    attrs: { _i: 39 },
+                    on: {
+                      clickItem: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
                     }
-                  ],
-                  attrs: { _i: 41 }
+                  })
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                {
+                  staticClass: _vm._$g(40, "sc"),
+                  staticStyle: {
+                    "margin-top": "0upx",
+                    color: "#999999",
+                    "font-size": "24upx",
+                    height: "250upx"
+                  },
+                  attrs: { _i: 40 }
                 },
                 [
                   _c(
-                    "vrow",
-                    { staticStyle: { border: "none" }, attrs: { _i: 42 } },
+                    "v-uni-view",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(41, "v-show"),
+                          expression: "_$g(41,'v-show')"
+                        }
+                      ],
+                      attrs: { _i: 41 }
+                    },
                     [
                       _c(
-                        "vcol",
-                        { attrs: { _i: 43 } },
+                        "vrow",
+                        { staticStyle: { border: "none" }, attrs: { _i: 42 } },
                         [
                           _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(44, "sc"),
-                              attrs: { _i: 44 }
-                            },
-                            [
-                              _vm._v("今天吃了"),
-                              _c(
-                                "v-uni-text",
-                                {
-                                  staticClass: _vm._$g(45, "sc"),
-                                  attrs: { _i: 45 }
-                                },
-                                [_vm._v(_vm._$g(45, "t0-0"))]
-                              ),
-                              _vm._v("卡路里")
-                            ],
-                            1
-                          ),
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(46, "sc"),
-                              attrs: { _i: 46 }
-                            },
-                            [
-                              _vm._v("还能再吃"),
-                              _c(
-                                "v-uni-text",
-                                {
-                                  staticClass: _vm._$g(47, "sc"),
-                                  attrs: { _i: 47 }
-                                },
-                                [_vm._v(_vm._$g(47, "t0-0"))]
-                              ),
-                              _vm._v("卡路里")
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 48 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(49, "sc"),
-                              attrs: { _i: 49 }
-                            },
+                            "vcol",
+                            { attrs: { _i: 43 } },
                             [
                               _c(
                                 "v-uni-view",
                                 {
-                                  staticClass: _vm._$g(50, "sc"),
-                                  attrs: { _i: 50 }
-                                },
-                                [_vm._v("拍照识别卡路里")]
-                              ),
-                              _c(
-                                "v-uni-view",
-                                {
-                                  staticClass: _vm._$g(51, "sc"),
-                                  attrs: { _i: 51 },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.$handleViewEvent($event)
-                                    }
-                                  }
+                                  staticClass: _vm._$g(44, "sc"),
+                                  attrs: { _i: 44 }
                                 },
                                 [
-                                  _c("uni-icons", {
-                                    staticClass: _vm._$g(52, "sc"),
-                                    attrs: { _i: 52 }
-                                  })
+                                  _vm._v("今天吃了"),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticClass: _vm._$g(45, "sc"),
+                                      attrs: { _i: 45 }
+                                    },
+                                    [_vm._v(_vm._$g(45, "t0-0"))]
+                                  ),
+                                  _vm._v("卡路里")
+                                ],
+                                1
+                              ),
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(46, "sc"),
+                                  attrs: { _i: 46 }
+                                },
+                                [
+                                  _vm._v("还能再吃"),
+                                  _c(
+                                    "v-uni-text",
+                                    {
+                                      staticClass: _vm._$g(47, "sc"),
+                                      attrs: { _i: 47 }
+                                    },
+                                    [_vm._v(_vm._$g(47, "t0-0"))]
+                                  ),
+                                  _vm._v("卡路里")
                                 ],
                                 1
                               )
                             ],
                             1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm._$g(53, "v-show"),
-                      expression: "_$g(53,'v-show')"
-                    }
-                  ],
-                  attrs: { _i: 53 }
-                },
-                [
-                  _c(
-                    "vrow",
-                    { staticClass: _vm._$g(54, "sc"), attrs: { _i: 54 } },
-                    [
-                      _c("vcol", { attrs: { _i: 55 } }),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 56 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(57, "sc"),
-                              staticStyle: {
-                                color: "#000000",
-                                "font-size": "40upx"
-                              },
-                              attrs: { _i: 57 }
-                            },
-                            [_vm._v("2020/10/10菜单")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c("vcol", { attrs: { _i: 58 } })
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vrow",
-                    { staticClass: _vm._$g(59, "sc"), attrs: { _i: 59 } },
-                    [
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 60 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(61, "sc"),
-                              attrs: { _i: 61 }
-                            },
-                            [_vm._v("肉饼蒸蛋")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 62 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(63, "sc"),
-                              attrs: { _i: 63 }
-                            },
-                            [_vm._v("藤椒仔鸡")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 64 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(65, "sc"),
-                              attrs: { _i: 65 }
-                            },
-                            [_vm._v("干煎板鱼")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vrow",
-                    { staticClass: _vm._$g(66, "sc"), attrs: { _i: 66 } },
-                    [
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 67 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(68, "sc"),
-                              attrs: { _i: 68 }
-                            },
-                            [_vm._v("元宝大头虾")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 69 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(70, "sc"),
-                              attrs: { _i: 70 }
-                            },
-                            [_vm._v("夜开花炒面筋")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 71 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(72, "sc"),
-                              attrs: { _i: 72 }
-                            },
-                            [_vm._v("粟米炒鸡粒")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "vrow",
-                    { staticClass: _vm._$g(73, "sc"), attrs: { _i: 73 } },
-                    [
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 74 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(75, "sc"),
-                              attrs: { _i: 75 }
-                            },
-                            [_vm._v("白菜梗炒素肠")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 76 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(77, "sc"),
-                              attrs: { _i: 77 }
-                            },
-                            [_vm._v("老黄瓜烧开洋")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 78 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(79, "sc"),
-                              attrs: { _i: 79 }
-                            },
-                            [_vm._v("咸菜百叶肉丝")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(80, "sc"), attrs: { _i: 80 } },
-        [
-          _c(
-            "vrow",
-            { staticClass: _vm._$g(81, "sc"), attrs: { _i: 81 } },
-            [
-              _c(
-                "vcol",
-                { attrs: { _i: 82 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(83, "sc"), attrs: { _i: 83 } },
-                    [_vm._v("饮食方案")]
-                  )
-                ],
-                1
-              ),
-              _c("vcol", { attrs: { _i: 84 } }),
-              _c(
-                "vcol",
-                { attrs: { _i: 85 } },
-                [
-                  _c(
-                    "vrow",
-                    {
-                      staticStyle: { "justify-content": "flex-end" },
-                      attrs: { _i: 86 }
-                    },
-                    [
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 87 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(88, "sc"),
-                              attrs: { _i: 88 }
-                            },
-                            [_vm._v("更多")]
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "vcol",
-                        { attrs: { _i: 89 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(90, "sc"),
-                              attrs: { _i: 90 }
-                            },
-                            [_c("uni-icons", { attrs: { _i: 91 } })],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(92, "sc"), attrs: { _i: 92 } },
-            [
-              _c(
-                "v-uni-text",
-                { staticStyle: { "font-size": "40upx" }, attrs: { _i: 93 } },
-                [_vm._v("经典均衡饮食")]
-              ),
-              _c(
-                "p",
-                { attrs: { _i: 94 } },
-                [
-                  _c("v-uni-text", { attrs: { _i: 95 } }, [
-                    _vm._v(
-                      "日常注意食物多样化，可以保证更全面的营养摄入。促进免疫系统良好运行。"
-                    )
-                  ])
-                ],
-                1
-              ),
-              _c(
-                "p",
-                { attrs: { _i: 96 } },
-                [
-                  _c("v-uni-text", { attrs: { _i: 97 } }, [
-                    _vm._v("推荐一天吃12样食物，一周吃25样食物。")
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(98, "sc"), attrs: { _i: 98 } },
-        [
-          _c(
-            "vrow",
-            { staticClass: _vm._$g(99, "sc"), attrs: { _i: 99 } },
-            [
-              _c(
-                "vcol",
-                { attrs: { _i: 100 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(101, "sc"), attrs: { _i: 101 } },
-                    [_vm._v("食堂热门菜品推荐")]
-                  )
-                ],
-                1
-              ),
-              _c("vcol", { attrs: { _i: 102 } }),
-              _c(
-                "vcol",
-                { attrs: { _i: 103 } },
-                [
-                  _c(
-                    "v-uni-navigator",
-                    {
-                      attrs: {
-                        url: "/pages/diet/food",
-                        "open-type": "navigate",
-                        _i: 104
-                      }
-                    },
-                    [
-                      _c(
-                        "vrow",
-                        {
-                          staticStyle: { "justify-content": "flex-end" },
-                          attrs: { _i: 105 }
-                        },
-                        [
-                          _c(
-                            "vcol",
-                            { attrs: { _i: 106 } },
-                            [
-                              _c(
-                                "v-uni-view",
-                                {
-                                  staticClass: _vm._$g(107, "sc"),
-                                  attrs: { _i: 107 }
-                                },
-                                [_vm._v("更多")]
-                              )
-                            ],
-                            1
                           ),
                           _c(
                             "vcol",
-                            { attrs: { _i: 108 } },
+                            { attrs: { _i: 48 } },
                             [
                               _c(
                                 "v-uni-view",
                                 {
-                                  staticClass: _vm._$g(109, "sc"),
-                                  attrs: { _i: 109 }
-                                },
-                                [_c("uni-icons", { attrs: { _i: 110 } })],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(111, "sc"), attrs: { _i: 111 } },
-            [
-              _c(
-                "vrow",
-                { staticClass: _vm._$g(112, "sc"), attrs: { _i: 112 } },
-                [
-                  _c(
-                    "vcol",
-                    { attrs: { _i: 113 } },
-                    [
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(114, "sc"), attrs: { _i: 114 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(115, "sc"),
-                              attrs: { _i: 115 }
-                            },
-                            [
-                              _c("v-uni-image", {
-                                staticClass: _vm._$g(116, "sc"),
-                                attrs: {
-                                  src: "/static/diet/1.jpg",
-                                  mode: "widthFix",
-                                  _i: 116
-                                }
-                              }),
-                              _c(
-                                "v-uni-view",
-                                {
-                                  staticClass: _vm._$g(117, "sc"),
-                                  attrs: { _i: 117 }
+                                  staticClass: _vm._$g(49, "sc"),
+                                  attrs: { _i: 49 }
                                 },
                                 [
                                   _c(
                                     "v-uni-view",
                                     {
-                                      staticClass: _vm._$g(118, "sc"),
-                                      attrs: { _i: 118 }
+                                      staticClass: _vm._$g(50, "sc"),
+                                      attrs: { _i: 50 }
                                     },
-                                    [_vm._v("xxx菜")]
+                                    [_vm._v("拍照识别卡路里")]
+                                  ),
+                                  _c(
+                                    "v-uni-view",
+                                    {
+                                      staticClass: _vm._$g(51, "sc"),
+                                      attrs: { _i: 51 },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("v-uni-image", {
+                                        attrs: {
+                                          src: "/static/images/diet/照相机.png",
+                                          _i: 52
+                                        }
+                                      })
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -8874,42 +8467,513 @@ var render = function() {
                     1
                   ),
                   _c(
-                    "vcol",
-                    { attrs: { _i: 119 } },
+                    "v-uni-view",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(53, "v-show"),
+                          expression: "_$g(53,'v-show')"
+                        }
+                      ],
+                      attrs: { _i: 53 }
+                    },
                     [
                       _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(120, "sc"), attrs: { _i: 120 } },
+                        "vrow",
+                        { staticClass: _vm._$g(54, "sc"), attrs: { _i: 54 } },
                         [
+                          _c("vcol", { attrs: { _i: 55 } }),
                           _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(121, "sc"),
-                              attrs: { _i: 121 }
-                            },
+                            "vcol",
+                            { attrs: { _i: 56 } },
                             [
-                              _c("v-uni-image", {
-                                staticClass: _vm._$g(122, "sc"),
-                                attrs: {
-                                  src: "/static/diet/3.jpg",
-                                  mode: "widthFix",
-                                  _i: 122
-                                }
-                              }),
                               _c(
                                 "v-uni-view",
                                 {
-                                  staticClass: _vm._$g(123, "sc"),
-                                  attrs: { _i: 123 }
+                                  staticClass: _vm._$g(57, "sc"),
+                                  staticStyle: {
+                                    color: "#000000",
+                                    "font-size": "40upx"
+                                  },
+                                  attrs: { _i: 57 }
                                 },
+                                [_vm._v("2020/10/10菜单")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c("vcol", { attrs: { _i: 58 } })
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vrow",
+                        { staticClass: _vm._$g(59, "sc"), attrs: { _i: 59 } },
+                        [
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 60 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(61, "sc"),
+                                  attrs: { _i: 61 }
+                                },
+                                [_vm._v("肉饼蒸蛋")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 62 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(63, "sc"),
+                                  attrs: { _i: 63 }
+                                },
+                                [_vm._v("藤椒仔鸡")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 64 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(65, "sc"),
+                                  attrs: { _i: 65 }
+                                },
+                                [_vm._v("干煎板鱼")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vrow",
+                        { staticClass: _vm._$g(66, "sc"), attrs: { _i: 66 } },
+                        [
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 67 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(68, "sc"),
+                                  attrs: { _i: 68 }
+                                },
+                                [_vm._v("元宝大头虾")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 69 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(70, "sc"),
+                                  attrs: { _i: 70 }
+                                },
+                                [_vm._v("夜开花炒面筋")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 71 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(72, "sc"),
+                                  attrs: { _i: 72 }
+                                },
+                                [_vm._v("粟米炒鸡粒")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vrow",
+                        { staticClass: _vm._$g(73, "sc"), attrs: { _i: 73 } },
+                        [
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 74 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(75, "sc"),
+                                  attrs: { _i: 75 }
+                                },
+                                [_vm._v("白菜梗炒素肠")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 76 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(77, "sc"),
+                                  attrs: { _i: 77 }
+                                },
+                                [_vm._v("老黄瓜烧开洋")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 78 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(79, "sc"),
+                                  attrs: { _i: 79 }
+                                },
+                                [_vm._v("咸菜百叶肉丝")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(80, "sc"), attrs: { _i: 80 } },
+            [
+              _c(
+                "vrow",
+                { staticClass: _vm._$g(81, "sc"), attrs: { _i: 81 } },
+                [
+                  _c(
+                    "vcol",
+                    { attrs: { _i: 82 } },
+                    [
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(83, "sc"), attrs: { _i: 83 } },
+                        [_vm._v("饮食方案")]
+                      )
+                    ],
+                    1
+                  ),
+                  _c("vcol", { attrs: { _i: 84 } }),
+                  _c(
+                    "vcol",
+                    { attrs: { _i: 85 } },
+                    [
+                      _c(
+                        "vrow",
+                        {
+                          staticStyle: { "justify-content": "flex-end" },
+                          attrs: { _i: 86 }
+                        },
+                        [
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 87 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(88, "sc"),
+                                  attrs: { _i: 88 }
+                                },
+                                [_vm._v("更多")]
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "vcol",
+                            { attrs: { _i: 89 } },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(90, "sc"),
+                                  attrs: { _i: 90 }
+                                },
+                                [_c("uni-icons", { attrs: { _i: 91 } })],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(92, "sc"), attrs: { _i: 92 } },
+                [
+                  _c(
+                    "v-uni-text",
+                    {
+                      staticStyle: { "font-size": "40upx" },
+                      attrs: { _i: 93 }
+                    },
+                    [_vm._v("经典均衡饮食")]
+                  ),
+                  _c(
+                    "p",
+                    { attrs: { _i: 94 } },
+                    [
+                      _c("v-uni-text", { attrs: { _i: 95 } }, [
+                        _vm._v(
+                          "日常注意食物多样化，可以保证更全面的营养摄入。促进免疫系统良好运行。"
+                        )
+                      ])
+                    ],
+                    1
+                  ),
+                  _c(
+                    "p",
+                    { attrs: { _i: 96 } },
+                    [
+                      _c("v-uni-text", { attrs: { _i: 97 } }, [
+                        _vm._v("推荐一天吃12样食物，一周吃25样食物。")
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(98, "sc"), attrs: { _i: 98 } },
+            [
+              _c(
+                "vrow",
+                { staticClass: _vm._$g(99, "sc"), attrs: { _i: 99 } },
+                [
+                  _c(
+                    "vcol",
+                    { attrs: { _i: 100 } },
+                    [
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(101, "sc"), attrs: { _i: 101 } },
+                        [_vm._v("食堂热门菜品推荐")]
+                      )
+                    ],
+                    1
+                  ),
+                  _c("vcol", { attrs: { _i: 102 } }),
+                  _c(
+                    "vcol",
+                    { attrs: { _i: 103 } },
+                    [
+                      _c(
+                        "v-uni-navigator",
+                        {
+                          attrs: {
+                            url: "/pages/diet/food",
+                            "open-type": "navigate",
+                            _i: 104
+                          }
+                        },
+                        [
+                          _c(
+                            "vrow",
+                            {
+                              staticStyle: { "justify-content": "flex-end" },
+                              attrs: { _i: 105 }
+                            },
+                            [
+                              _c(
+                                "vcol",
+                                { attrs: { _i: 106 } },
                                 [
                                   _c(
                                     "v-uni-view",
                                     {
-                                      staticClass: _vm._$g(124, "sc"),
-                                      attrs: { _i: 124 }
+                                      staticClass: _vm._$g(107, "sc"),
+                                      attrs: { _i: 107 }
                                     },
-                                    [_vm._v("yyy菜")]
+                                    [_vm._v("更多")]
+                                  )
+                                ],
+                                1
+                              ),
+                              _c(
+                                "vcol",
+                                { attrs: { _i: 108 } },
+                                [
+                                  _c(
+                                    "v-uni-view",
+                                    {
+                                      staticClass: _vm._$g(109, "sc"),
+                                      attrs: { _i: 109 }
+                                    },
+                                    [_c("uni-icons", { attrs: { _i: 110 } })],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(111, "sc"), attrs: { _i: 111 } },
+                [
+                  _c(
+                    "vrow",
+                    { staticClass: _vm._$g(112, "sc"), attrs: { _i: 112 } },
+                    [
+                      _c(
+                        "vcol",
+                        { attrs: { _i: 113 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(114, "sc"),
+                              attrs: { _i: 114 }
+                            },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(115, "sc"),
+                                  attrs: { _i: 115 }
+                                },
+                                [
+                                  _c("v-uni-image", {
+                                    staticClass: _vm._$g(116, "sc"),
+                                    attrs: {
+                                      src: "/static/diet/1.jpg",
+                                      mode: "widthFix",
+                                      _i: 116
+                                    }
+                                  }),
+                                  _c(
+                                    "v-uni-view",
+                                    {
+                                      staticClass: _vm._$g(117, "sc"),
+                                      attrs: { _i: 117 }
+                                    },
+                                    [
+                                      _c(
+                                        "v-uni-view",
+                                        {
+                                          staticClass: _vm._$g(118, "sc"),
+                                          attrs: { _i: 118 }
+                                        },
+                                        [_vm._v("xxx菜")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "vcol",
+                        { attrs: { _i: 119 } },
+                        [
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(120, "sc"),
+                              attrs: { _i: 120 }
+                            },
+                            [
+                              _c(
+                                "v-uni-view",
+                                {
+                                  staticClass: _vm._$g(121, "sc"),
+                                  attrs: { _i: 121 }
+                                },
+                                [
+                                  _c("v-uni-image", {
+                                    staticClass: _vm._$g(122, "sc"),
+                                    attrs: {
+                                      src: "/static/diet/3.jpg",
+                                      mode: "widthFix",
+                                      _i: 122
+                                    }
+                                  }),
+                                  _c(
+                                    "v-uni-view",
+                                    {
+                                      staticClass: _vm._$g(123, "sc"),
+                                      attrs: { _i: 123 }
+                                    },
+                                    [
+                                      _c(
+                                        "v-uni-view",
+                                        {
+                                          staticClass: _vm._$g(124, "sc"),
+                                          attrs: { _i: 124 }
+                                        },
+                                        [_vm._v("yyy菜")]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -9630,7 +9694,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\nbody{\n    height: 100%;\n}\n.cont{\n\tmargin: 20rpx;\n}\n.page{\n   \n    height: 100%;\n}\n.infos{\n\tmargin: 5rpx;\n\tborder: 2rpx solid #D9D9D9;\n\t-webkit-border-radius: 20rpx;\n\t        border-radius: 20rpx;\n}\n.row{     \n\t/* background: #BBBBBB; */\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\tborder-bottom :2rpx solid #D9D9D9;\n}\n.col{             \n\tdisplay: -webkit-box;             \n\tdisplay: -webkit-flex;             \n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;        \n\t-webkit-flex-wrap: wrap;        \n\t        flex-wrap: wrap;\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\t-webkit-border-radius: 20upx;\n\t        border-radius: 20upx;\n\t\n\tfont-size: 35upx;\n}\n.title{\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\tmargin: ;\n\tpadding: 0 50upx;\n\tfont-size: 40upx; \n\t-webkit-box-pack:start; \n\t-webkit-justify-content:flex-start; \n\t        justify-content:flex-start;\n}\n.tabs{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\tmargin: 20upx;\n\tborder :2rpx solid #D9D9D9;\n\t-webkit-border-radius: 20upx;\n\t        border-radius: 20upx;\n}\n.cal{\n\tmargin: 0 10upx;\n\tcolor: #000000;\n}\n.text{\n\tmargin-bottom: -140upx;\n}\n.camera{\n    margin-top: 20upx;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;  \n\twidth: 100%;\n}\n.card{\n\tmargin:20upx;\n\tborder :2rpx solid #D9D9D9;\n\t-webkit-border-radius: 20upx;\n\t        border-radius: 20upx;\n}\n.contents{\n\ttext-align: left;\n\ttext-indent:2em;\n    padding: 20upx;\n\tcolor: #666666;\n}\n.wf-item-page{\n\t\tbackground: #fff;\n\t\toverflow: hidden;\n\t\t-webkit-border-radius: 5px;\n\t\t        border-radius: 5px;\n\t\twidth:100%\n}\n.item-img{\n\t\twidth: 100%;\n}\n.item-info{\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -webkit-flex;\n\t\tdisplay: flex;\n\t\t-webkit-box-align: center;\n\t\t-webkit-align-items: center;\n\t\t        align-items: center;\n\t\tpadding: 5px;\n}\n.info-avatar{\n\t\twidth: 25px;\n\t\theight: 25px;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tmargin-right: 5px;\n}\n.info-nickname{\n\t\tfont-size: 12px;\n\t\tcolor: #333;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n    height: 100%;\n}\n.cont{\n\tmargin: 20rpx;\n}\n.page{\n   \n    height: 100%;\n}\n.infos{\n\tmargin: 5rpx;\n\tborder: 2rpx solid #D9D9D9;\n\t-webkit-border-radius: 20rpx;\n\t        border-radius: 20rpx;\n}\n.row{     \n\t/* background: #BBBBBB; */\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\tborder-bottom :2rpx solid #D9D9D9;\n}\n.col{             \n\tdisplay: -webkit-box;             \n\tdisplay: -webkit-flex;             \n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;        \n\t-webkit-flex-wrap: wrap;        \n\t        flex-wrap: wrap;\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\t-webkit-border-radius: 20upx;\n\t        border-radius: 20upx;\n\t\n\tfont-size: 35upx;\n}\n.title{\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\tmargin: ;\n\tpadding: 0 50upx;\n\tfont-size: 40upx; \n\t-webkit-box-pack:start; \n\t-webkit-justify-content:flex-start; \n\t        justify-content:flex-start;\n}\n.tabs{\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\tmargin: 20upx;\n\tborder :2rpx solid #D9D9D9;\n\t-webkit-border-radius: 20upx;\n\t        border-radius: 20upx;\n}\n.cal{\n\tmargin: 0 10upx;\n\tcolor: #000000;\n}\n.text{\n\tmargin-bottom: -10upx;\n}\n.camera{\n    margin-top: 20upx;\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-align:center;\n\t-webkit-align-items:center;\n\t        align-items:center;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;  \n\twidth: 100%;\n}\n.camera uni-image{\n\tobject-fit: cover;\n\twidth: 70px;\n\theight: 55px;\n}\n.card{\n\tmargin:20upx;\n\tborder :2rpx solid #D9D9D9;\n\t-webkit-border-radius: 20upx;\n\t        border-radius: 20upx;\n}\n.contents{\n\ttext-align: left;\n\ttext-indent:2em;\n    padding: 20upx;\n\tcolor: #666666;\n}\n.wf-item-page{\n\t\tbackground: #fff;\n\t\toverflow: hidden;\n\t\t-webkit-border-radius: 5px;\n\t\t        border-radius: 5px;\n\t\twidth:100%\n}\n.item-img{\n\t\twidth: 100%;\n}\n.item-info{\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -webkit-flex;\n\t\tdisplay: flex;\n\t\t-webkit-box-align: center;\n\t\t-webkit-align-items: center;\n\t\t        align-items: center;\n\t\tpadding: 5px;\n}\n.info-avatar{\n\t\twidth: 25px;\n\t\theight: 25px;\n\t\t-webkit-border-radius: 50%;\n\t\t        border-radius: 50%;\n\t\tmargin-right: 5px;\n}\n.info-nickname{\n\t\tfont-size: 12px;\n\t\tcolor: #333;\n}\n.content{\n\t\t\n\t\tmargin-left: auto;\n\t\tmargin-right: auto;\n\t\tmargin-top: 20rpx;\n\t\tpadding-top: 20rpx;\n\t\tpadding-bottom: 30rpx;\t\n\t\t-webkit-border-radius: 10rpx;\t\n\t\t        border-radius: 10rpx;\n\t\tbackground-color: #FFFFFF;\n\t\t-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n\t\t        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);\n}\n.all{\n}\n", ""]);
 // Exports
 module.exports = exports;
 
