@@ -36,16 +36,27 @@ public class UserInfo {
     private String password;
 
     @Column
+    //单位kg
     private Double weight;
 
     @Column
+    //单位cm
     private Double height;
 
     @Column
+    //男1 女2
+    private Integer sex;
+
+    @Column
+    private Integer age;
+
+    @Column
+    //单位kg
     private Double targetWeight;
 
     @Column
-    private String phase;
+    //增重1 减重2 维持体重3
+    private Integer phase;
 
     @OneToMany(mappedBy = "userInfo", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     private List<DailyFoodRecordInfo> userDailyFoodRecords = new ArrayList<>();
