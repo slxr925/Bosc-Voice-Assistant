@@ -1,6 +1,8 @@
 package com.bosc.voiceassistant.aba.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,6 +12,8 @@ import java.util.Date;
  * @since 2020/9/11 2:41 下午
  */
 @Data
+@DynamicUpdate
+@DynamicInsert
 @Entity(name = "foodmenu")
 public class FoodMenuInfo {
 
@@ -37,4 +41,7 @@ public class FoodMenuInfo {
 
     @Column(nullable = false)
     private Double avgMark;
+
+    @Column(nullable = false)
+    private Double calorie;
 }

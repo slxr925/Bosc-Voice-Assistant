@@ -1,4 +1,4 @@
-package com.bosc.voiceassistant.aba.service;
+package com.bosc.voiceassistant.aba.service.i;
 
 import com.bosc.voiceassistant.aba.entity.UserInfo;
 

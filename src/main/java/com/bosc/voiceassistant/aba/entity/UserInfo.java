@@ -47,7 +47,7 @@ public class UserInfo {
     @Column
     private String phase;
 
-//    @OneToMany(mappedBy = "userInfo", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-//    private List<DailyFoodRecordInfo> userDailyFoodRecords = new ArrayList<>();
+    @OneToMany(mappedBy = "userInfo", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    private List<DailyFoodRecordInfo> userDailyFoodRecords = new ArrayList<>();
 
 }

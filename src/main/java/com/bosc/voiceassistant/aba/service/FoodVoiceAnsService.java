@@ -1,4 +1,4 @@
-package com.bosc.voiceassistant.aba.service.i;
+package com.bosc.voiceassistant.aba.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
@@ -19,7 +19,7 @@ import java.util.List;
  * @since 2020/9/14 3:13 下午
  */
 @Service
-public class FoodResultService {
+public class FoodVoiceAnsService {
 
     @Autowired
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;

@@ -1,7 +1,7 @@
 package com.bosc.voiceassistant.aba.controller;
 
 import com.bosc.voiceassistant.aba.entity.UserInfo;
-import com.bosc.voiceassistant.aba.service.IUserService;
+import com.bosc.voiceassistant.aba.service.i.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

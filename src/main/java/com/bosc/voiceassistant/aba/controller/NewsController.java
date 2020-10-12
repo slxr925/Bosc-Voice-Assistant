@@ -1,7 +1,7 @@
 package com.bosc.voiceassistant.aba.controller;
 
 import com.bosc.voiceassistant.aba.entity.NewsInfo;
-import com.bosc.voiceassistant.aba.service.INewsService;
+import com.bosc.voiceassistant.aba.service.i.INewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

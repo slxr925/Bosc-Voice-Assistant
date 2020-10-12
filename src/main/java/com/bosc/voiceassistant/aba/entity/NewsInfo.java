@@ -1,6 +1,8 @@
 package com.bosc.voiceassistant.aba.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +15,8 @@ import java.util.Date;
  * @since 2020/10/10 4:00 下午
  */
 @Data
+@DynamicUpdate
+@DynamicInsert
 @Entity(name = "news")
 public class NewsInfo {
 

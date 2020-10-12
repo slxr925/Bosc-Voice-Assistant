@@ -1,8 +1,8 @@
-package com.bosc.voiceassistant.aba.service.i;
+package com.bosc.voiceassistant.aba.service.impl;
 
 import com.bosc.voiceassistant.aba.entity.NewsInfo;
 import com.bosc.voiceassistant.aba.repository.INewsDao;
-import com.bosc.voiceassistant.aba.service.INewsService;
+import com.bosc.voiceassistant.aba.service.i.INewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

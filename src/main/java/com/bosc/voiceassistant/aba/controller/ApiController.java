@@ -2,7 +2,7 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.bosc.voiceassistant.aba.service.i.FoodResultService;
+import com.bosc.voiceassistant.aba.service.FoodVoiceAnsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -22,7 +22,7 @@ import java.text.ParseException;
 public class ApiController {
 
     @Autowired
-    private FoodResultService foodResultService;
+    private FoodVoiceAnsService fvaService;
 
     @RequestMapping(value = "/send")
     @ResponseBody
@@ -48,7 +48,7 @@ public class ApiController {
             //首先解析问题类型
             if (jsonObject.get("intent").equals("qa_dining")) {
                 //食堂问题
-                String str = foodResultService.getResult(jsonObject);
+                String str = fvaService.getResult(jsonObject);
             } else if (jsonObject.get("intent").equals("qa_bus")) {
                 //班车问题
 

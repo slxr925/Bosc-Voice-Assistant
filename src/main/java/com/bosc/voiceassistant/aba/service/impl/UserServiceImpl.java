@@ -1,8 +1,8 @@
-package com.bosc.voiceassistant.aba.service.i;
+package com.bosc.voiceassistant.aba.service.impl;
 
 import com.bosc.voiceassistant.aba.repository.IUserDao;
 import com.bosc.voiceassistant.aba.entity.UserInfo;
-import com.bosc.voiceassistant.aba.service.IUserService;
+import com.bosc.voiceassistant.aba.service.i.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
