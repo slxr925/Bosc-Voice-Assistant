@@ -96,10 +96,12 @@
 				<vcol span="50"><view class="col title">饮食方案</view></vcol>
 				<vcol span="25" ></vcol>
 				<vcol span="15" >
+					<navigator url="/pages/diet/recom" open-type="navigate">
 						<vrow style="justify-content:flex-end; ">
 							<vcol span="10"><view class="col">更多</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
+					</navigator>
 				</vcol>
 			</vrow>
 			<view class='contents'>
@@ -180,7 +182,7 @@ export default {
     },
 	watch:{// 监听stuName的变化情况
 	    cal1: function(newVal, oldVal){//stuName是data的return返回对象中的数组变量，newVal是属性变化后的值，oldVal是属性变化前的值
-	        cal2=all_cal-newVal
+	        this.cal2=this.all_cal-newVal
 	    }
 	},
 
@@ -190,7 +192,9 @@ export default {
                 this.current = e.currentIndex;
             }
           },
+		  
 		  openCamera(){
+			  let self=this;
 		  	uni.chooseImage({
 		  	    count: 6,
 		  	    sizeType: ['original', 'compressed'],
@@ -202,7 +206,7 @@ export default {
 					let reader = new FileReader();
 					let imgFile;
 					// let that = this
-					let self=this;
+					
 					reader.readAsDataURL(res.tempFiles[0])
 					reader.onload = e => {
 						imgFile = e.target.result;
@@ -214,7 +218,7 @@ export default {
 						    data: {
 								filter_threshold:0.8,
 								image:arr[1],
-								baike_num:1
+								//baike_num:1
 							},
 						    header: {
 								'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
