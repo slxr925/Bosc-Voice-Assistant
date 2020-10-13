@@ -58,5 +58,6 @@ public class UserController {
     public List<UserInfo> getAllUsers() {
         return userService.getAllUsers();
     }
+
 }
 

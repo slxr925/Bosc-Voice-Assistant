@@ -87,4 +87,5 @@ public class UserServiceImpl implements IUserService {
     public List<UserInfo> getUserListBySex(Integer sex) {
         return userDao.findAllBySex(sex);
     }
+
 }

@@ -73,5 +73,4 @@ public interface IUserService {
 
     List<UserInfo> getUserListBySex(Integer sex);
 
-
 }

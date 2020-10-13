@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -64,33 +65,46 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
      */
     List<UserInfo> findAllByUserName(String userName);
 
+    /**
+     *
+     * @param age
+     * @return
+     */
     UserInfo findByAge(Integer age);
 
+    /**
+     *
+     * @param height
+     * @return
+     */
     UserInfo findByHeight(Double height);
 
+    /**
+     *
+     * @param weight
+     * @return
+     */
     UserInfo findByWeight(Double weight);
 
+    /**
+     *
+     * @param sex
+     * @return
+     */
     UserInfo findBySex(Integer sex);
 
+    /**
+     *
+     * @param sex
+     * @return
+     */
     List<UserInfo> findAllBySex(Integer sex);
 
+    /**
+     *
+     * @param targetWeight
+     * @return
+     */
     UserInfo findByTargetWeight(Double targetWeight);
-
-    @Modifying
-    @Query("update user set age = :age where userId = :userId")
-    void updateAgeByUserId(@Param("age") Integer age, @Param("userId") Integer userId);
-
-    @Modifying
-    @Query("update user set height = :height where userId = :userId")
-    void updateHeightByUserId(@Param("height") Double height, @Param("userId") Integer userId);
-
-    @Modifying
-    @Query("update user set weight = :weight where userId = :userId")
-    void updateWeightByUserId(@Param("weight") Double weight, @Param("userId") Integer userId);
-
-    @Modifying
-    @Query("update user set targetWeight = :targetWeight where userId = :userId")
-    void updateTargetByUserId(@Param("targetWeight") Double targetWeight, @Param("userId") Integer userId);
-
 
 }
