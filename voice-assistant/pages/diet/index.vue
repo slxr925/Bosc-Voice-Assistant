@@ -204,62 +204,63 @@ export default {
 					uni.showLoading({
 						title: '识别中...'
 					});
-					let reader = new FileReader();
-					let imgFile;
+
 					// let that = this
-					
-					reader.readAsDataURL(res.tempFiles[0])
-					reader.onload = e => {
-						imgFile = e.target.result;
-						let arr = imgFile.split(',')
-						let token='24.46c22275f03a66b3c34427dea0a97333.2592000.1605160554.282335-22811471'
-						uni.request({
-							url:'https://aip.baidubce.com/rest/2.0/image-classify/v2/dish?access_token='+token,
-						    //url: 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=5jfpAW1CP1B9GaBP7uvcQESy&client_secret=tsVOpUw6RpI2Nqq2d2m29yb6xctuetnv',
-						    data: {
-								filter_threshold:0.8,
-								image:arr[1],
-								//baike_num:1
-							},
-						    header: {
-								'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
-							},
-							dataType:'json',
-							method:'post',
-						
-						    success: (res) => {
-							   uni.hideLoading();
-							   console.log(res.data)
-							   if (res.data.result.length>0){
-								   let food=res.data.result[0];
-								   self.cal1+=parseInt(food.calorie);
-								   uni.showToast({
-								       title: '您吃了'+food.name+",\n卡路里为:"+food.calorie+'大卡',
-								       duration: 2000
-								   });
-							   }else{
-								   
-								   uni.showToast({
-								       title: '识别失败',
-								       duration: 2000
-								   });
-							   }
+					let url=res.tempFilePaths[0]
+					uni.request({
+						url: url,
+						method:'GET',
+						responseType: 'arraybuffer',
+						success: ress => {
+							let base64 = wx.arrayBufferToBase64(ress.data); //把arraybuffer转成base64 
+							//base64 = 'data:image/jpeg;base64,' + base64 //不加上这串字符，在页面无法显示的哦
+							let token='24.46c22275f03a66b3c34427dea0a97333.2592000.1605160554.282335-22811471'
+							uni.request({
+								url:'https://aip.baidubce.com/rest/2.0/image-classify/v2/dish?access_token='+token,
+							    //url: 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=5jfpAW1CP1B9GaBP7uvcQESy&client_secret=tsVOpUw6RpI2Nqq2d2m29yb6xctuetnv',
+							    data: {
+									filter_threshold:0.8,
+									image:base64,
+									//baike_num:1
+								},
+							    header: {
+									'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
+								},
+								dataType:'json',
+								method:'post',
+							
+							    success: (res) => {
+								   uni.hideLoading();
+								   console.log(res.data)
+								   if (res.data.result.length>0){
+									   let food=res.data.result[0];
+									   self.cal1+=parseInt(food.calorie);
+									   uni.showToast({
+									       title: '您吃了'+food.name+",\n卡路里为:"+food.calorie+'大卡',
+									       duration: 2000
+									   });
+								   }else{
+									   
+									   uni.showToast({
+									       title: '识别失败',
+									       duration: 2000
+									   });
+								   }
+							
+							
+							    },
+								fail(){
+									uni.hideLoading();
+									uni.showToast({
+									    title: '识别失败',
+									    duration: 2000
+									});
+								}
+							});
+							 
+						}
+					    })
 
-
-						    },
-							fail(){
-								uni.hideLoading();
-								uni.showToast({
-								    title: '识别失败',
-								    duration: 2000
-								});
-							}
-						});
-						 
-						//arr[1]
-						// console.log(imgFile)
-						//console.log(this.datas.faceBase64)
-					}
 
 		  	        // 预览图片
 		  	        // uni.previewImage({
