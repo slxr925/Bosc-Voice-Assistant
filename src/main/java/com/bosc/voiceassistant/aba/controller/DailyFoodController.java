@@ -2,7 +2,7 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.bosc.voiceassistant.aba.service.DailyCalorieService;
+import com.bosc.voiceassistant.aba.service.DailyFoodService;
 import com.bosc.voiceassistant.aba.service.i.IUserService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +23,10 @@ import java.util.List;
 @Api
 @RestController
 @RequestMapping(value = "/dailycalorie")
-public class DailyCalorieController {
+public class DailyFoodController {
 
     @Autowired
-    private DailyCalorieService dcService;
+    private DailyFoodService dcService;
 
     @Autowired
     private IUserService userService;

@@ -5,7 +5,9 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Xu Ran
@@ -44,5 +46,8 @@ public class FoodMenuInfo {
 
     @Column(nullable = false)
     private Double calorie;
+
+    @OneToMany(mappedBy = "foodMenuInfo", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    private List<DailyFoodRecordInfo> foodRecords = new ArrayList<>();
 
 }

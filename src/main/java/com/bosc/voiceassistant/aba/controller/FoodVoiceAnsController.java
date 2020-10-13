@@ -20,8 +20,8 @@ import java.util.List;
  */
 @Api
 @RestController
-@RequestMapping("/food")
-public class FoodController {
+@RequestMapping("/foodvoice")
+public class FoodVoiceAnsController {
 
     @Autowired
     private FoodVoiceAnsService fvaService;
@@ -59,10 +59,10 @@ public class FoodController {
 
 //    @RequestMapping(value = "/getFoodTrueFalseResult")
 //    public String getFoodTFResult() throws ParseException {
-//        Date resultDate = foodResultService.stringToDate("2020-09-17");
-//        List<FoodMenuInfo> list3 = foodResultService.getFoodTrueFalseResult(resultDate, resultDate, "", "brunch",
-//                "category", 0.0);
-//        if (price > 0 && price.equals(list3.get(0).getFoodPrice())) {
+//        Date resultDate = fvaService.stringToDate("2020-09-17");
+//        List<FoodMenuInfo> list3 = fvaService.getFoodTrueFalseResult(resultDate, resultDate, "", "brunch",
+//                "category", 3.5);
+//        if (3.5 > 0 && price.equals(list3.get(0).getFoodPrice())) {
 //            return "是的";
 //        } else if (price > 0 && !price.equals(list3.get(0).getFoodPrice())) {
 //            return "不是";

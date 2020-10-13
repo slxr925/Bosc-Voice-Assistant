@@ -32,4 +32,8 @@ public class DailyFoodRecordInfo {
     @JoinColumn
     private UserInfo userInfo;
 
+    @ManyToOne
+    @JoinColumn
+    private FoodMenuInfo foodMenuInfo;
+
 }

@@ -15,7 +15,7 @@ import java.util.*;
  * @since 2020/10/12 3:40 下午
  */
 @Service
-public class DailyCalorieService {
+public class DailyFoodService {
 
     @Autowired
     private IFoodMenuService foodMenuService;
