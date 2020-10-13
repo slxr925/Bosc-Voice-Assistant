@@ -162,6 +162,27 @@
 				    });
 				    return false;
 				}
+				var url=this.global.serive.url;
+				self=this;
+				
+				uni.request({
+				    url: url+"/user/addUser",
+				    data: {
+				        email:self.email,
+						userName:self.userName,
+						password:self.passData,
+					},
+				    header: {
+						'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
+					},
+					dataType:'json',
+					method:'post',
+				
+				    success: (res) => {
+				        console.log(res.data);
+				       
+				    }
+				});
 				console.log("注册成功")
 				_this.isRotate=true
 				setTimeout(function(){
