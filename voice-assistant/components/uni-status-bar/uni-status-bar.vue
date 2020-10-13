@@ -12,7 +12,10 @@
 			return {
 				statusBarHeight: statusBarHeight
 			}
-		}
+		},
+		onLoad(){
+			console.log(this.statusBarHeight)
+		},
 	}
 </script>
 

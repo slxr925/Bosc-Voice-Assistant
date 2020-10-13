@@ -1,4 +1,13 @@
 <template>
+	<view>
+		<uni-nav-bar status-bar='false' @clickLeft="back('/pages/index/index')" left-icon="back" left-text="返回"  title="注册">
+			<view slot="right" class='info'>
+						   <navigator url="/pages/uni-feedback/uni-feedback" open-type="navigate">
+					  <uni-icons  type="more" size="24" />
+						   </navigator>
+			</view>
+		</uni-nav-bar>
+	
 	<view class="register">
 	
 		<view class="content">
@@ -55,6 +64,7 @@
 				<navigator url="" open-type="navigate">《协议》</navigator>
 			</view>
 		</view>
+	</view>
 	</view>
 </template>
 

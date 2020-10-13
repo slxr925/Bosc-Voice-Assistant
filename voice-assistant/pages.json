@@ -26,7 +26,7 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "个人中心"
+				
 			}
 		},
 		{
@@ -51,6 +51,14 @@
             "style" : {}
         }
 
+        ,{
+            "path" : "pages/car/car",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/jingrong/jingrong",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -5,7 +5,7 @@
 			<view class="info-nickname">{{item.nickName}}</view>
 		</view>
 		<view class="item-info">	
-			<uni-rate :value="item.score" allow-half :is-fill="false" size="18" />
+			<uni-rate :value="item.score" allow-half  size="18" />
 		</view>
 	</view>
 </template>

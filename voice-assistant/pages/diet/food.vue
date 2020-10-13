@@ -16,7 +16,7 @@
 
 <script>
 	import uniSearchBar from '@/components/uni-search-bar/uni-search-bar.vue'
-	import WaterfallsFlow from '../../components/WaterfallsFlow/WaterfallsFlow.vue'
+	import WaterfallsFlow from '@/components/WaterfallsFlow/WaterfallsFlow.vue'
 	
 	export default {
 		components:{
@@ -34,26 +34,26 @@
 					},
 					{
 						image:'/static/diet/2.jpg',
-						score:2,
+						score:'2',
 						nickName:'rFonz'
 					},
 					{
 						image:'/static/diet/3.jpg',
-						score:1.5,
+						score:'1.5',
 						nickName:'rFonz'
 					},
 					{
 						image:'/static/diet/4.jpg',
-						score:2.5,
+						score:'2.5',
 						nickName:'dds'
 					},
 					{
 						image:'/static/diet/5.jpg',
-						score:4,
+						score:'4.5',
 						nickName:'rFonz'
 					},					{
 						image:'/static/diet/6.jpg',
-						score:3.5,
+						score:'4',
 						nickName:'小炒肉'
 					}
 				]
