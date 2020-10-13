@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.service.DailyCalorieService;
 import com.bosc.voiceassistant.aba.service.i.IUserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -13,15 +14,13 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Xu Ran
  * @since 2020/10/12 4:00 下午
  */
+@Api
 @RestController
 @RequestMapping(value = "/dailycalorie")
 public class DailyCalorieController {
@@ -53,7 +52,7 @@ public class DailyCalorieController {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+        //return Result.error();
     }
-
 
 }

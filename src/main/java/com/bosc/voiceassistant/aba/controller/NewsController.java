@@ -2,6 +2,7 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.bosc.voiceassistant.aba.entity.NewsInfo;
 import com.bosc.voiceassistant.aba.service.i.INewsService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @author Xu Ran
  * @since 2020/10/11 5:21 下午
  */
+@Api
 @RestController
 @RequestMapping("/news")
 public class NewsController {

@@ -3,6 +3,7 @@ package com.bosc.voiceassistant.aba.controller;
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
 
 import com.bosc.voiceassistant.aba.service.FoodVoiceAnsService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,6 +18,7 @@ import java.util.List;
  * @author Xu Ran
  * @since 2020/9/17 3:04 下午
  */
+@Api
 @RestController
 @RequestMapping("/food")
 public class FoodController {

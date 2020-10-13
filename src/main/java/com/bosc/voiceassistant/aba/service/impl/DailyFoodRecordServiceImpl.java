@@ -53,12 +53,7 @@ public class DailyFoodRecordServiceImpl implements IDailyFoodRecordService {
 
     @Override
     public Double addCalorieRecord(Double calorie) {
-        StringBuilder sb = new StringBuilder("insert ");
-        EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createNativeQuery(sb.toString(), DailyFoodRecordInfo.class);
-        List<DailyFoodRecordInfo> list = query.getResultList();
-        return list.get(0).getDailyCalorie();
+        return null;
     }
 
     @Override

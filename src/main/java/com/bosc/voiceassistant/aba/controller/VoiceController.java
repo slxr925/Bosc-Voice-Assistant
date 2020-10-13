@@ -3,11 +3,12 @@ package com.bosc.voiceassistant.aba.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.service.FoodVoiceAnsService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.ParseException;
 
+/**
+ * @author Xu Ran
+ * @since 2020/9/2 下午8:14
+ */
+@Api
 @RestController
 @RequestMapping(value = "/voice")
 public class VoiceController {
@@ -24,9 +30,9 @@ public class VoiceController {
     @Autowired
     private FoodVoiceAnsService fvaService;
 
-    @RequestMapping(value = "/voiceResult")
+    @RequestMapping(value = "/voiceResult/{question}")
     @ResponseBody
-    public void voiceResult(@RequestBody String question) {
+    public void voiceResult(@PathVariable(value = "question") String question) {
         try {
             RestTemplate restTemplate = new RestTemplate();
             URI uri = new URI("http://49.235.152.129:8888/search");
