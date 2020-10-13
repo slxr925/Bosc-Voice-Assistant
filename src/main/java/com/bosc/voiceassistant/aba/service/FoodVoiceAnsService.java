@@ -25,7 +25,7 @@ public class FoodVoiceAnsService {
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;
 
     //菜品问题返回结果
-    public String getResult(JSONObject jsonObject) throws ParseException {
+    public String getFoodVoiceResult(JSONObject jsonObject) throws ParseException {
         StringBuilder sb = new StringBuilder();
         String startDate = jsonObject.get("start_date").toString();
         String endDate = jsonObject.get("end_date").toString();

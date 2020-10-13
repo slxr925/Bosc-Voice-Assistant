@@ -62,4 +62,29 @@ public class UserServiceImpl implements IUserService {
     public List<UserInfo> getAllUsers() {
         return userDao.findAll();
     }
+
+    @Override
+    public UserInfo getUserByAge(Integer age) {
+        return userDao.findByAge(age);
+    }
+
+    @Override
+    public UserInfo getUserByHeight(Double height) {
+        return userDao.findByHeight(height);
+    }
+
+    @Override
+    public UserInfo getUserByWeight(Double weight) {
+        return userDao.findByWeight(weight);
+    }
+
+    @Override
+    public UserInfo getUserBySex(Integer sex) {
+        return userDao.findBySex(sex);
+    }
+
+    @Override
+    public List<UserInfo> getUserListBySex(Integer sex) {
+        return userDao.findAllBySex(sex);
+    }
 }

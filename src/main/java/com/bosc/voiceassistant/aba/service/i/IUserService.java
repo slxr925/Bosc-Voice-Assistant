@@ -62,4 +62,14 @@ public interface IUserService {
      * @return
      */
     List<UserInfo> getAllUsers();
+
+    UserInfo getUserByAge(Integer age);
+
+    UserInfo getUserByHeight(Double height);
+
+    UserInfo getUserByWeight(Double weight);
+
+    UserInfo getUserBySex(Integer sex);
+
+    List<UserInfo> getUserListBySex(Integer sex);
 }

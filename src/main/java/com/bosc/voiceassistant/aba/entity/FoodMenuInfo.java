@@ -44,4 +44,5 @@ public class FoodMenuInfo {
 
     @Column(nullable = false)
     private Double calorie;
+
 }

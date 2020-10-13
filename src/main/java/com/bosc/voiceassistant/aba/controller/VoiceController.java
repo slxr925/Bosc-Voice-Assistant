@@ -18,15 +18,15 @@ import java.net.URISyntaxException;
 import java.text.ParseException;
 
 @RestController
-@RequestMapping(value = "send")
-public class ApiController {
+@RequestMapping(value = "/voice")
+public class VoiceController {
 
     @Autowired
     private FoodVoiceAnsService fvaService;
 
-    @RequestMapping(value = "/send")
+    @RequestMapping(value = "/voiceResult")
     @ResponseBody
-    public void send(@RequestBody String question) {
+    public void voiceResult(@RequestBody String question) {
         try {
             RestTemplate restTemplate = new RestTemplate();
             URI uri = new URI("http://49.235.152.129:8888/search");
@@ -48,12 +48,12 @@ public class ApiController {
             //首先解析问题类型
             if (jsonObject.get("intent").equals("qa_dining")) {
                 //食堂问题
-                String str = fvaService.getResult(jsonObject);
+                String str = fvaService.getFoodVoiceResult(jsonObject);
             } else if (jsonObject.get("intent").equals("qa_bus")) {
                 //班车问题
 
-            } else if (jsonObject.get("intent").equals("qa_")) {
-                //报修问题
+            } else {
+                //识别不出来的
 
             }
         } catch (URISyntaxException | ParseException e) {
