@@ -31,7 +31,6 @@ public class VoiceController {
     private FoodVoiceAnsService fvaService;
 
     @RequestMapping(value = "/voiceResult/{question}")
-    @ResponseBody
     public void voiceResult(@PathVariable(value = "question") String question) {
         try {
             RestTemplate restTemplate = new RestTemplate();

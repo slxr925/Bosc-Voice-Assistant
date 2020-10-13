@@ -32,7 +32,6 @@ public class DailyCalorieController {
     private IUserService userService;
 
     @RequestMapping(value = "/recommand/{userId}", method = RequestMethod.GET)
-    @ResponseBody
     public void recommandResult(@PathVariable(value = "userId") Integer userId) {
         try {
             RestTemplate restTemplate = new RestTemplate();

@@ -27,7 +27,6 @@ public class FoodController {
     private FoodVoiceAnsService fvaService;
 
     @RequestMapping(value = "/getFoodPriceResult")
-    @ResponseBody
     public String getFoodPriceResult() {
         StringBuilder sb = new StringBuilder();
         List<FoodMenuInfo> list = fvaService.getFoodPriceResult("绿豆汤", "None");
@@ -40,7 +39,6 @@ public class FoodController {
     }
 
     @RequestMapping(value = "/getFoodTimeResult")
-    @ResponseBody
     public String getFoodTimeResult() throws ParseException {
         StringBuilder sb = new StringBuilder();
         List<FoodMenuInfo> list = fvaService.getFoodTimeResult("面条");
@@ -60,7 +58,6 @@ public class FoodController {
     }
 
 //    @RequestMapping(value = "/getFoodTrueFalseResult")
-//    @ResponseBody
 //    public String getFoodTFResult() throws ParseException {
 //        Date resultDate = foodResultService.stringToDate("2020-09-17");
 //        List<FoodMenuInfo> list3 = foodResultService.getFoodTrueFalseResult(resultDate, resultDate, "", "brunch",
@@ -76,7 +73,6 @@ public class FoodController {
 //    }
 
     @RequestMapping(value = "/getFoodMenuResult")
-    @ResponseBody
     public String getFoodMenuResult() throws ParseException {
         Date resultDate = fvaService.stringToDate("2020-09-18");
         List<FoodMenuInfo> list1 = fvaService.getFoodMenuResult(resultDate, resultDate, "午餐", "None");
