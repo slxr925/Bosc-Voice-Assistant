@@ -1,4 +1,5 @@
 <template>
+	<view class="all">
 	<view>		
 	    <uni-nav-bar status-bar='false' @clickLeft="back('/pages/index/index')" left-icon="back" left-text="返回"  title="饮食">
 			<view slot="right" class='info'>
@@ -7,7 +8,7 @@
 						   </navigator>
 			</view>
 		</uni-nav-bar>
-	<view class="all">
+	
     <view class="page" style="width: 95%; margin-left: auto;margin-right: auto;">
 	    <view class='infos'>
 			<vrow class="row" >
@@ -283,14 +284,18 @@ page{
 }
 .cont{
 	margin: 20rpx;
+	
 }
 .page{
-   
+	margin-top: 10px;
+    border-radius: 10rpx;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     height: 100%;
 }
 .infos{
 	margin: 5rpx;
-	border: 2rpx solid #D9D9D9;
+	
 	border-radius: 20rpx;
 }
 .row{     
@@ -345,12 +350,16 @@ page{
 	margin:20upx;
 	border :2rpx solid #D9D9D9;
 	border-radius: 20upx;
+	border-radius: 10rpx;
+	background-color: #FFFFFF;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .contents{
 	text-align: left;
 	text-indent:2em;
     padding: 20upx;
 	color: #666666;
+	
 }
 	.wf-item-page{
 		background: #fff;
@@ -392,6 +401,8 @@ page{
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 	}
 	.all{
-		
+		background-color: #E5E5E5;
+		margin-bottom: 500px;
+		height: 100%;
 	}
 </style>

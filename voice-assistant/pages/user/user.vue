@@ -60,6 +60,7 @@
 						<image class="cell-icon" :src="item.icon" mode="aspectFill"></image>
 						<view class="cell-text">{{ item.title }}</view>
 					</view>
+					<view class="uservalue2">{{item.value}}</view>
 					<view class="iconfont iconmore1"></view>
 				</view>
 			</view>
@@ -116,13 +117,14 @@ export default {
 				{
 					title: '饮食目标',
 					icon: '/static/images/user/饮食目标.png',
-					path: 'kefu'
+					path: 'kefu',
+					value: '增重'
 				},
 				{
 					title: '饮食偏好',
 					icon: '/static/images/user/饮食偏好.png',
 					path: 'help',
-					value: '增重'
+					value: '甜'
 				},
 				{
 					title: '手机',
@@ -257,7 +259,11 @@ page {
 		}
 	}
 	.uservalue{
-		margin-left: 240px;
+		margin-left: 220px;
+		color: #007AFF;
+	}
+	.uservalue2{
+		margin-left: 180px;
 		color: #007AFF;
 	}
 }

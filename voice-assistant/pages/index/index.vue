@@ -192,7 +192,7 @@
 	@import "/static/css/index-chat.css";
 	.mainContent{
 		background-color: #E5E5E5;
-		padding-bottom: 130rpx;
+		padding-bottom: 170rpx;
 	}
 	.content {
 		display: flex;
