@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -18,7 +17,7 @@ import java.util.*;
 public class DailyFoodService {
 
     @Autowired
-    private IFoodMenuService foodMenuService;
+    private static IFoodMenuService foodMenuService;
 
     public List<MultiValueMap<String, String>> getFoodRes() {
         List<FoodMenuInfo> foodList = new ArrayList<>();
@@ -35,15 +34,19 @@ public class DailyFoodService {
                 foodList.addAll(foodMenuService.getFoodListByDate(getDateplus(1)));
                 foodList.addAll(foodMenuService.getFoodListByDate(getDateplus(2)));
                 foodList.addAll(foodMenuService.getFoodListByDate(getDateplus(3)));
+                break;
             case "星期三":
                 foodList.addAll(foodMenuService.getFoodListByDate(new Date()));
                 foodList.addAll(foodMenuService.getFoodListByDate(getDateplus(1)));
                 foodList.addAll(foodMenuService.getFoodListByDate(getDateplus(2)));
+                break;
             case "星期四":
                 foodList.addAll(foodMenuService.getFoodListByDate(new Date()));
                 foodList.addAll(foodMenuService.getFoodListByDate(getDateplus(1)));
+                break;
             case "星期五":
                 foodList.addAll(foodMenuService.getFoodListByDate(new Date()));
+                break;
         }
         List<MultiValueMap<String, String>> list = new LinkedList<>();
         for (FoodMenuInfo fmi : foodList) {
@@ -76,4 +79,5 @@ public class DailyFoodService {
             w = 0;
         return weekDays[w];
     }
+
 }

@@ -1,101 +1,51 @@
 package com.bosc.voiceassistant.aba.entity;
 
-/**
- * @description:封装json对象，所有返回结果都使用它
- **/
+import lombok.Data;
+
+@Data
 public class Result<T> {
 
-    private int code;// 业务自定义状态码
+    private T data;
+    private String code;
+    private String msg;
 
-    private String msg;// 请求状态描述，调试用
-
-    private T data;// 请求数据，对象或数组均可
-
+    /**
+     * 若没有数据返回，默认状态码为 0，提示信息为“操作成功！”
+     */
     public Result() {
+        this.code = "0";
+        this.msg = "操作成功！";
     }
 
     /**
-     * 成功时候的调用
-     *
-     * @param data data
-     * @param <T>  t
-     * @return Result
+     * 若没有数据返回，可以人为指定状态码和提示信息
+     * @param code
+     * @param msg
      */
-    public static <T> Result<T> success(T data) {
-        return new Result<T>(data);
+    public Result(String code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
     /**
-     * 失败时候的调用
-     *
-     * @param codeMsg codeMsg
-     * @param <T>     t
-     * @return Result
-     */
-    public static <T> Result<T> error(CodeMsg codeMsg) {
-        return new Result<T>(codeMsg);
-    }
-
-    /**
-     * 成功的构造函数
-     *
-     * @param data data
+     * 有数据返回时，状态码为 0，默认提示信息为“操作成功！”
+     * @param data
      */
     public Result(T data) {
-        this.code = 200;//默认200是成功
-        this.msg = "SUCCESS";
         this.data = data;
-    }
-
-    public Result(int code, String msg) {
-        this.code = code;
-        this.msg = msg;
+        this.code = "0";
+        this.msg = "操作成功！";
     }
 
     /**
-     * 失败的构造函数
-     *
-     * @param codeMsg codeMsg
+     * 有数据返回，状态码为 0，人为指定提示信息
+     * @param data
+     * @param msg
      */
-    private Result(CodeMsg codeMsg) {
-        if (codeMsg != null) {
-            this.code = codeMsg.getCode();
-            this.msg = codeMsg.getMsg();
-        }
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
+    public Result(T data, String msg) {
+        this.data = data;
+        this.code = "0";
         this.msg = msg;
     }
 
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    @Override
-    public String toString() {
-        return "Result{" +
-                "code=" + code +
-                ", msg='" + msg + '\'' +
-                ", data=" + data +
-                '}';
-    }
 }
-
-

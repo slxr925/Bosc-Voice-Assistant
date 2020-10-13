@@ -35,7 +35,7 @@ public class DailyFoodController {
     public void recommandResult(@PathVariable(value = "userId") Integer userId) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            URI uri = new URI("http://49.235.152.129:8888/search");
+            URI uri = new URI("http://192.168.43.83:8081/foodrecom");
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             MultiValueMap<String, Object> map = new LinkedMultiValueMap<>();
@@ -47,7 +47,6 @@ public class DailyFoodController {
             JSONObject tempJson = JSON.parseObject(exchange.getBody());
             Object obj = tempJson.get("obj");
             JSONObject jsonObject = JSON.parseObject(obj.toString());
-
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }

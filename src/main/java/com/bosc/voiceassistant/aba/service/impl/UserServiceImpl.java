@@ -47,9 +47,18 @@ public class UserServiceImpl implements IUserService {
     public UserInfo updateUser(UserInfo userInfo) {
         UserInfo existUser = getUserByUserName(userInfo.getUserName());
         if (existUser != null) {
-            return null;
+            existUser.setUserName(userInfo.getUserName());
+            existUser.setPassword(userInfo.getPassword());
+            existUser.setAge(userInfo.getAge());
+            existUser.setEmail(userInfo.getEmail());
+            existUser.setTargetWeight(userInfo.getTargetWeight());
+            existUser.setHeight(userInfo.getHeight());
+            existUser.setPhase(userInfo.getPhase());
+            existUser.setWeight(userInfo.getWeight());
+            return existUser;
+        } else {
+            return userDao.save(userInfo);
         }
-        return userDao.save(userInfo);
     }
 
     @Override

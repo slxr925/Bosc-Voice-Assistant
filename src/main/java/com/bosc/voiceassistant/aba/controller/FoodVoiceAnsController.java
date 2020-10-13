@@ -38,24 +38,24 @@ public class FoodVoiceAnsController {
         return sb.toString();
     }
 
-    @RequestMapping(value = "/getFoodTimeResult")
-    public String getFoodTimeResult() throws ParseException {
-        StringBuilder sb = new StringBuilder();
-        List<FoodMenuInfo> list = fvaService.getFoodTimeResult("面条");
-        List<Date> dateList = new ArrayList<>();
-        for (FoodMenuInfo food : list) {
-            dateList.add(food.getDate());
-        }
-        dateList.sort(Date::compareTo);
-        long msec = System.currentTimeMillis();
-        for (Date date : dateList) {
-            if (date.after(fvaService.convertToDate())) {
-                sb.append(date.toString());
-                break;
-            }
-        }
-        return sb.toString();
-    }
+//    @RequestMapping(value = "/getFoodTimeResult")
+//    public String getFoodTimeResult() throws ParseException {
+//        StringBuilder sb = new StringBuilder();
+//        List<FoodMenuInfo> list = fvaService.getFoodTimeResult("面条");
+//        List<Date> dateList = new ArrayList<>();
+//        for (FoodMenuInfo food : list) {
+//            dateList.add(food.getDate());
+//        }
+//        dateList.sort(Date::compareTo);
+//        long msec = System.currentTimeMillis();
+//        for (Date date : dateList) {
+//            if (date.after(fvaService.convertToDate())) {
+//                sb.append(date.toString());
+//                break;
+//            }
+//        }
+//        return sb.toString();
+//    }
 
 //    @RequestMapping(value = "/getFoodTrueFalseResult")
 //    public String getFoodTFResult() throws ParseException {

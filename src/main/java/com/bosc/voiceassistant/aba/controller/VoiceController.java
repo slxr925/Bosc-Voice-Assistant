@@ -2,6 +2,7 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.bosc.voiceassistant.aba.entity.Result;
 import com.bosc.voiceassistant.aba.service.FoodVoiceAnsService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,15 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.ParseException;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * @author Xu Ran
@@ -31,7 +34,7 @@ public class VoiceController {
     private FoodVoiceAnsService fvaService;
 
     @RequestMapping(value = "/voiceResult/{question}")
-    public void voiceResult(@PathVariable(value = "question") String question) {
+    public Result<Map> voiceResult(@PathVariable(value = "question") String question) {
         try {
             RestTemplate restTemplate = new RestTemplate();
             URI uri = new URI("http://49.235.152.129:8888/search");
@@ -54,16 +57,27 @@ public class VoiceController {
             if (jsonObject.get("intent").equals("qa_dining")) {
                 //食堂问题
                 String str = fvaService.getFoodVoiceResult(jsonObject);
+                Map<String, String> resFoodMap = new LinkedHashMap<>();
+                resFoodMap.put("text", str);
+                resFoodMap.put("url", "");
+                return new Result<>(resFoodMap);
             } else if (jsonObject.get("intent").equals("qa_bus")) {
                 //班车问题
-
+                Map<String, String> resBusMap = new LinkedHashMap<>();
+                resBusMap.put("text", "班车时刻表");
+                resBusMap.put("url", "/pages/car/car");
+                return new Result<>(resBusMap);
             } else {
                 //识别不出来的
-
+                Map<String, String> errorMap = new LinkedHashMap<>();
+                errorMap.put("text", "我好像听不懂您说的话～反馈链接：pages/uni-feedback/uni-feedback");
+                errorMap.put("url", "");
+                return new Result<>(errorMap);
             }
         } catch (URISyntaxException | ParseException e) {
             e.printStackTrace();
         }
+        return new Result<>("500", "语音解析失败！");
     }
 }
 

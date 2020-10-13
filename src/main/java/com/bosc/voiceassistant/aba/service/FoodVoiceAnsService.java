@@ -2,6 +2,7 @@ package com.bosc.voiceassistant.aba.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
+import com.bosc.voiceassistant.aba.entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Service;
@@ -48,7 +49,7 @@ public class FoodVoiceAnsService {
                     sb.append(list1.get(0));
                 }
             } else {
-                return null;
+                return "";
             }
         } else if (jsonObject.get("type").equals(Integer.parseInt("2"))) {
             //价格类问题
@@ -84,7 +85,6 @@ public class FoodVoiceAnsService {
                 }
             }
         }
-
         return sb.toString();
     }
 
