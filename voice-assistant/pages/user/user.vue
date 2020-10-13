@@ -5,7 +5,6 @@
 	<view class="user">
 		<!-- 头部 --> 
 		<view class="user-wrap">
-			<view class="setting iconfont icon31shezhi"></view>
 			<view class="info">
 				<image class="avatar" mode="aspectFill" :src="userInfo.headPicUrl"></image>
 				<view class="nickname">{{ userInfo.nickName }}</view>
@@ -47,6 +46,7 @@
 						<image class="cell-icon" :src="item.icon" mode="aspectFill"></image>
 						<view class="cell-text">{{ item.title }}</view>
 					</view>
+					<view class="uservalue">{{item.value}}</view>
 					<view class="iconfont iconmore1"></view>
 				</view>
 			</view>
@@ -78,55 +78,63 @@ export default {
 		return {
 			userInfo: {
 				headPicUrl: '/static/images/user/avatar.jpg',
-				nickName: '史蒂芬.林'
+				nickName: '上行小美'
 			},
 			userList: [
 				{
 					title: '昵称',
-					icon: '/static/images/user/icon-address.png',
-					path: 'address-list'
+					icon: '/static/images/user/昵称.png',
+					path: 'address-list',
+					value: '上行小美'
 				},
 				{
 					title: '性别',
-					icon: '/static/images/user/icon-collect.png',
-					path: 'collect-list'
+					icon: '/static/images/user/性别.png',
+					path: 'collect-list',
+					value: '女'
 				},
 				{
 					title: '年龄',
-					icon: '/static/images/user/icon-foot.png',
-					path: 'browse-list'
+					icon: '/static/images/user/年龄.png',
+					path: 'browse-list',
+					value: '18'
 				},
 								{
 					title: '身高',
-					icon: '/static/images/user/icon-address.png',
-					path: 'address-list'
+					icon: '/static/images/user/身高.png',
+					path: 'address-list',
+					value: '175 cm'
 				},
 				{
 					title: '体重',
-					icon: '/static/images/user/icon-collect.png',
-					path: 'collect-list'
+					icon: '/static/images/user/体重.png',
+					path: 'collect-list',
+					value: '50 kg'
 				},
 			],
 			serverList: [
 				{
 					title: '饮食目标',
-					icon: '/static/images/user/icon-kefu.png',
+					icon: '/static/images/user/饮食目标.png',
 					path: 'kefu'
 				},
 				{
 					title: '饮食偏好',
-					icon: '/static/images/user/icon-help.png',
-					path: 'help'
+					icon: '/static/images/user/饮食偏好.png',
+					path: 'help',
+					value: '增重'
 				},
 				{
 					title: '手机',
-					icon: '/static/images/user/icon-about.png',
-					text: '1.0.0'
+					icon: '/static/images/user/手机.png',
+					text: '1.0.0',
+					value: '13066666666'
 				},
 				{
 					title: '邮箱',
-					icon: '/static/images/user/icon-kefu.png',
-					path: 'kefu'
+					icon: '/static/images/user/邮箱.png',
+					path: 'kefu',
+					value: 'shxm@bosc.cn'
 				}
 			]
 		};
@@ -150,7 +158,7 @@ page {
 		padding: 5rpx;
 		z-index: 9;
 		border-radius: 0 0 20% 20%;
-		background: url('https://handsel.oss-cn-shenzhen.aliyuncs.com/1588938371592.jpg') no-repeat;
+		background: url('/static/images/user/userback.png') no-repeat;
 		background-size: cover;
 		.setting {
 			color: #fff;
@@ -247,6 +255,10 @@ page {
 			font-size: 40rpx;
 			color: #999;
 		}
+	}
+	.uservalue{
+		margin-left: 240px;
+		color: #007AFF;
 	}
 }
 </style>

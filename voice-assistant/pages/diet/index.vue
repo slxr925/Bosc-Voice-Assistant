@@ -8,29 +8,29 @@
 			</view>
 		</uni-nav-bar>
 	<view class="all">
-    <view class="page" >
+    <view class="page" style="width: 95%; margin-left: auto;margin-right: auto;">
 	    <view class='infos'>
 			<vrow class="row" >
-				<vcol span="50"><view class="col title">基本信息</view></vcol>
+				<vcol span="46"><view class="col title">基本信息</view></vcol>
 				<vcol span="30" ></vcol>
 				<vcol span="15" >
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col">返回</view></vcol>
+							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
 				</vcol>
 			</vrow>
 			<vrow class="row" >
-				<vcol span="24"><view class="col">阶段</view></vcol>
-				<vcol span="24"><view class="col">目标体重</view></vcol>
-				<vcol span="24"><view class="col">现在体重</view></vcol>
-				<vcol span="24"><view class="col">BMI</view></vcol>
+				<vcol span="23"><view class="col">阶段</view></vcol>
+				<vcol span="23"><view class="col">目标体重</view></vcol>
+				<vcol span="23"><view class="col">现在体重</view></vcol>
+				<vcol span="23"><view class="col">BMI</view></vcol>
 			</vrow>
 			<vrow class="row" >
-				<vcol span="24"><view class="col">减重</view></vcol>
-				<vcol span="24"><view class="col">70kg</view></vcol>
-				<vcol span="24"><view class="col">74kg</view></vcol>
-				<vcol span="24"><view class="col">26.1</view></vcol>
+				<vcol span="23"><view class="col">减重</view></vcol>
+				<vcol span="23"><view class="col">70kg</view></vcol>
+				<vcol span="23"><view class="col">74kg</view></vcol>
+				<vcol span="23"><view class="col">26.1</view></vcol>
 			</vrow>
 		</view>
     </view>
@@ -42,11 +42,11 @@
         <view class='tabs' style="margin-top: 0upx;color:#999999;font-size: 24upx;height: 250upx;">
             <view v-show="current === 0" >
                 <vrow  style="border: none;">
-                	<vcol span="47">
+                	<vcol span="44">
 						<view class="col">今天吃了<text class='cal'>{{cal1}}</text>卡路里</view>
 						<view class="col">还能再吃<text class='cal'>{{cal2}}</text>卡路里</view>
 					</vcol>
-                	<vcol span="47">
+                	<vcol span="44">
 						<view class="col">
 							<view class='text'>拍照识别卡路里</view>
 							<view class='camera' @click="openCamera">
@@ -65,21 +65,21 @@
 				        
 				</vrow>
                <vrow class="row" >
-               	<vcol span="31"><view class="col">肉饼蒸蛋</view></vcol>
-               	<vcol span="32"><view class="col">藤椒仔鸡</view></vcol>
-               	<vcol span="31"><view class="col">干煎板鱼</view></vcol>
+               	<vcol span="29"><view class="col">肉饼蒸蛋</view></vcol>
+               	<vcol span="30"><view class="col">藤椒仔鸡</view></vcol>
+               	<vcol span="29"><view class="col">干煎板鱼</view></vcol>
         
                </vrow>
                <vrow class="row" >
-               	<vcol span="31"><view class="col">元宝大头虾</view></vcol>
-               	<vcol span="32"><view class="col">夜开花炒面筋</view></vcol>
-               	<vcol span="31"><view class="col">粟米炒鸡粒</view></vcol>
+               	<vcol span="29"><view class="col">元宝大头虾</view></vcol>
+               	<vcol span="30"><view class="col">夜开花炒面筋</view></vcol>
+               	<vcol span="29"><view class="col">粟米炒鸡粒</view></vcol>
         
                </vrow>
 			   <vrow class="row" >
-			   	<vcol span="31"><view class="col">白菜梗炒素肠</view></vcol>
-			   	<vcol span="32"><view class="col">老黄瓜烧开洋</view></vcol>
-			   	<vcol span="31"><view class="col">咸菜百叶肉丝</view></vcol>
+			   	<vcol span="29"><view class="col">白菜梗炒素肠</view></vcol>
+			   	<vcol span="30"><view class="col">老黄瓜烧开洋</view></vcol>
+			   	<vcol span="29"><view class="col">咸菜百叶肉丝</view></vcol>
 			           
 			   </vrow>
             </view>
@@ -97,7 +97,7 @@
 				<vcol span="25" ></vcol>
 				<vcol span="15" >
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col">更多</view></vcol>
+							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
 				</vcol>
@@ -119,12 +119,12 @@
 		</view>
 		<view class='card'>
 			<vrow class="row" >
-				<vcol span="60"><view class="col title">食堂热门菜品推荐</view></vcol>
+				<vcol span="60"><view class="col title" >食堂热门菜品推荐</view></vcol>
 				<vcol span="15" ></vcol>
 				<vcol span="15" >
 					<navigator url="/pages/diet/food" open-type="navigate">
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col">更多</view></vcol>
+							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
 						</navigator>
@@ -315,7 +315,7 @@ page{
 		color: #333;
 	}
 	.content{
-		
+		width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 20rpx;

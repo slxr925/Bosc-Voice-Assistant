@@ -149,11 +149,12 @@
 				   // 分类菜单
 				   categoryList: [
 				   	{ id: 1, name: '饮食健康', img: '/static/images/index/饮食.png',url:'/pages/diet/index'},
-				   	{ id: 2, name: '班车时刻', img: '/static/images/index/班车.png', url:'/pages/car/car'},
+				   	{ id: 2, name: '班车时刻', img: '/static/images/index/班车.png' },
 				   	{ id: 3, name: '设备报修', img: '/static/images/index/报修.png' },
-				   	{ id: 4, name: '今日要闻', img: '/static/images/index/新闻.png',url:'/pages/new/index'},
-				   	{ id: 5, name: '金融知识', img: '/static/images/index/知识.png',url:'/pages/jingrong/jingrong'},
+				   	{ id: 4, name: '今日要闻', img: '/static/images/index/新闻.png',url:'/pages/new/index'  },
+				   	{ id: 5, name: '金融知识', img: '/static/images/index/知识.png' },
 				   	{ id: 6, name: '等多服务', img: '/static/images/index/更多.png' },
+
 				   ],
 			}
 		},
@@ -274,7 +275,7 @@
 		border-right: #C0C0C0 dashed 1rpx;
 	}
 	.answerRight{
-		margin-left: 105rpx;
+		margin-left: 115rpx;
 	}
 	.hrcss{
 		width: 98%;
