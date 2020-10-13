@@ -59,6 +59,10 @@
             "path" : "pages/jingrong/jingrong",
             "style" : {}
         }
+        ,{
+            "path" : "pages/diet/recom",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
