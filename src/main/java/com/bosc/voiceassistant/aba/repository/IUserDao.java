@@ -87,4 +87,10 @@ public interface IUserDao extends JpaRepository<UserInfo, Integer> {
     @Modifying
     @Query("update user set weight = :weight where userId = :userId")
     void updateWeightByUserId(@Param("weight") Double weight, @Param("userId") Integer userId);
+
+    @Modifying
+    @Query("update user set targetWeight = :targetWeight where userId = :userId")
+    void updateTargetByUserId(@Param("targetWeight") Double targetWeight, @Param("userId") Integer userId);
+
+
 }

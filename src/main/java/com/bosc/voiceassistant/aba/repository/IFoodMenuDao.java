@@ -40,8 +40,8 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaS
      * @param foodName
      * @return
      */
-    @Query(value = "select * from foodmenu where foodmenu.foodName = ?1", nativeQuery = true)
-    List<FoodMenuInfo> findListByFoodName(String foodName);
+    //@Query(value = "select * from foodmenu where foodmenu.food_name = ?1", nativeQuery = true)
+    List<FoodMenuInfo> findAllByFoodName(String foodName);
 
     /**
      * 通过是否为早午餐找菜
@@ -57,8 +57,7 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaS
      * @param brunch
      * @return
      */
-    @Query(value = "select * from foodmenu where foodmenu.brunch = ?1", nativeQuery = true)
-    List<FoodMenuInfo> findListByBrunch(String brunch);
+    List<FoodMenuInfo> findAllByBrunch(String brunch);
 
     /**
      * 通过日期找菜
@@ -74,8 +73,7 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaS
      * @param date
      * @return
      */
-    @Query(value = "select * from foodmenu where foodmenu.date = ?1", nativeQuery = true)
-    List<FoodMenuInfo> findListByDate(Date date);
+    List<FoodMenuInfo> findAllByDate(Date date);
 
     /**
      * 通过菜类型找菜
@@ -91,8 +89,7 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaS
      * @param category
      * @return
      */
-    @Query(value = "select * from foodmenu where category = ?1", nativeQuery = true)
-    List<FoodMenuInfo> findListByCategory(String category);
+    List<FoodMenuInfo> findAllByCategory(String category);
 
     /**
      * 通过价格找菜
@@ -108,8 +105,8 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaS
      * @param foodPrice
      * @return
      */
-    @Query(value = "select * from foodmenu where food_price = ?1", nativeQuery = true)
-    List<FoodMenuInfo> findListByFoodPrice(Double foodPrice);
+
+    List<FoodMenuInfo> findAllByFoodPrice(Double foodPrice);
 
     /**
      * 找所有的菜

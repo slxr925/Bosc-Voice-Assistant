@@ -55,7 +55,6 @@ public class UserController {
     }
 
     @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
-    @ResponseBody
     public List<UserInfo> getAllUsers() {
         return userService.getAllUsers();
     }

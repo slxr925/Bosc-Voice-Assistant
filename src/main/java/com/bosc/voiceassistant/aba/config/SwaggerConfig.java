@@ -38,9 +38,9 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 // 标题
-                .title("Spring Boot集成Swagger2")
+                .title("上行智能助理")
                 // 接口描述
-                .description("swagger")
+                .description("阿巴阿巴阿巴阿巴")
                 // 联系方式
                 .contact("xuran@bosc.cn")
                 // 版本信息

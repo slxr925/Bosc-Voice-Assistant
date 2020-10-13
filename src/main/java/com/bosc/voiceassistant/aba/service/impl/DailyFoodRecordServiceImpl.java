@@ -52,12 +52,13 @@ public class DailyFoodRecordServiceImpl implements IDailyFoodRecordService {
     }
 
     @Override
-    public Double addCalorieRecord(Double calorie) {
-        return null;
+    public DailyFoodRecordInfo addRecord(DailyFoodRecordInfo dailyFoodRecordInfo) {
+        return dfrDao.save(dailyFoodRecordInfo);
     }
 
     @Override
-    public Double deleteCalorie(Double calorie) {
-        return null;
+    public void deleteRecord(DailyFoodRecordInfo dailyFoodRecordInfo) {
+        dfrDao.delete(dailyFoodRecordInfo);
     }
+
 }

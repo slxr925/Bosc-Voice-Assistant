@@ -31,7 +31,7 @@ public class FoodMenuServiceImpl implements IFoodMenuService {
 
     @Override
     public List<FoodMenuInfo> getFoodListByFoodName(String foodName) {
-        return foodMenuDao.findListByFoodName(foodName);
+        return foodMenuDao.findAllByFoodName(foodName);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class FoodMenuServiceImpl implements IFoodMenuService {
 
     @Override
     public List<FoodMenuInfo> getFoodListByBrunch(String brunch) {
-        return foodMenuDao.findListByBrunch(brunch);
+        return foodMenuDao.findAllByBrunch(brunch);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class FoodMenuServiceImpl implements IFoodMenuService {
 
     @Override
     public List<FoodMenuInfo> getFoodListByDate(Date date) {
-        return foodMenuDao.findListByDate(date);
+        return foodMenuDao.findAllByDate(date);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class FoodMenuServiceImpl implements IFoodMenuService {
 
     @Override
     public List<FoodMenuInfo> getFoodListByFoodPrice(Double foodPrice) {
-        return foodMenuDao.findListByFoodPrice(foodPrice);
+        return foodMenuDao.findAllByFoodPrice(foodPrice);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class FoodMenuServiceImpl implements IFoodMenuService {
 
     @Override
     public List<FoodMenuInfo> getFoodListByCategory(String category) {
-        return foodMenuDao.findListByCategory(category);
+        return foodMenuDao.findAllByCategory(category);
     }
 
     @Override

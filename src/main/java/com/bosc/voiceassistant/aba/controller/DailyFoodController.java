@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Api
 @RestController
-@RequestMapping(value = "/dailycalorie")
+@RequestMapping(value = "/dailyfood")
 public class DailyFoodController {
 
     @Autowired

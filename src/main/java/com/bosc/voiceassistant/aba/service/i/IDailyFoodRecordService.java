@@ -47,8 +47,8 @@ public interface IDailyFoodRecordService {
      */
     DailyFoodRecordInfo getRecordByCalorie(Double calorie);
 
-    Double addCalorieRecord(Double calorie);
+    DailyFoodRecordInfo addRecord(DailyFoodRecordInfo dailyFoodRecordInfo);
 
-    Double deleteCalorie(Double calorie);
+    void deleteRecord(DailyFoodRecordInfo dailyFoodRecordInfo);
 
 }
