@@ -2,6 +2,7 @@ package com.bosc.voiceassistant.aba.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.bosc.voiceassistant.aba.entity.Result;
 import com.bosc.voiceassistant.aba.service.DailyFoodService;
 import com.bosc.voiceassistant.aba.service.i.IUserService;
 import io.swagger.annotations.Api;
@@ -33,7 +34,7 @@ public class DailyFoodController {
     private IUserService userService;
 
     @RequestMapping(value = "/recommand/{userId}", method = RequestMethod.GET)
-    public void recommandResult(@PathVariable(value = "userId") Integer userId) {
+    public Result<Object> recommandResult(@PathVariable(value = "userId") Integer userId) {
         try {
             RestTemplate restTemplate = new RestTemplate();
             URI uri = new URI("http://192.168.43.83:8081/foodrecom");
@@ -51,7 +52,7 @@ public class DailyFoodController {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        //return Result.error();
+        return new Result<>("500", "推荐解析失败！");
     }
 
 }

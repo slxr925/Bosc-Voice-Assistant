@@ -11,6 +11,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -33,7 +34,7 @@ public class VoiceController {
     @Autowired
     private FoodVoiceAnsService fvaService;
 
-    @RequestMapping(value = "/voiceResult/{question}")
+    @RequestMapping(value = "/voiceResult/{question}", method = RequestMethod.GET)
     public Result<Map> voiceResult(@PathVariable(value = "question") String question) {
         try {
             RestTemplate restTemplate = new RestTemplate();
@@ -43,7 +44,6 @@ public class VoiceController {
             headers.setContentType(MediaType.APPLICATION_JSON);
             //添加参数,因为HttpEntity里面的参数是MultiValueMap类型的，所以使用这个map集合
             MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
-            //System.out.println(question);
             map.add("question", question);
             //添加请求的实体类，第一个参数是要发送的参数，第二个参数是请求头里的数据
             HttpEntity<Object> requestEntity = new HttpEntity<>(map, headers);
