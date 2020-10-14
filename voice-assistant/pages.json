@@ -61,6 +61,10 @@
             "path" : "pages/diet/recom",
             "style" : {}
         }
+        ,{
+            "path" : "pages/diet/dietlog",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

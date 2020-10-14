@@ -235,7 +235,8 @@ export default {
 								   self.cal1+=parseInt(food.calorie);
 								   uni.showToast({
 								       title: '您吃了'+food.name+",\n卡路里为:"+food.calorie+'大卡',
-								       duration: 2000
+								       duration: 2000,
+									   icon:'none'
 								   });
 							   }else{
 								   

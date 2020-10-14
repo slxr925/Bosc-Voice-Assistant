@@ -10,7 +10,8 @@
 		globalData: {  
             login: false,
 			serive:{
-				url:'http://192.168.43.198:8081'
+				//url:'http://192.168.43.198:8081'
+				url:'http://49.235.152.129:18081'
 			},
 
         },  
