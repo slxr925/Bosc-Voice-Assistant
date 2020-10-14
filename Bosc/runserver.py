@@ -5,4 +5,4 @@ from web import app
 #
 # server = pywsgi.WSGIServer(('0.0.0.0', 8080), app)
 # server.serve_forever()
-app.run(host="0.0.0.0", debug=True, port=8080)
+app.run(host="0.0.0.0", debug=True, port=8081)
