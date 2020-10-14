@@ -404,7 +404,7 @@ page {
 
 .scroll-h {
 	width: 750rpx;
-	height: 80rpx;
+	height: 0rpx;
 	flex-direction: row;
 	/* #ifndef APP-PLUS */
 	white-space: nowrap;
@@ -462,6 +462,7 @@ page {
 	background-color: none;
 }
 .swiper-box {
+	height: 1000px;
 	flex: 1;
 }
 
