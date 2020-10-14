@@ -146,6 +146,9 @@
 		watch: {
 			value(newVal) {
 				this.valueSync = Number(newVal);
+			},
+			size(newVal) {
+				this.size = Number(newVal);
 			}
 		},
 		computed: {
@@ -176,6 +179,7 @@
 			this.valueSync = Number(this.value);
 			this._rateBoxLeft = 0
 			this._oldValue = null
+			this.size = Number(this.size);
 		},
 		mounted() {
 				setTimeout(() => {
