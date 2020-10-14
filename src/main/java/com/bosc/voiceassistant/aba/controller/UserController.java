@@ -1,5 +1,6 @@
 package com.bosc.voiceassistant.aba.controller;
 
+import com.bosc.voiceassistant.aba.entity.Result;
 import com.bosc.voiceassistant.aba.entity.UserInfo;
 import com.bosc.voiceassistant.aba.service.i.IUserService;
 import io.swagger.annotations.Api;
@@ -42,8 +43,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public UserInfo addUser(UserInfo userInfo) {
-        return userService.addUser(userInfo);
+    public Result<Object> addUser(UserInfo userInfo) {
+        if (userService.addUser(userInfo) == null) {
+            return new Result<>("400", "该用户已存在！");
+        }
+        return new Result<>(userService.addUser(userInfo));
+
     }
 
     @RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
