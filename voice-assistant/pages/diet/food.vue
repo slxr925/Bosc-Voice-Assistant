@@ -8,8 +8,9 @@
 			</view>
 		</uni-nav-bar>
 		<uni-search-bar placeholder="输入菜名" :radius="100" @confirm="search"></uni-search-bar>
+		
 	<view class="page">
-		<WaterfallsFlow :wfList='list' @itemTap="itemTap" />
+		<WaterfallsFlow :wfList='list'  />
 	</view>
 	</view>
 </template>
@@ -80,9 +81,9 @@
 			},1000)
 		},
 		methods:{
-			itemTap(item){
-				console.log(item);
-			}
+		        onChange(e) {
+		            console.log('rate发生改变:' + JSON.stringify(e))
+		        }
 		}
 		
 	}

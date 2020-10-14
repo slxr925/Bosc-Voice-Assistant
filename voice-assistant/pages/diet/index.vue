@@ -12,28 +12,26 @@
     <view class="page" style="width: 95%; margin-left: auto;margin-right: auto;">
 	    <view class='infos'>
 			<vrow class="row" >
-				<vcol span="46"><view class="col title" >个人信息</view></vcol>
+				<vcol span="46"><view class="col title">基本信息</view></vcol>
 				<vcol span="30" ></vcol>
 				<vcol span="15" >
-						<navigator url="/pages/user/user" open-type="navigate">
-							<vrow style="justify-content:flex-end; ">
-								<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
-								<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
-							</vrow>
-						</navigator>
+						<vrow style="justify-content:flex-end; ">
+							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
+							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
+						</vrow>
 				</vcol>
 			</vrow>
 			<vrow class="row" >
-				<vcol span="23"><view class="col" style="font-size: 20px;">阶段</view></vcol>
-				<vcol span="23"><view class="col" style="font-size: 20px;">目标体重</view></vcol>
-				<vcol span="23"><view class="col" style="font-size: 20px;">现在体重</view></vcol>
-				<vcol span="23"><view class="col" style="font-size: 20px;">BMI</view></vcol>
+				<vcol span="23"><view class="col">阶段</view></vcol>
+				<vcol span="23"><view class="col">目标体重</view></vcol>
+				<vcol span="23"><view class="col">现在体重</view></vcol>
+				<vcol span="23"><view class="col">BMI</view></vcol>
 			</vrow>
 			<vrow class="row" >
-				<vcol span="23"><view class="col" style="color: #555555;">减重</view></vcol>
-				<vcol span="23"><view class="col" style="color: #555555;">70kg</view></vcol>
-				<vcol span="23"><view class="col" style="color: #555555;">74kg</view></vcol>
-				<vcol span="23"><view class="col" style="color: #555555;">26.1</view></vcol>
+				<vcol span="23"><view class="col">减重</view></vcol>
+				<vcol span="23"><view class="col">70kg</view></vcol>
+				<vcol span="23"><view class="col">74kg</view></vcol>
+				<vcol span="23"><view class="col">26.1</view></vcol>
 			</vrow>
 		</view>
     </view>
@@ -96,8 +94,7 @@
 	</view>
 		<view class='card'>
 			<vrow class="row" >
-				<vcol span="50">
-					<view class="col title">饮食方案</view></vcol>
+				<vcol span="50"><view class="col title">饮食方案</view></vcol>
 				<vcol span="25" ></vcol>
 				<vcol span="15" >
 					<navigator url="/pages/diet/recom" open-type="navigate">
@@ -171,7 +168,7 @@
 	import vrow from '@/components/lml-layout/row.vue'
 	import vcol from '@/components/lml-layout/col.vue'
     import zzxTabs from "@/components/zzx-tabs/zzx-tabs.vue"
-
+    import { pathToBase64, base64ToPath } from '@/js_sdk/gsq-image-tools/image-tools/index.js'
 export default {
     components: { vrow,vcol,zzxTabs },
     data() {
@@ -207,14 +204,13 @@ export default {
 					uni.showLoading({
 						title: '识别中...'
 					});
-					let reader = new FileReader();
-					let imgFile;
+
 					// let that = this
-					
-					reader.readAsDataURL(res.tempFiles[0])
-					reader.onload = e => {
-						imgFile = e.target.result;
-						let arr = imgFile.split(',')
+					let url=res.tempFilePaths[0]
+					pathToBase64(url)
+					  .then(base64 => {
+						base64=base64.split(',')[1]
+					    console.log(base64)
 						let token='24.46c22275f03a66b3c34427dea0a97333.2592000.1605160554.282335-22811471'
 						uni.request({
 							
@@ -222,7 +218,7 @@ export default {
 						    //url: 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=5jfpAW1CP1B9GaBP7uvcQESy&client_secret=tsVOpUw6RpI2Nqq2d2m29yb6xctuetnv',
 						    data: {
 								filter_threshold:0.8,
-								image:arr[1],
+								image:base64,
 								//baike_num:1
 							},
 						    header: {
@@ -248,8 +244,8 @@ export default {
 								       duration: 2000
 								   });
 							   }
-
-
+						
+						
 						    },
 							fail(){
 								uni.hideLoading();
@@ -259,11 +255,12 @@ export default {
 								});
 							}
 						});
-						 
-						//arr[1]
-						// console.log(imgFile)
-						//console.log(this.datas.faceBase64)
-					}
+					  })
+					  .catch(error => {
+					    console.error(error)
+					  })
+
+
 
 		  	        // 预览图片
 		  	        // uni.previewImage({
@@ -313,11 +310,11 @@ page{
 }
 .col{             
 	display: flex;
-	justify-content: center;        
-	flex-wrap: wrap;
 	align-items:center;
+	justify-content: center;        
+
 	border-radius: 20upx;
-	
+	flex-wrap: wrap;
 	font-size: 35upx; 
 
 }
@@ -410,6 +407,7 @@ page{
 	}
 	.all{
 		background-color: #E5E5E5;
-		height: 125%;
+		margin-bottom: 500px;
+		height: 100%;
 	}
 </style>

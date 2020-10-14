@@ -4,8 +4,11 @@
 		<view class="item-info">
 			<view class="info-nickname">{{item.nickName}}</view>
 		</view>
-		<view class="item-info">	
-			<uni-rate :value="item.score" allow-half  size="18" />
+		<view class="item-info">
+			<view class="example-body">
+				<uni-rate allow-half  size='18' :value="item.score" />
+			</view>
+			
 		</view>
 	</view>
 </template>
@@ -17,7 +20,10 @@
 				type:Object,
 				require:true
 			}
-		}
+		},
+		    methods: {
+
+		    }
 	}
 </script>
 
