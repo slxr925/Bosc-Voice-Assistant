@@ -35,8 +35,9 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserInfo addUser(UserInfo userInfo) {
-        UserInfo existUser = getUserByUserName(userInfo.getUserName());
-        if (existUser != null) {
+        UserInfo existUser1 = getUserByUserName(userInfo.getUserName());
+        UserInfo existUser2 = getUserByEmail(userInfo.getEmail());
+        if (existUser1 != null && existUser2 != null) {
             return null;
         } else {
             return userDao.save(userInfo);

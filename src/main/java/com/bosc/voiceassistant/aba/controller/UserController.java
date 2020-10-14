@@ -43,11 +43,11 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public Result<Object> addUser(UserInfo userInfo) {
+    public Result addUser(UserInfo userInfo) {
         if (userService.addUser(userInfo) == null) {
-            return new Result<>("400", "该用户已存在！");
+            return new Result("400", "该用户已存在！");
         }
-        return new Result<>(userService.addUser(userInfo));
+        return new Result(userService.addUser(userInfo));
 
     }
 
