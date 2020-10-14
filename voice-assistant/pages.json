@@ -26,7 +26,6 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				
 			}
 		},
 		{
@@ -50,7 +49,6 @@
             "path" : "pages/diet/food",
             "style" : {}
         }
-
         ,{
             "path" : "pages/car/car",
             "style" : {}
