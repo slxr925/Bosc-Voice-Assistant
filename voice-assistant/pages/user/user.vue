@@ -259,11 +259,11 @@ page {
 		}
 	}
 	.uservalue{
-		margin-left: 220px;
+		margin-left: 180px;
 		color: #007AFF;
 	}
 	.uservalue2{
-		margin-left: 180px;
+		margin-left: 140px;
 		color: #007AFF;
 	}
 }

@@ -182,8 +182,8 @@
 	}
 
 	.avatar {
-		width: 70rpx;
-		height: 70rpx;
+		width: 75rpx;
+		height: 75rpx;
 		border-radius: 50%;
 	}
 
@@ -205,23 +205,24 @@
 	}
 
 	.msg-me>.msg-text>.msg-text-content {
-		margin-left: 70rpx;
-		background-color: #FFFFFF;
-		border: 1rpx solid #d5e0e5;
+		color: #FFFFFF;
+		margin-right: 15rpx;
+		background-color: #3875ff;
 		border-top-right-radius: 20rpx;
 		border-bottom-left-radius: 30rpx;
 		border-top-left-radius: 10rpx;
-		margin-right: 15rpx;
+		margin-left: 70rpx;
 	}
 
 	.msg-service>.msg-text>.msg-text-content {
-		color: #FFFFFF;
-		margin-left: 15rpx;
-		background-color: #3875ff;
+		margin-right: 70rpx;
+		background-color: #F2F2F2;
+		border: 1rpx solid #d5e0e5;
 		border-top-left-radius: 20rpx;
 		border-bottom-right-radius: 30rpx;
 		border-top-right-radius: 10rpx;
-		margin-right: 70rpx;
+		
+		margin-left: 15rpx;
 	}
 
 	.operation {

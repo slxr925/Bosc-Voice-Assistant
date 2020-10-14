@@ -190,7 +190,7 @@ import footbar from "@/components/fooBar/fooBar"
 	}
 	.question{
 		width: 100%;
-		height: 34%;
+		height: 28%;
 		margin-left:-10rpx; 
 	}
 </style>

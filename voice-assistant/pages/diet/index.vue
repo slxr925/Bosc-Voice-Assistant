@@ -11,14 +11,16 @@
 	
     <view class="page" style="width: 95%; margin-left: auto;margin-right: auto;">
 	    <view class='infos'>
-			<vrow class="row" >
-				<vcol span="46"><view class="col title">基本信息</view></vcol>
+			<vrow class="row" style="background-color: #0099FF; border-radius: 10px;">
+				<vcol span="48"><view class="col title" style="color: #FFFFFF;">基本信息</view></vcol>
 				<vcol span="30" ></vcol>
 				<vcol span="15" >
-						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
-							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
-						</vrow>
+						<navigator url="/pages/user/user" open-type="navigate">
+							<vrow style="justify-content:flex-end; ">
+								<vcol span="10"><view class="col" style="color: #FFFFFF;">更多</view></vcol>
+								<vcol span="5"><view class="col" style="color: #FFFFFF;"> <uni-icons  type="forward" size="24" /></view></vcol>                  
+							</vrow>
+						</navigator>
 				</vcol>
 			</vrow>
 			<vrow class="row" >
@@ -93,13 +95,13 @@
          </vrow> -->
 	</view>
 		<view class='card'>
-			<vrow class="row" >
-				<vcol span="50"><view class="col title">饮食方案</view></vcol>
+			<vrow class="row" style="background-color: #0099FF; border-radius: 10px;">
+				<vcol span="50"><view class="col title" style="color: #FFFFFF;">饮食方案</view></vcol>
 				<vcol span="25" ></vcol>
 				<vcol span="15" >
 					<navigator url="/pages/diet/recom" open-type="navigate">
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
+							<vcol span="10"><view class="col" style="color: #FFFFFF;">更多</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
 					</navigator>
@@ -121,13 +123,13 @@
 
 		</view>
 		<view class='card'>
-			<vrow class="row" >
-				<vcol span="60"><view class="col title" >食堂热门菜品推荐</view></vcol>
+			<vrow class="row" style="background-color: #0099FF; border-radius: 10px;">
+				<vcol span="60"><view class="col title" style="color: #FFFFFF;">食堂热门菜品推荐</view></vcol>
 				<vcol span="15" ></vcol>
 				<vcol span="15" >
 					<navigator url="/pages/diet/food" open-type="navigate">
 						<vrow style="justify-content:flex-end; ">
-							<vcol span="10"><view class="col" style="color: #8F8F94;">更多</view></vcol>
+							<vcol span="10"><view class="col" style="color: #FFFFFF;">更多</view></vcol>
 							<vcol span="5"><view class="col"> <uni-icons  type="forward" size="24" /></view></vcol>                  
 						</vrow>
 						</navigator>
@@ -293,20 +295,21 @@ page{
 }
 .page{
 	margin-top: 10px;
-    border-radius: 10rpx;
-    background-color: #FFFFFF;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
     height: 100%;
 }
 .infos{
+	background-color: #FFFFFF;
 	margin: 5rpx;
-	
+	border :3rpx solid #0099FF;
+	box-shadow: 0 3px 6px rgba(50, 161, 246, 1.0);
 	border-radius: 20rpx;
 }
 .row{     
 	/* background: #BBBBBB; */
 	align-items:center;
 	border-bottom :2rpx solid #D9D9D9;
+	
 }
 .col{             
 	display: flex;
@@ -324,12 +327,13 @@ page{
 	padding: 0 50upx;
 	font-size: 40upx; 
 	justify-content:flex-start;
+	
 }
 .tabs{
 	display: flex;
 	align-items:center;
 	margin: 20upx;
-	border :2rpx solid #D9D9D9;
+	border :3rpx solid #0099FF;
 	border-radius: 20upx;
 }
 .cal{
@@ -353,11 +357,12 @@ page{
 }
 .card{
 	margin:20upx;
-	border :2rpx solid #D9D9D9;
+	
 	border-radius: 20upx;
-	border-radius: 10rpx;
+	border-radius: 20rpx;
 	background-color: #FFFFFF;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+	border :3rpx solid #0099FF;
+	box-shadow: 0 3px 6px rgba(50, 161, 246, 1.0);
 }
 .contents{
 	text-align: left;
@@ -401,13 +406,13 @@ page{
 		margin-top: 20rpx;
 		padding-top: 20rpx;
 		padding-bottom: 30rpx;	
-		border-radius: 10rpx;
+		border-radius: 20rpx;
 		background-color: #FFFFFF;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 3px 6px rgba(50, 161, 246, 1.0);
 	}
 	.all{
 		background-color: #E5E5E5;
-		margin-bottom: 500px;
-		height: 100%;
+
+		height: 125%;
 	}
 </style>
