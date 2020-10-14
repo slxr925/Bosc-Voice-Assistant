@@ -2,7 +2,7 @@ package com.bosc.voiceassistant.aba.service.i;
 
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -51,13 +51,6 @@ public interface IFoodMenuService {
      */
     List<FoodMenuInfo> getFoodListByBrunch(String brunch);
 
-    /**
-     * 通过date找food
-     *
-     * @param date
-     * @return
-     */
-    FoodMenuInfo getFoodByDate(Date date);
 
     /**
      * 通过date找多个food

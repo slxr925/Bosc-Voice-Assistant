@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -45,10 +45,6 @@ public class FoodMenuServiceImpl implements IFoodMenuService {
         return foodMenuDao.findAllByBrunch(brunch);
     }
 
-    @Override
-    public FoodMenuInfo getFoodByDate(Date date) {
-        return foodMenuDao.findByDate(date);
-    }
 
     @Override
     public List<FoodMenuInfo> getFoodListByDate(Date date) {

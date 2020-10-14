@@ -7,7 +7,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -45,11 +45,6 @@ public class FoodMenuController {
     @RequestMapping(value = "/getFoodListByBrunch/{brunch}", method = RequestMethod.GET)
     public List<FoodMenuInfo> getFoodListByBrunch(@PathVariable(value = "brunch") String brunch) {
         return fmService.getFoodListByBrunch(brunch);
-    }
-
-    @RequestMapping(value = "/getFoodByDate/{date}", method = RequestMethod.GET)
-    public FoodMenuInfo getFoodByDate(@PathVariable(value = "date") Date date) {
-        return fmService.getFoodByDate(date);
     }
 
     @RequestMapping(value = "/getFoodListByDate/{date}", method = RequestMethod.GET)

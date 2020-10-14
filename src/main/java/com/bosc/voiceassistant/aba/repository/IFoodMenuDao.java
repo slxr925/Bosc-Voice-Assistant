@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -60,28 +60,14 @@ public interface IFoodMenuDao extends JpaRepository<FoodMenuInfo, Integer>, JpaS
     List<FoodMenuInfo> findAllByBrunch(String brunch);
 
     /**
-     * 通过日期找菜
-     *
-     * @param date
-     * @return
-     */
-    FoodMenuInfo findByDate(Date date);
-
-    /**
-     * 通过日期找多个菜
-     *
-     * @param date
-     * @return
-     */
-    List<FoodMenuInfo> findAllByDate(Date date);
-
-    /**
      * 通过菜类型找菜
      *
      * @param category
      * @return
      */
     FoodMenuInfo findByCategory(String category);
+
+    List<FoodMenuInfo> findAllByDate(Date date);
 
     /**
      * 通过菜类型找多个菜

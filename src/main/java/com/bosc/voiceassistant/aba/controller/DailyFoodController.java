@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Xu Ran
@@ -39,7 +40,7 @@ public class DailyFoodController {
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             MultiValueMap<String, Object> map = new LinkedMultiValueMap<>();
-            List<MultiValueMap<String, String>> foodlist = dcService.getFoodRes();
+            List<Map<String, String>> foodlist = dcService.getFoodRes();
             map.add("user", userService.getUserById(userId));
             map.add("res", foodlist);
             HttpEntity<Object> requestEntity = new HttpEntity<>(map, headers);
