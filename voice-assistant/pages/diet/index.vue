@@ -31,7 +31,7 @@
 				<vcol span="23"><view class="col">减重</view></vcol>
 				<vcol span="23"><view class="col">70kg</view></vcol>
 				<vcol span="23"><view class="col">74kg</view></vcol>
-				<vcol span="23"><view class="col">26.1</view></vcol>
+				<vcol span="23"><view class="col">26.2</view></vcol>
 			</vrow>
 		</view>
     </view>

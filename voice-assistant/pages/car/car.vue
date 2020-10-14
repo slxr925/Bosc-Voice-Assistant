@@ -79,7 +79,7 @@
 				<vcol span="16"><view class="col">18:20</view></vcol>
 			</vrow>
 		</view>
-		<view>定时班车</view>
+		<view class="title">定时班车</view>
 		<view class='card'>
 			<!-- <vrow class="row" > -->
 			<!-- 	<vcol span="20" class="banche"><view class="col">定时班车</view></vcol>
@@ -180,10 +180,12 @@
 	align-items:center;
 	border-radius: 20upx;
 	font-size: 35upx; 
+	
 }
 .tablehead{
 	background-color: #0077EE;
 	border-radius: 20upx;
+	color: #F7F7F7;
 }
 .banche{
 	background-color: #007AFF;
