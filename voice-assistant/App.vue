@@ -38,4 +38,5 @@
 	/*每个页面公共css */
 	@import '/common/uni.css';
 	@import "/common/css/iconfont.css";
+
 </style>
