@@ -1,6 +1,6 @@
 <template>
 	<view>
-	    <uni-nav-bar status-bar='false' @clickLeft="back('/pages/index/index')" left-icon="back" left-text="返回"  title="饮食">
+	    <uni-nav-bar status-bar='false' @clickLeft="back('/pages/diet/index')" left-icon="back" left-text="返回"  title="饮食">
 			<view slot="right" class='info'>
 						   <navigator url="/pages/uni-feedback/uni-feedback" open-type="navigate">
 					  <uni-icons  type="more" size="24" />

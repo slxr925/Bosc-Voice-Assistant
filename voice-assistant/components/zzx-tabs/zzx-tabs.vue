@@ -48,7 +48,7 @@
 			},
 			activeColor: {
 				type: String,
-				default: '#FF6633'
+				default: '#007AFF'
 			},
 			tabHeight: {
 				type: String,

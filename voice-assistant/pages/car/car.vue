@@ -11,21 +11,21 @@
 			班车安排如下
 		</view>
 		<view class='card'>
-			<vrow class="row" >
-				<vcol span="18"><view class="col">2号线</view></vcol>
+			<vrow class="row tablehead">
+				<vcol span="18"><view class="col ">2号线</view></vcol>
 				<vcol span="22"><view class="col">出发</view></vcol>
 				<vcol span="22"><view class="col">到达</view></vcol>
 				<vcol span="16"><view class="col">首班车</view></vcol>
 				<vcol span="16"><view class="col">某班车</view></vcol>
 			</vrow>
-			<vrow class="row" >
+			<vrow class="row " >
 				<vcol span="18"><view class="col">上班</view></vcol>
 				<vcol span="22"><view class="col">地铁2号线 张江高科站</view></vcol>
 				<vcol span="22"><view class="col">张江园区北门</view></vcol>
 				<vcol span="16"><view class="col">7:10</view></vcol>
 				<vcol span="16"><view class="col">8:00</view></vcol>
 			</vrow>
-			<vrow class="row" >
+			<vrow class="row " >
 				<vcol span="18"><view class="col">下班</view></vcol>
 				<vcol span="22"><view class="col">张江园区北门</view></vcol>
 				<vcol span="22"><view class="col">地铁2号线 广兰路站</view></vcol>
@@ -34,7 +34,7 @@
 			</vrow>
 		</view>
 		<view class='card'>
-			<vrow class="row" >
+			<vrow class="row tablehead" >
 				<vcol span="18"><view class="col">9号线</view></vcol>
 				<vcol span="22"><view class="col">出发</view></vcol>
 				<vcol span="22"><view class="col">到达</view></vcol>
@@ -57,7 +57,7 @@
 			</vrow>
 		</view>
 		<view class='card'>
-			<vrow class="row" >
+			<vrow class="row tablehead" >
 				<vcol span="18"><view class="col">12号线</view></vcol>
 				<vcol span="22"><view class="col">出发</view></vcol>
 				<vcol span="22"><view class="col">到达</view></vcol>
@@ -79,22 +79,23 @@
 				<vcol span="16"><view class="col">18:20</view></vcol>
 			</vrow>
 		</view>
+		<view>定时班车</view>
 		<view class='card'>
-			<vrow class="row" >
-				<vcol span="20"><view class="col">定时班车</view></vcol>
-				<vcol span="72">
-					<vrow class="row" >
+			<!-- <vrow class="row" > -->
+			<!-- 	<vcol span="20" class="banche"><view class="col">定时班车</view></vcol>
+				<vcol span="72"> -->
+					<vrow class="row tablehead" >
 						<vcol span="20"><view class="col">发车</view></vcol>
 						<vcol span="20"><view class="col">到达</view></vcol>
-						<vcol span="32"><view class="col">到达时间</view></vcol>
+						<vcol span="54"><view class="col">到达时间</view></vcol>
 					</vrow>
 					<vrow class="row" >
 						<vcol span="20"><view class="col">张江园区北门</view></vcol>
 						<vcol span="20"><view class="col">地铁2号线 广兰路站</view></vcol>
-						<vcol span="32">
+						<vcol span="54">
 							<vrow class="row" >
-								<vcol span="16"><view class="col">周一 周三 周五</view></vcol>
-								<vcol span="16"><view class="col">11:45 19:00 20:00 20:40 20:45</view></vcol>
+								<vcol span="34"><view class="col">周一 周三 周五</view></vcol>
+								<vcol span="20"><view class="col">11:45 19:00 20:00 20:40 20:45</view></vcol>
 							</vrow>
 							<vrow class="row" >
 								<vcol span="16"><view class="col">周二 周四</view></vcol>
@@ -129,8 +130,8 @@
 
 						</vcol>
 					
-					</vrow>
-				</vcol>
+					<!-- </vrow> -->
+				<!-- </vcol> -->
 			</vrow>
 
 
@@ -156,7 +157,9 @@
 
 <style>
 .title{
-	text-indent:2em;
+	/* text-indent:1em; */
+	padding-top: 10rpx;
+	padding-left: 21rpx;
 	color: #666666;
 	font-size: 40upx;
 }
@@ -177,5 +180,12 @@
 	align-items:center;
 	border-radius: 20upx;
 	font-size: 35upx; 
+}
+.tablehead{
+	background-color: #0077EE;
+	border-radius: 20upx;
+}
+.banche{
+	background-color: #007AFF;
 }
 </style>
