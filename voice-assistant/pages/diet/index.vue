@@ -217,6 +217,7 @@ export default {
 						let arr = imgFile.split(',')
 						let token='24.46c22275f03a66b3c34427dea0a97333.2592000.1605160554.282335-22811471'
 						uni.request({
+							
 							url:'https://aip.baidubce.com/rest/2.0/image-classify/v2/dish?access_token='+token,
 						    //url: 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=5jfpAW1CP1B9GaBP7uvcQESy&client_secret=tsVOpUw6RpI2Nqq2d2m29yb6xctuetnv',
 						    data: {
