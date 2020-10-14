@@ -98,4 +98,18 @@ public class UserServiceImpl implements IUserService {
         return userDao.findAllBySex(sex);
     }
 
+    @Override
+    public String login(String email, String password) {
+        UserInfo existUser = getUserByEmail(email);
+        if (existUser == null) {
+            return "notexist";
+        } else {
+            if (!existUser.getPassword().equals(password)) {
+                return "wrong";
+            } else {
+                return "success！";
+            }
+        }
+    }
+
 }

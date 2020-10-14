@@ -63,14 +63,47 @@ public interface IUserService {
      */
     List<UserInfo> getAllUsers();
 
+    /**
+     *
+     * @param age
+     * @return
+     */
     UserInfo getUserByAge(Integer age);
 
+    /**
+     *
+     * @param height
+     * @return
+     */
     UserInfo getUserByHeight(Double height);
 
+    /**
+     *
+     * @param weight
+     * @return
+     */
     UserInfo getUserByWeight(Double weight);
 
+    /**
+     *
+     * @param sex
+     * @return
+     */
     UserInfo getUserBySex(Integer sex);
 
+    /**
+     *
+     * @param sex
+     * @return
+     */
     List<UserInfo> getUserListBySex(Integer sex);
+
+    /**
+     *
+     * @param email
+     * @param password
+     * @return
+     */
+    String login(String email, String password);
 
 }

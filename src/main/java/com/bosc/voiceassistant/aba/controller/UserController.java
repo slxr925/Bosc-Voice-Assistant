@@ -48,7 +48,6 @@ public class UserController {
             return new Result("400", "该用户已存在！");
         }
         return new Result(userService.addUser(userInfo));
-
     }
 
     @RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
@@ -66,5 +65,10 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @RequestMapping(value = "/login/{email}/{password}", method = RequestMethod.POST)
+    public Result loginUser(@PathVariable String email, @PathVariable String password) {
+        if (userService.login(email, password).equals("notexist")) return new Result("400", "用户不存在！");
+        else if (userService.login(email, password).equals("wrong")) return new Result("400", "密码错误！");
+        else return new Result(userService.getUserByEmail(email), "用户名密码正确！");
+    }
 }
-
