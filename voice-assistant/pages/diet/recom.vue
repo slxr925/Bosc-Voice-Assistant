@@ -34,7 +34,7 @@
 							<vcol style="background-color: #0099FF; border-radius: 10px;width: 100%;">
 								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐一</view>
 							</vcol>
-							<vcol span="30" v-for="(f, i) in item.food" :key="i" >
+							<vcol span="30" v-for="(f, i) in item.food[0]" :key="i" >
 								<view class="col" style="color: #8F8F94;">
 									<text>
 										{{f}}
@@ -47,7 +47,7 @@
 							<vcol style="background-color: #0099FF; border-radius: 10px;width: 100%;">
 								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐二</view>
 							</vcol>
-							<vcol span="30" v-for="(f, i) in item.food" :key="i" >
+							<vcol span="30" v-for="(f, i) in item.food[1]" :key="i" >
 								<view class="col" style="color: #8F8F94;">
 									<text>
 										{{f}}
@@ -73,47 +73,112 @@
 		components: { vrow,vcol },
 		data() {
 			return {
+				global:getApp().globalData,
 				nowindex: 0,
 				list:[
 					{
 						img_url:'/static/diet/day/1.png',
 						title:'周一',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					},
 					{
 						img_url:'/static/diet/day/2.png',
 						title:'周二',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					},
 					{
 						img_url:'/static/diet/day/3.png',
 						title:'周三',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					},
 					{
 						img_url:'/static/diet/day/4.png',
 						title:'周四',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					},
 					{
 						img_url:'/static/diet/day/5.png',
 						title:'周五',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					},
 					{
 						img_url:'/static/diet/day/6.png',
 						title:'周六',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					},
 					{
 						img_url:'/static/diet/day/7.png',
 						title:'周日',
-						food:['xx','23','www','dds','dee'],
+						food:[['xx','23','www','dds','dee']],
 					}
 					]
 			}
 		},
+		created(){
+			if (global.login==false){
+				
+				uni.redirectTo({
+				    url: '/pages/login/login'
+				});
+				return;
+			}
+			var url=this.global.serive.url;
+				self=this;
+				
+				uni.request({
+						url: url+"/dailyfood/recommand/"+self.user.userid,
+				
+					 //    header: {
+						// 	'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
+						// },
+						dataType:'json',
+						method:'get',
+						success: (res) => {
+							
+							console.log(res.data);
+							let code=res.data['code'];
+							if (code==200||code=='200'){
+
+								self.list=res.data.data
+							}else{
+							uni.showToast({
+							    title: '加载失败',
+							    duration: 2000,
+								icon:'none'						
+							});							}
+							
+						},
+						fail(){
+							uni.showToast({
+							    title: '加载失败',
+							    duration: 2000,
+								icon:'none'						
+							});
+						}
+					});
+		},
 		methods: {
+			init(data){
+				dict={
+					'周一':'/static/diet/day/1.png',
+					'周二':'/static/diet/day/2.png',
+					'周三':'/static/diet/day/3.png',
+					'周四':'/static/diet/day/4.png',
+					'周五':'/static/diet/day/5.png',
+					'周六':'/static/diet/day/6.png',
+					'周日':'/static/diet/day/7.png'
+				};
+				items=[]
+				for (var key in dict) {
+				　　var item = dic[key];
+				    items.push({
+						img_url:'/static/diet/day/1.png',
+						title:'周一',
+						food:['xx','23','www','dds','dee'],
+					})
+				
+				}
+			},
             openDetail(index){
 				this.nowindex=index;
 			}
@@ -132,7 +197,7 @@
 .card{
 	overflow: hidden;
 	border-radius: 20rpx;
-		margin: 20upx;
+	margin: 20upx;
 	border :10rpx solid #0099FF;
 	
 	border-bottom: none;

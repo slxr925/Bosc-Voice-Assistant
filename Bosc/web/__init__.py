@@ -9,7 +9,7 @@ def hello_world():
 
 @app.route('/search',methods=['GET','POST'])
 def index():
-    print(1)
+    # print(1)
     t = request.data
     if len(t)==0:
         t=request.values['data']
@@ -24,12 +24,14 @@ def index():
         'code':1,
         'msg':'success'
     }
+    print(r)
     s=json.jsonify(r)
+
     return s
 
 @app.route('/foodrecom',methods=['GET','POST'])
 def index2():
-    print(1)
+    # print(1)
     t = request.data
     if len(t) == 0:
         t = request.values['data']
@@ -43,5 +45,7 @@ def index2():
         'code': 1,
         'msg': 'success'
     }
+    print(r)
     s = json.jsonify(r)
+
     return s

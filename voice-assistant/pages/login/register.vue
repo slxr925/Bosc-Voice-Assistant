@@ -168,7 +168,8 @@
 								icon:'success'						
 							});
 							console.log("注册成功")
-							
+							this.global.login=true;
+							this.global.user=res.data
 							setTimeout(function(){
 								
 								uni.redirectTo({

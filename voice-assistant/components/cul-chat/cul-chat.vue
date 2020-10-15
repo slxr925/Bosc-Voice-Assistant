@@ -8,7 +8,15 @@
 					<view class="msg-text">
 						<view class="msg-text-content">
 							<text>{{msg.data}}</text>
+							<view  v-if="link(msg.url,msg.isme)">
+								
+								<navigator class='urls'  :url="msg.url" open-type="navigate">
+									<text>点击跳转</text>
+									<uni-icons  color='blue' type="navigate-filled" size="30"></uni-icons>
+								</navigator>
+							</view>
 						</view>
+
 					</view>
 					<image class="avatar" v-if="msg.isme" :src="meAvatar" lazy-load></image>
 				</view>
@@ -26,6 +34,7 @@
 <script>
 	export default {
 		name: 'CulChat',
+
 		props: {
 			question:{type: String},
 			//聊天窗体高度
@@ -73,11 +82,16 @@
 			}else{
 				this.msgs.push({
 					isme: false,
-					data: "请输入您的问题"
+					data: "请输入您的问题",
+					url:''
 				});
 			}
 		},
 		methods: {
+			link: function (url,isme) {
+			  // `this` 指向 vm 实例
+			  return isme==false &&url.length!=0
+			},
 			//语音识别
 			 openVoice() {
 				let vm = this;
@@ -125,7 +139,8 @@
 					this.msgInput.msg2 = ''
 					let msg = {
 						isme: true,
-						data: val
+						data: val,
+						url:""
 					}
 					this.msgs.push(msg)
 					this.conversion = !this.conversion
@@ -135,7 +150,8 @@
 						callback: m => {
 							let anotherMsg = {
 								isme: false,
-								data: m
+								data: m['text'],
+								url:m['url']
 							}
 							_self.msgs.push(anotherMsg);
 							_self.jumpScroll();
@@ -162,7 +178,15 @@
 		box-sizing: border-box;
 		background-color: #FFFFFF;
 	}
-
+    .gourl{
+		margin: 5upx;
+		margin-top: 10upx;
+	}
+	.urls{
+		margin-top: 10rpx;
+		margin-bottom: -10rpx;
+		line-height: 60rpx;
+	}
 	.msg-me,
 	.msg-service {
 		display: flex;

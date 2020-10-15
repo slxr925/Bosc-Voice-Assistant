@@ -64,6 +64,7 @@ import footbar from "@/components/fooBar/fooBar"
 		},
 		data() {
 			return {
+				global:getApp().globalData,
 				question:'',
 				auiToast: {
 					msg: '网络连接错误，请稍后再试',
@@ -124,9 +125,38 @@ import footbar from "@/components/fooBar/fooBar"
 			selectedBanner(item, index) {
 			    console.log('🥒', item, index)
 			},
+
 			sendMsg(message){
 				let val=message.message;
-				return message.callback(val+"："+"阿巴阿巴阿巴");
+				var url=this.global.serive.url;
+				self=this;
+				
+				uni.request({
+					    url: url+"/voice/voiceResult/"+val,
+				
+					 //    header: {
+						// 	'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
+						// },
+						dataType:'json',
+						method:'get',
+					    success: (res) => {
+							
+					        console.log(res.data);
+							let code=res.data['code'];
+							if (code==200||code=='200'){
+
+								return message.callback(res.data.data);
+							}else{
+return message.callback({text:"对不起，我们还不呢回答您的问题，您可以再词反馈您的意见",url:"/pages/uni-feedback/uni-feedback"});
+							}
+							
+					    },
+						fail(){
+return message.callback({text:"对不起，我们还不呢回答您的问题，您可以再词反馈您的意见",url:"/pages/uni-feedback/uni-feedback"});
+
+						}
+					});
+
 			},
 		}
 	}

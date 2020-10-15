@@ -8,7 +8,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
 from scipy.linalg import norm
 import datetime
-from config import project_dir
+import re
+
+root = os.path.abspath(os.path.dirname(__file__))
+# from config import project_dir
+
 def read_file(filename):
     template = {}
     with open(filename, 'r', encoding='utf-8') as fin:
@@ -18,17 +22,19 @@ def read_file(filename):
             template[line[0]] = line[1]
 
     return template
-            
-# 1.获取意图 
+
+
+# 1.获取意图
 def get_intent(res):
     res['intent'] = 'qa_dining'
     return res
+
 
 # 2.利用cos句子相似度，获取问题种类：type: 1-问菜单 2-问价格 3-是否类问题 4-问时间
 def tf_similarity(sentence, example):
     def add_space(s):
         return ' '.join(list(s))
-    
+
     # 将字中间加入空格
     sentence, example = add_space(sentence), add_space(example)
     # 转化为TF矩阵
@@ -38,16 +44,18 @@ def tf_similarity(sentence, example):
     # 计算TF系数
     return np.dot(vectors[0], vectors[1]) / (norm(vectors[0]) * norm(vectors[1]))
 
+
 def get_type(sentence, res):
     score = 0
     res['type'] = 'None'
-    template = read_file(project_dir+'/model/question_template/dinging.txt')
+    template = read_file(root + '/question_template/dinging.txt')
     for tmp in template:
         sim = tf_similarity(sentence, tmp)
         if score < sim:
             score = sim
             res['type'] = template[tmp]
     return res
+
 
 # 3.匹配日期
 def get_date(sentence, res):
@@ -118,6 +126,7 @@ def get_date(sentence, res):
 
     return res
 
+
 # 4.匹配早餐、午餐
 def get_brunch(sentence, res):
     if '早上' in sentence or '早' in sentence:
@@ -130,23 +139,25 @@ def get_brunch(sentence, res):
         res['brunch'] = 'None'
     return res
 
-# 5.匹配category（菜的种类）: 1-主荤（大昏）2-半荤（小荤）3-蔬菜（素菜）4-汤 5-点心 6-粗粮   
+
+# 5.匹配category（菜的种类）: 1-主荤（大昏）2-半荤（小荤）3-蔬菜（素菜）4-汤 5-点心 6-粗粮
 # 将词典存入字典
 def dict_to_trie(slot_value):
     '''
     slot_value: 词典类型(menu/date/time)
     return: t['面条'] = ‘menu’
     '''
-    root=os.path.abspath(os.path.dirname(__file__))
+
     t = pygtrie.StringTrie()
-    with open(root+'/slot-dictionaries/'+slot_value+'.txt', 'r', encoding='utf-8') as fin:
+    with open(root + '/slot-dictionaries/' + slot_value + '.txt', 'r', encoding='utf-8') as fin:
         for line in fin:
             line = line.strip('\n').strip('\t')
             t[line] = slot_value
-    return t 
+    return t
+
 
 def get_category(sentence, res):
-    slot_values = ['主荤','半荤', '蔬菜', '汤', '点心', '粗粮', '水果','面食']
+    slot_values = ['主荤', '半荤', '蔬菜', '汤', '点心', '粗粮', '水果', '面食']
     res['category'] = []
     res['menu'] = []
 
@@ -154,8 +165,8 @@ def get_category(sentence, res):
         t_trie = dict_to_trie(slot_value)
         i = j = 0
         length = len(sentence)
-        while i<length and j<length:
-            dict_word = sentence[i:j+1]
+        while i < length and j < length:
+            dict_word = sentence[i:j + 1]
             if t_trie.has_key(dict_word):
                 j = j + 1
                 if slot_value not in res.keys():
@@ -165,8 +176,8 @@ def get_category(sentence, res):
                     continue
             else:
                 j = j + 1
-                if j==length-1 and i<length:
-                    dict_word = sentence[i:j+1]
+                if j == length - 1 and i < length:
+                    dict_word = sentence[i:j + 1]
                     if t_trie.has_key(dict_word):
                         if slot_value not in res.keys():
                             res['category'].append(slot_value)
@@ -181,37 +192,64 @@ def get_category(sentence, res):
             res['category'].append(slot_value)
 
     if '荤菜' in sentence:
-        res['category'] .extend(['主荤', '半荤'])
-    res['category']=list(set(res['category']))
+        res['category'].extend(['主荤', '半荤'])
+    if '大荤' in sentence:
+        res['category'].extend(['主荤'])
+    if '小荤' in sentence:
+        res['category'].extend(['小荤'])
+    res['category'] = list(set(res['category']))
     res['menu'] = list(set(res['menu']))
     return res
 
-# 6.返回菜名，如果未说具体菜名，并且是问菜单类的问题，则返回全部菜单 
+
+# 6.返回菜名，如果未说具体菜名，并且是问菜单类的问题，则返回全部菜单
 def get_menu(sentence, res):
-    if not res['menu'] and ('菜' in sentence or '菜单' in sentence):
-        res['menu'] = '全部菜单'
+    if not res['menu'] and ('菜' in sentence or '菜单' in sentence and '蔬菜' not in sentence):
+        res['menu'] = ['全部菜单']
     return res
+
+
+# 7.返回是否类问题中的价格问题
+def get_price(sentence, res):
+    res['price'] = []
+    mode = re.compile(r'\d+')
+    res['price'] = mode.findall(sentence)
+
+    return res
+
+
+def clear_info(res):
+    if res['type'] == '2' and res['menu'] == ['全部菜单'] and len(res['category']) != 0:
+        res['menu'] = []
+    if res['type'] == '2' and len(res['menu']) != 0:
+        res['category'] = []
+    return res
+
 
 # 封装函数
 def get_dinningRoom(sentence):
     res = {}
-    #1.获取意图
+    # 1.获取意图
     res = get_intent(res)
-    #2.获取问题种类
+    # 2.获取问题种类
     res = get_type(sentence, res)
-    #3.获取日期
+    # 3.获取日期
     res = get_date(sentence, res)
-    #4.获取早、午餐
+    # 4.获取早、午餐
     res = get_brunch(sentence, res)
-    #5.获取菜的种类
+    # 5.获取菜的种类
     res = get_category(sentence, res)
-    #6.获取菜单
+    # 6.获取菜单
     res = get_menu(sentence, res)
+    # 7.获取价格
+    res = get_price(sentence, res)
+    res = clear_info(res)
     return res
+
 
 if __name__ == '__main__':
     res = {}
-    sentence = '面条是不是5快？'
+    sentence = '大荤的价格是不是7块钱？'
     res = get_dinningRoom(sentence)
     print(res)
 
