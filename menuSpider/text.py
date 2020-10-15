@@ -33,11 +33,42 @@ def test1():
     data_format="%Y年%m月%d日"
     date = datetime.datetime.strptime(t,data_format)
     print(date)
-test1()
+# test1()
 def test():
     t={'主荤': ['上汤肉圆', '椒盐基围虾', '清蒸小鲈鱼', '蒜香鸡米花'], '半荤': ['青红椒土豆肉片', '干锅有机花菜', '五香兰花干', '番茄炒蛋'], '水果': ['桔子'], '汤': ['咸菜肉丝麻腐汤', '绿豆汤'], '点心': ['清蛋糕', '烤布丁', '夹心蛋糕', '肉包刀切', '五香薄饼'], '粗粮': ['山芋'], '蔬菜': ['青菜', '卷心菜', '葱油菜瓜'], '蛋': ['白煮蛋', '茶叶蛋'], '豆浆、粥、汤': ['豆浆', '牛奶', '白粥', '谷物牛奶麦片'], '赠品': [], '酱菜': ['榨菜'], '面浇头': ['辣肉', '炒素', '蔬菜'], '面食1': ['面条', '小馄饨', '汤米粉'], '面食2': ['熏鱼面', '榨菜肉丝面', '五香兰花干面'], '饮料': ['酸奶', '冰红茶']}
     l=[]
     for k in t:
         l.extend(t[k])
     print('\n'.join(l))
-test()
+# test()
+from Util.db_util import dbutil
+import random
+from tqdm import tqdm
+def test3():
+    dbs = dbutil("tengxun")
+    dict={
+        '主荤':300,
+        '半荤':220,
+        '水果':70,
+        '汤':20,
+        '点心':100,
+        '粗粮':90,
+        '蔬菜':100,
+        '蛋':150,
+        '豆浆、粥、汤':60,
+        '酱菜':20,
+        '面浇头':40,
+        '面食1':160,
+        '面食2': 160,
+        '饮料':80
+    }
+    sql='select DISTINCT food_name,category from foodmenu '
+    food=dbs.getDics(sql)
+    for f in tqdm(food):
+        v=dict[f['category']]
+        r=random.random()*0.3+1
+        t=int(v*r)
+        sql2='update foodmenu set calorie=%s where food_name=%s'
+        dbs.exe_sql(sql2,(t,f['food_name']))
+
+test3()

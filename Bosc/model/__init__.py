@@ -1,3 +1,4 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-from model.diningRoom_test import get_dinningRoom
+from model.classification import model_predict
+from model.recommendation import recom

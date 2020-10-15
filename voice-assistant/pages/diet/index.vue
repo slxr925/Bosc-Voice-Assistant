@@ -44,10 +44,15 @@
         </view> 
         <view class='tabs' style="margin-top: 0upx;color:#999999;font-size: 24upx;height: 250upx;">
             <view v-show="current === 0" >
-                <vrow  style="border: none;">
+                <vrow style="border: none;">
                 	<vcol span="44">
-						<view class="col">今天吃了<text class='cal'>{{cal1}}</text>卡路里</view>
-						<view class="col">还能再吃<text class='cal'>{{cal2}}</text>卡路里</view>
+						<view class="col clatext">今天吃了<text class='cal'>{{cal1}}</text>卡路里</view>
+						<view class="col clatext">还能再吃<text class='cal'>{{cal2}}</text>卡路里</view>
+						<view class="col foodlog">
+							<navigator url="/pages/diet/dietlog" open-type="navigate">
+							   更多记录
+						    </navigator>
+						</view>
 					</vcol>
                 	<vcol span="44">
 						<view class="col">
@@ -322,6 +327,9 @@ page{
 	font-size: 35upx; 
 
 }
+.clatext{
+	font-size: 30upx; 
+}
 .title{
 	align-items:center;
 	margin: ;
@@ -336,8 +344,10 @@ page{
 	margin: 20upx;
 	border :3rpx solid #0099FF;
 	border-radius: 20upx;
+	
 }
 .cal{
+	font-size: 35upx; 
 	margin: 0 10upx;
 	color: #000000;
 }
@@ -363,6 +373,14 @@ page{
 	background-color: #FFFFFF;
 	border :3rpx solid #0099FF;
 	box-shadow: 0 3px 6px rgba(50, 161, 246, 1.0);
+}
+.foodlog{
+	display: flex;
+	align-items:center;
+	justify-content: center;  
+	font-size: 30upx;
+	color: #007AFF;
+	padding-bottom: 10upx;
 }
 .contents{
 	text-align: left;

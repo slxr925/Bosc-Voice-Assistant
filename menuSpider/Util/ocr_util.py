@@ -85,7 +85,7 @@ def insert(result):
                  "params":{
                        # "food_id":str(uuid.uuid1()),
 
-                       'date':"2020-09-30",
+                       'date':date,
                         "brunch":getType(key),
                         "category":key,
                      "food_img":n+".jpg",

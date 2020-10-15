@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 from flask import Flask,json,request
 app = Flask(__name__)
-from model import get_dinningRoom
+from model import model_predict,recom
 @app.route('/')
 def hello_world():
     return '欢迎来到 上银语音助手！'
@@ -20,12 +20,13 @@ def index():
         data['question']=''.join(data['question'])
     r= {
         'success':True,
-        'obj':get_dinningRoom(data['question']),
+        'obj':model_predict([data['question']]),
         'code':1,
         'msg':'success'
     }
     s=json.jsonify(r)
     return s
+
 @app.route('/foodrecom',methods=['GET','POST'])
 def index2():
     print(1)
@@ -35,11 +36,10 @@ def index2():
     data = json.loads(t)
     print(data)
     # t={"question":"xxxx"}
-    if isinstance(data['question'], list):
-        data['question'] = ''.join(data['question'])
+
     r = {
         'success': True,
-        'obj': get_dinningRoom(data['question']),
+        'obj': recom(data),
         'code': 1,
         'msg': 'success'
     }

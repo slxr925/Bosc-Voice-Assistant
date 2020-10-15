@@ -7,7 +7,9 @@
 					<view :style="{color:themeColor}" @click="pickerConfirm">确定</view>
 				</view>
 				<view class="rangeBox" @touchmove.stop.prevent="returnHandle" @tap.stop="returnHandle">
-					<input type="text" disabled placeholder="开始时间" :value="startDate" :style="{color:themeColor,'border-color':themeColor,opacity:dateType=='startDate'?1:.5}" @tap="changeDateType('startDate')">至<input type="text" disabled placeholder="结束时间" :style="{color:themeColor,'border-color':themeColor,opacity:dateType=='endDate'?1:.5}" :value="endDate" @tap="changeDateType('endDate')">
+					<input type="text" disabled placeholder="开始时间" :value="startDate" :style="{color:themeColor,'border-color':themeColor,opacity:dateType=='startDate'?1:.5}" @tap="changeDateType('startDate')">
+					至
+					<input type="text" disabled placeholder="结束时间" :style="{color:themeColor,'border-color':themeColor,opacity:dateType=='endDate'?1:.5}" :value="endDate" @tap="changeDateType('endDate')">
 				</view>
 				<picker-view indicator-style="height: 40px;" class="mpvue-picker-view" :value="pickerValue" @change="pickerChangeMul">
 					<block>
@@ -72,8 +74,14 @@
 			  default: '#4C83D6'
 			}
 		},
+			
 		created() {
+			let date = new Date();
+			let date_value = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+
 			this.init()
+			// this.startDate=date_value
+			// this.endDate=date_value
 		},
 		data() {
 			return {
@@ -366,7 +374,7 @@
 		align-items: center;
 	}
 	.rangeBox input{
-		width: 180upx;
+		width: 240upx;
 		margin: 0 10px;
 		text-align: center;
 		align-items: center;

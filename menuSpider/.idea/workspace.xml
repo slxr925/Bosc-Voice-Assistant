@@ -69,7 +69,7 @@
       <recent name="D:\code\Bosc-Voice-Assistant\menuSpider\menuSpider" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start">
+  <component name="RunManager" selected="Python.text">
     <configuration name="img_util" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="menuSpider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,9 +204,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.text" />
         <item itemvalue="Python.start" />
         <item itemvalue="Python.ocr_util" />
-        <item itemvalue="Python.text" />
         <item itemvalue="Python.xunfei_util" />
         <item itemvalue="Python.img_util" />
       </list>
@@ -239,6 +239,7 @@
       <workItem from="1602578676398" duration="3089000" />
       <workItem from="1602590015781" duration="293000" />
       <workItem from="1602594532456" duration="852000" />
+      <workItem from="1602724183149" duration="2135000" />
     </task>
     <servers />
   </component>
@@ -270,38 +271,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="278" y="147" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602590255068" />
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1602595390630">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602595390630" />
-    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1602595390629">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602595390629" />
-    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1602595390629">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602595390629" />
-    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1602595390629">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602595390629" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1600062070490">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600062070490" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1600062070490">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1600062070490" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1600062070490">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1600062070490" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1600062070490">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1602726334711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1600062070490" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602726334711" />
     <state x="270" y="57" key="SettingsEditor" timestamp="1599057754735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -329,6 +330,11 @@
           <line>114</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/text.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -351,7 +357,7 @@
     <SUITE FILE_PATH="coverage/menuSpider$xunfei_util.coverage" NAME="xunfei_util Coverage Results" MODIFIED="1599048130752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Util" />
     <SUITE FILE_PATH="coverage/menuSpider$bosMenu.coverage" NAME="bosMenu Coverage Results" MODIFIED="1598958818870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/menuSpider/spiders" />
     <SUITE FILE_PATH="coverage/menuSpider$util.coverage" NAME="util Coverage Results" MODIFIED="1598961136438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/menuSpider" />
-    <SUITE FILE_PATH="coverage/menuSpider$text.coverage" NAME="text Coverage Results" MODIFIED="1599049500616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/menuSpider$text.coverage" NAME="text Coverage Results" MODIFIED="1602726111920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/menuSpider$start.coverage" NAME="start Coverage Results" MODIFIED="1602594826028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
