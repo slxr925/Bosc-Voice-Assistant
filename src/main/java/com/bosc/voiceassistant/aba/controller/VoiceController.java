@@ -43,7 +43,7 @@ public class VoiceController {
             headers.setContentType(MediaType.APPLICATION_JSON);
             //添加参数,因为HttpEntity里面的参数是MultiValueMap类型的，所以使用这个map集合
             MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
-            map.add("question", "什么时候能吃到黄豆芽");
+            map.add("question", question);
             //添加请求的实体类，第一个参数是要发送的参数，第二个参数是请求头里的数据
             HttpEntity<Object> requestEntity = new HttpEntity<>(map, headers);
             ResponseEntity<String> exchange = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
