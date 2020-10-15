@@ -11,7 +11,7 @@ import javax.persistence.Query;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +25,8 @@ public class FoodVoiceAnsService {
     @Autowired
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;
 
+    private final static double ex = 0.001;
+
     //菜品问题返回结果
     public String getFoodVoiceResult(JSONObject jsonObject) throws ParseException {
         StringBuilder sb = new StringBuilder();
@@ -35,7 +37,8 @@ public class FoodVoiceAnsService {
         String brunch = jsonObject.get("brunch").toString();
         List<?> tempList2 = List.class.cast(jsonObject.get("category"));
         List<String> categoryList = tempList2.stream().map(e -> (String) e).collect(Collectors.toList());
-        Double price = (Double) jsonObject.get("price");
+        String priceStr = jsonObject.get("price").toString();
+        double price = Double.parseDouble(priceStr);
         if (jsonObject.get("type").equals("1")) {
             //问菜单问题
             List<FoodMenuInfo> list1 = getFoodMenuResult(stringToDate(startDate), stringToDate(endDate), brunch, categoryList);
@@ -70,10 +73,10 @@ public class FoodVoiceAnsService {
             List<FoodMenuInfo> list3 = getFoodTrueFalseResult(stringToDate(startDate), stringToDate(endDate), menuList,
                     brunch,
                     categoryList, price);
-            if (price.equals(list3.get(0).getFoodPrice())) {
+            if (Math.abs(price - list3.get(0).getFoodPrice()) <= ex) {
                 return "是的";
-            } else if (!price.equals(list3.get(0).getFoodPrice())) {
-                return "不是, 价格应该是" + price + "元";
+            } else if (Math.abs(price - list3.get(0).getFoodPrice()) > ex) {
+                return "不是, 价格应该是" + list3.get(0).getFoodPrice() + "元";
             } else {
                 if (list3.size() > 0) return "有";
                 else return "没有";
@@ -92,6 +95,9 @@ public class FoodVoiceAnsService {
                     break;
                 }
             }
+        } else if (jsonObject.get("type").equals("5")) {
+            //识别不出来的
+            sb.append("很抱歉，无法识别您的问题。");
         }
         return sb.toString();
     }
@@ -142,11 +148,17 @@ public class FoodVoiceAnsService {
 
     //String转Date
     public Date stringToDate(String str) throws ParseException {
+        if (str.equals("None")) return convertSqlDate(new java.util.Date());
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = sdf.parse(str);
+        java.util.Date date = sdf.parse(str);
         String strDate = sdf.format(date);
-        Date date2 = sdf.parse(strDate);
-        return new java.sql.Date(date2.getTime());
+        java.util.Date date2 = sdf.parse(strDate);
+        return new Date(date2.getTime());
+    }
+
+    private static Date convertSqlDate(java.util.Date date) {
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        return sqlDate;
     }
 
     //时间戳转Date
@@ -183,7 +195,7 @@ public class FoodVoiceAnsService {
 
     //是否类问题
     public List<FoodMenuInfo> getFoodTrueFalseResult(Date startDate, Date endDate, List<String> menuList, String brunch,
-                                                     List<String> category, Double price) {
+                                                     List<String> category, double price) {
         StringBuilder sb = new StringBuilder("select * from foodmenu as fm where 1 = 1");
         if (price > 0) {
             if (menuList.size() > 0) {

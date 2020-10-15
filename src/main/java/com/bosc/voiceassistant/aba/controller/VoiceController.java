@@ -60,19 +60,19 @@ public class VoiceController {
                 Map<String, String> resFoodMap = new LinkedHashMap<>();
                 resFoodMap.put("text", str);
                 resFoodMap.put("url", "");
-                return new Result(resFoodMap,"食堂问题");
+                return new Result(resFoodMap, "食堂问题");
             } else if (jsonObject.get("intent").equals("qa_bus")) {
                 //班车问题
                 Map<String, String> resBusMap = new LinkedHashMap<>();
                 resBusMap.put("text", "班车时刻表");
                 resBusMap.put("url", "/pages/car/car");
-                return new Result(resBusMap,"班车问题");
-            } else {
+                return new Result(resBusMap, "班车问题");
+            } else if (jsonObject.get("intent").equals("qa_others")) {
                 //识别不出来的
                 Map<String, String> errorMap = new LinkedHashMap<>();
-                errorMap.put("text", "我好像听不懂您说的话～反馈链接：pages/uni-feedback/uni-feedback");
-                errorMap.put("url", "");
-                return new Result(errorMap,"识别不出来");
+                errorMap.put("text", "我好像听不懂您说的话～反馈链接：");
+                errorMap.put("url", "pages/uni-feedback/uni-feedback");
+                return new Result(errorMap, "识别不出来");
             }
         } catch (URISyntaxException | ParseException e) {
             e.printStackTrace();
