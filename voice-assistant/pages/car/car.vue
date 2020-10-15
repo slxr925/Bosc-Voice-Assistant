@@ -87,18 +87,18 @@
 					<vrow class="row tablehead" >
 						<vcol span="18"><view class="col">发车</view></vcol>
 						<vcol span="20"><view class="col">到达</view></vcol>
-						<vcol span="54" style="margin-left: 10px;"><view class="col">到达时间</view></vcol>
+						<vcol span="50" style="margin-left: 10px;"><view class="col">到达时间</view></vcol>
 					</vrow>
 					<vrow class="row" >
 						<vcol span="18"><view class="col">张江园区北门</view></vcol>
 						<vcol span="20" ><view class="col">地铁2号线 广兰路站</view></vcol>
 						<vcol span="54" style="border-left: #0077EE solid;">
 							<vrow class="row" style="margin-left: 20px;">
-								<vcol span="32"><view class="col">周一 周三 周五</view></vcol>
+								<vcol span="30"><view class="col">周一 周三 周五</view></vcol>
 								<vcol span="18"><view class="col">11:45 19:00 20:00 20:40 20:45</view></vcol>
 							</vrow>
 							<vrow class="row" style="margin-left: 20px;">
-								<vcol span="32"><view class="col">周二 周四</view></vcol>
+								<vcol span="30"><view class="col">周二 周四</view></vcol>
 								<vcol span="18"><view class="col">11:45 19:00 20:00</view></vcol>
 							</vrow>
 						</vcol>
@@ -109,11 +109,11 @@
 						<vcol span="20"><view class="col">地铁9号线 民雷路站 & 地铁12号线 金京路站</view></vcol>
 						<vcol span="54" style="border-left: #0077EE solid;">
 							<vrow class="row" style="margin-left: 20px;">
-								<vcol span="32"><view class="col">周一 周三 周五</view></vcol>
+								<vcol span="30"><view class="col">周一 周三 周五</view></vcol>
 								<vcol span="18"><view class="col">20:40 20:45</view></vcol>
 							</vrow>
 							<vrow class="row" style="margin-left: 20px;">
-								<vcol span="32"><view class="col">周二 周四</view></vcol>
+								<vcol span="30"><view class="col">周二 周四</view></vcol>
 								<vcol span="10"><view class="col">21:20</view></vcol>
 							</vrow>
 						</vcol>
@@ -124,7 +124,7 @@
 						<vcol span="20" ><view class="col">张江园区北门</view></vcol>
 						<vcol span="50" style="border-left: #0077EE solid;">
 							<vrow class="row" style="margin-left: 20px;">
-								<vcol span="28" style="margin-left: 13px;"><view class="col">周一 周二 周三 周四 周五</view></vcol>
+								<vcol span="28" style="margin-left: 8px;"><view class="col">周一 周二 周三 周四 周五</view></vcol>
 								<vcol span="13"><view class="col">12:45</view></vcol>
 							</vrow>
 

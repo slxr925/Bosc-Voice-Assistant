@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="xx">
 		<uni-nav-bar status-bar='false' @clickLeft="back('/pages/diet/index')" left-icon="back" left-text="返回"  title="饮食推荐">
 			<view slot="right" class='info'>
 						   <navigator url="/pages/uni-feedback/uni-feedback" open-type="navigate">
@@ -7,10 +7,19 @@
 						   </navigator>
 			</view>
 		</uni-nav-bar>
-		<view>
-			<view class='title'>
-				<text>根据您的需求为您推荐周一到周日的食堂菜单</text>
+		<view class="all">
+			<view  class="flex-row-start margin-left margin-top one-show" >
+				<view class="chat-img flex-row-center">
+					<image style="height: ;eight: 75rpx;width: 75rpx;" src="/static/images/register/robot.png" mode="aspectFit"></image>
+				</view>
+				<view  class="flex"  style="width: 550rpx;">
+					<view class="margin-left padding-chat flex-column-start" style="border-radius: 35rpx;background-color: #f9f9f9;">
+						<text  style="word-break: break-all;" >我可以根据您的需求和饮食习惯为您推荐每天的最佳饮食组合</text>
+						<!-- 消息模板 =>初次问候 -->		
+					</view>
+				</view>
 			</view>
+
 			<view>
 				<view class='card' v-for="(item, index) in list" :key="index"
 					@tap="openDetail(index)" :ref="'collapse'+index" >
@@ -21,7 +30,23 @@
 						</view>
 					</view>
 					<view class='detail' v-if="nowindex===index">
-						<vrow >
+						<vrow class="vrow">
+							<vcol style="background-color: #0099FF; border-radius: 10px;width: 100%;">
+								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐一</view>
+							</vcol>
+							<vcol span="30" v-for="(f, i) in item.food" :key="i" >
+								<view class="col" style="color: #8F8F94;">
+									<text>
+										{{f}}
+									</text>
+								</view>
+							</vcol>
+							                
+						</vrow>
+						<vrow class="vrow">
+							<vcol style="background-color: #0099FF; border-radius: 10px;width: 100%;">
+								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐二</view>
+							</vcol>
 							<vcol span="30" v-for="(f, i) in item.food" :key="i" >
 								<view class="col" style="color: #8F8F94;">
 									<text>
@@ -97,8 +122,9 @@
 </script>
 
 <style>
+	@import "/static/css/index-chat.css";
 .title{
-	font-size: 45upx;
+	font-size: 40upx;
 	
 	text-align: left;
 	text-indent:2em;
@@ -107,7 +133,8 @@
 	overflow: hidden;
 	border-radius: 20rpx;
 		margin: 20upx;
-	border :10rpx solid #D9D9D9;
+	border :10rpx solid #0099FF;
+	
 	border-bottom: none;
 
 	/* margin-bottom: 10upx; */
@@ -138,5 +165,30 @@
 		flex-wrap: wrap;
 		font-size: 35upx; 
 	
+	}
+	.xx{
+		background-color: #E5E5E5;
+	}
+	.all{
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 94%;
+		border-radius: 20upx;
+		border-radius: 20rpx;
+		background-color: #FFFFFF;
+		border :3rpx solid #E5E5E5;
+		box-shadow: 0 3px 6px rgba(204, 204, 204, 1.0);
+	}
+	.vrow{
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		width: 92%;
+		border-radius: 20upx;
+		border-radius: 20rpx;
+		background-color: #FFFFFF;
+		border :3rpx solid #0099FF;
+		box-shadow: 0 3px 6px rgba(50, 161, 246, 1.0);
 	}
 </style>

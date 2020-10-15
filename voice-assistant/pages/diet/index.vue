@@ -13,7 +13,7 @@
 	    <view class='infos'>
 			<vrow class="row" style="background-color: #0099FF; border-radius: 10px;">
 				<vcol span="48"><view class="col title" style="color: #FFFFFF;">基本信息</view></vcol>
-				<vcol span="30" ></vcol>
+				<vcol span="28" ></vcol>
 				<vcol span="15" >
 						<navigator url="/pages/user/user" open-type="navigate">
 							<vrow style="justify-content:flex-end; ">
@@ -357,8 +357,7 @@ page{
 	height: 55px;
 }
 .card{
-	margin:20upx;
-	
+	margin:20upx;	
 	border-radius: 20upx;
 	border-radius: 20rpx;
 	background-color: #FFFFFF;
