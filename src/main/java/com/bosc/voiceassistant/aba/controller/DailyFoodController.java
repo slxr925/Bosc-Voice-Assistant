@@ -34,10 +34,10 @@ public class DailyFoodController {
     private IUserService userService;
 
     @RequestMapping(value = "/recommand/{userId}", method = RequestMethod.GET)
-    public Result<Object> recommandResult(@PathVariable(value = "userId") Integer userId) {
+    public Result recommandResult(@PathVariable(value = "userId") Integer userId) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            URI uri = new URI("http://192.168.43.83:8081/foodrecom");
+            URI uri = new URI("http://49.235.152.129:18085/foodrecom");
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             MultiValueMap<String, Object> map = new LinkedMultiValueMap<>();
@@ -49,10 +49,11 @@ public class DailyFoodController {
             JSONObject tempJson = JSON.parseObject(exchange.getBody());
             Object obj = tempJson.get("obj");
             JSONObject jsonObject = JSON.parseObject(obj.toString());
+            return new Result(jsonObject, "推荐解析成功！");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        return new Result<>("500", "推荐解析失败！");
+        return new Result("500", "推荐解析失败！");
     }
 
 }

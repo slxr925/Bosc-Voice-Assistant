@@ -1,6 +1,7 @@
 package com.bosc.voiceassistant.aba.controller;
 
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
+import com.bosc.voiceassistant.aba.entity.Result;
 import com.bosc.voiceassistant.aba.entity.UserInfo;
 import com.bosc.voiceassistant.aba.service.i.IFoodMenuService;
 import io.swagger.annotations.Api;
@@ -23,33 +24,33 @@ public class FoodMenuController {
     private IFoodMenuService fmService;
 
     @RequestMapping(value = "/getFoodByFoodId/{foodId}", method = RequestMethod.GET)
-    public FoodMenuInfo getFoodByFoodId(@PathVariable(value = "foodId") Integer foodId) {
-        return fmService.getFoodByFoodId(foodId);
+    public Result<FoodMenuInfo> getFoodByFoodId(@PathVariable(value = "foodId") Integer foodId) {
+        return new Result<>(fmService.getFoodByFoodId(foodId));
     }
 
     @RequestMapping(value = "/getFoodByFoodName/{foodName}", method = RequestMethod.GET)
-    public FoodMenuInfo getFoodByFoodName(@PathVariable(value = "foodName") String foodName) {
-        return fmService.getFoodByFoodName(foodName);
+    public Result<FoodMenuInfo> getFoodByFoodName(@PathVariable(value = "foodName") String foodName) {
+        return new Result<>(fmService.getFoodByFoodName(foodName));
     }
 
     @RequestMapping(value = "/getFoodListByFoodName/{foodName}", method = RequestMethod.GET)
-    public List<FoodMenuInfo> getFoodListByFoodName(@PathVariable(value = "foodName") String foodName) {
-        return fmService.getFoodListByFoodName(foodName);
+    public Result<List> getFoodListByFoodName(@PathVariable(value = "foodName") String foodName) {
+        return new Result<>(fmService.getFoodListByFoodName(foodName));
     }
 
     @RequestMapping(value = "/getFoodByBrunch/{brunch}", method = RequestMethod.GET)
-    public FoodMenuInfo getFoodByBrunch(@PathVariable(value = "brunch") String brunch) {
-        return fmService.getFoodByBrunch(brunch);
+    public Result<FoodMenuInfo> getFoodByBrunch(@PathVariable(value = "brunch") String brunch) {
+        return new Result<>(fmService.getFoodByBrunch(brunch));
     }
 
     @RequestMapping(value = "/getFoodListByBrunch/{brunch}", method = RequestMethod.GET)
-    public List<FoodMenuInfo> getFoodListByBrunch(@PathVariable(value = "brunch") String brunch) {
-        return fmService.getFoodListByBrunch(brunch);
+    public Result<List> getFoodListByBrunch(@PathVariable(value = "brunch") String brunch) {
+        return new Result<>(fmService.getFoodListByBrunch(brunch));
     }
 
     @RequestMapping(value = "/getFoodListByDate/{date}", method = RequestMethod.GET)
-    public List<FoodMenuInfo> getFoodListByDate(@PathVariable(value = "date") Date date) {
-        return fmService.getFoodListByDate(date);
+    public Result<List> getFoodListByDate(@PathVariable(value = "date") Date date) {
+        return new Result<>(fmService.getFoodListByDate(date));
     }
 
     @RequestMapping(value = "/getFoodByFoodPrice/{foodPrice}", method = RequestMethod.GET)

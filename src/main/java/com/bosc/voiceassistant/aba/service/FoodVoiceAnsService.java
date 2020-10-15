@@ -36,7 +36,7 @@ public class FoodVoiceAnsService {
         Date startDateSql = stringToDate(startDate);
         Date endDateSql = stringToDate(endDate);
         Double price = (Double) jsonObject.get("price");
-        if (jsonObject.get("type").equals(Integer.parseInt("1"))) {
+        if (jsonObject.get("type").equals("1")) {
             //问菜单问题
             List<FoodMenuInfo> list1 = getFoodMenuResult(startDateSql, endDateSql, brunch, category);
             if (list1.size() > 0) {
@@ -51,7 +51,7 @@ public class FoodVoiceAnsService {
             } else {
                 return "";
             }
-        } else if (jsonObject.get("type").equals(Integer.parseInt("2"))) {
+        } else if (jsonObject.get("type").equals("2")) {
             //价格类问题
             List<FoodMenuInfo> list2 = getFoodPriceResult(menu, category);
             if (list2.size() > 0) {
@@ -59,7 +59,7 @@ public class FoodVoiceAnsService {
             } else {
                 return "0";
             }
-        } else if (jsonObject.get("type").equals(Integer.parseInt("3"))) {
+        } else if (jsonObject.get("type").equals("3")) {
             //是否类问题
             List<FoodMenuInfo> list3 = getFoodTrueFalseResult(startDateSql, endDateSql, menu, brunch, category, price);
             if (price > 0 && price.equals(list3.get(0).getFoodPrice())) {
@@ -70,7 +70,7 @@ public class FoodVoiceAnsService {
                 if (list3.size() > 0) return "有";
                 else return "没有";
             }
-        } else if (jsonObject.get("type").equals(Integer.parseInt("4"))) {
+        } else if (jsonObject.get("type").equals("4")) {
             //时间问题
             List<FoodMenuInfo> list4 = getFoodTimeResult(menu);
             List<Date> dateList = new ArrayList<>();

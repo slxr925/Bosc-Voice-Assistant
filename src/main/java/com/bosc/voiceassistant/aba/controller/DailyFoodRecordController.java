@@ -1,6 +1,7 @@
 package com.bosc.voiceassistant.aba.controller;
 
 import com.bosc.voiceassistant.aba.entity.DailyFoodRecordInfo;
+import com.bosc.voiceassistant.aba.entity.Result;
 import com.bosc.voiceassistant.aba.service.i.IDailyFoodRecordService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class DailyFoodRecordController {
     private IDailyFoodRecordService dfrService;
 
     @RequestMapping(value = "/addNewRecord", method = RequestMethod.POST)
-    public DailyFoodRecordInfo addNewRecord(DailyFoodRecordInfo dailyFoodRecordInfo) {
-        return dfrService.addRecord(dailyFoodRecordInfo);
+    public Result<DailyFoodRecordInfo> addNewRecord(DailyFoodRecordInfo dailyFoodRecordInfo) {
+        return new Result<>(dfrService.addRecord(dailyFoodRecordInfo));
     }
 }

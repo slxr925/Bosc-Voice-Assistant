@@ -53,8 +53,7 @@ public class DailyFoodService {
         for (FoodMenuInfo fmi : foodList) {
             Map<String, String> map = new LinkedHashMap<>();
             map.put("name", fmi.getFoodName());
-            map.put("cal", (Math.random() * 300 + ""));
-            //map.add("cal", fmi.getCalorie().toString());
+            map.put("cal", fmi.getCalorie().toString());
             map.put("category", fmi.getCategory());
             map.put("date", getWeekOfDate(fmi.getDate()));
             list.add(map);
