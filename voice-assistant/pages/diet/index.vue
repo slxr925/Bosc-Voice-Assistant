@@ -147,7 +147,7 @@
 							<view class="wf-item-page">
 								<image src="/static/diet/1.jpg" mode="widthFix" class="item-img" />
 								<view class="item-info">
-									<view class="info-nickname">xxx菜</view>
+									<view class="info-nickname">牛肉</view>
 								</view>
 							</view>
 					</view>
@@ -157,7 +157,7 @@
 						<image src="/static/diet/3.jpg"  mode="widthFix" class="item-img" />
 						<view class="item-info">
 							
-							<view class="info-nickname">yyy菜</view>
+							<view class="info-nickname">香锅</view>
 						</view>
 					</view>
 					</view></vcol>		        
@@ -402,8 +402,10 @@ page{
 	
 	.item-info{
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		padding: 5px;
+		justify-content: center; 
+		font-size: 40upx;
 	}
 	
 	.info-avatar{

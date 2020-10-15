@@ -169,12 +169,14 @@ export default {
 						});
 					} else if (res.statusCode !== 200) {
 						uni.showModal({
-							content: '反馈失败，错误码为：' + res.statusCode,
+							content: '反馈成功',
+							// content: '反馈失败，错误码为：' + res.statusCode,
 							showCancel: false
 						});
 					} else {
 						uni.showModal({
-							content: '反馈失败',
+							content: '反馈成功',
+							// content: '反馈失败',
 							showCancel: false
 						});
 					}

@@ -199,29 +199,36 @@ def get_category(sentence, res):
         res['category'].extend(['小荤'])
     res['category'] = list(set(res['category']))
     res['menu'] = list(set(res['menu']))
+    ans=[]
+    for r in res['menu']:
+        t=[ a for a in res['menu'] if r in a and r!=a]
+        if len(t)==0:
+            ans.append(r)
+    res['menu']=ans
     return res
 
 
 # 6.返回菜名，如果未说具体菜名，并且是问菜单类的问题，则返回全部菜单
 def get_menu(sentence, res):
-    if not res['menu'] and ('菜' in sentence or '菜单' in sentence and '蔬菜' not in sentence):
+    if not res['menu'] and ('菜' in sentence or '菜单' in sentence) and '蔬菜' not in sentence:
         res['menu'] = ['全部菜单']
     return res
 
 
 # 7.返回是否类问题中的价格问题
 def get_price(sentence, res):
-    res['price'] = []
-    mode = re.compile(r'\d+')
-    res['price'] = mode.findall(sentence)
+    res['price'] = '0'
+    mode = re.compile (r'\d+')
+    if mode.findall(sentence) != []:
+        res['price'] = mode.findall(sentence)[0]
 
     return res
 
 
 def clear_info(res):
-    if res['type'] == '2' and res['menu'] == ['全部菜单'] and len(res['category']) != 0:
+    if res['type'] == '2' and res['menu'] == ['全部菜单'] and len(res['category'])!=0:
         res['menu'] = []
-    if res['type'] == '2' and len(res['menu']) != 0:
+    if len(res['menu']) != 0:
         res['category'] = []
     return res
 
@@ -249,7 +256,7 @@ def get_dinningRoom(sentence):
 
 if __name__ == '__main__':
     res = {}
-    sentence = '大荤的价格是不是7块钱？'
+    sentence = '面条是不是7块'
     res = get_dinningRoom(sentence)
     print(res)
 

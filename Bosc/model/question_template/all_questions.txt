@@ -680,6 +680,11 @@
 几点有班车？	qa_bus
 班车几点？	qa_bus
 今天晚上有班车么	qa_bus
+班车时间表	qa_bus
+班车时刻表	qa_bus
+班车表	qa_bus
+班车时间	qa_bus
+今天有没有班车	qa_bus
 今日夜幕有班车么	qa_bus
 今天晚上有私车么	qa_bus
 今儿个晚上有班车么	qa_bus
