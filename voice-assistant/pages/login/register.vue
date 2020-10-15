@@ -169,7 +169,7 @@
 							});
 							console.log("注册成功")
 							this.global.login=true;
-							this.global.user=res.data
+						this.global.user=res.data.data
 							setTimeout(function(){
 								
 								uni.redirectTo({

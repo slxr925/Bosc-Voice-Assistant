@@ -147,12 +147,12 @@ import footbar from "@/components/fooBar/fooBar"
 
 								return message.callback(res.data.data);
 							}else{
-return message.callback({text:"对不起，我们还不呢回答您的问题，您可以再词反馈您的意见",url:"/pages/uni-feedback/uni-feedback"});
+return message.callback({text:"对不起，我们还不能回答您的问题，您可以再词反馈您的意见",url:"/pages/uni-feedback/uni-feedback"});
 							}
 							
 					    },
 						fail(){
-return message.callback({text:"对不起，我们还不呢回答您的问题，您可以再词反馈您的意见",url:"/pages/uni-feedback/uni-feedback"});
+return message.callback({text:"对不起，我们还不能回答您的问题，您可以再词反馈您的意见",url:"/pages/uni-feedback/uni-feedback"});
 
 						}
 					});

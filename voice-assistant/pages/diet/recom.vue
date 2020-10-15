@@ -30,11 +30,11 @@
 						</view>
 					</view>
 					<view class='detail' v-if="nowindex===index">
-						<vrow class="vrow">
+						<vrow class="vrow"  v-for="(f1, i) in item.food" :key="i">
 							<vcol style="background-color: #0099FF; border-radius: 10px;width: 100%;">
-								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐一</view>
+								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐{{i+1}}</view>
 							</vcol>
-							<vcol span="30" v-for="(f, i) in item.food[0]" :key="i" >
+							<vcol span="30" v-for="(f, i) in f1" :key="i" >
 								<view class="col" style="color: #8F8F94;">
 									<text>
 										{{f}}
@@ -43,19 +43,7 @@
 							</vcol>
 							                
 						</vrow>
-						<vrow class="vrow">
-							<vcol style="background-color: #0099FF; border-radius: 10px;width: 100%;">
-								<view class="col title" style="color: #FFFFFF;margin-left: -40px;">套餐二</view>
-							</vcol>
-							<vcol span="30" v-for="(f, i) in item.food[1]" :key="i" >
-								<view class="col" style="color: #8F8F94;">
-									<text>
-										{{f}}
-									</text>
-								</view>
-							</vcol>
-							                
-						</vrow>
+
 
 					</view>
 				</view>
@@ -75,58 +63,59 @@
 			return {
 				global:getApp().globalData,
 				nowindex: 0,
-				list:[
-					{
-						img_url:'/static/diet/day/1.png',
-						title:'周一',
-						food:[['xx','23','www','dds','dee']],
-					},
-					{
-						img_url:'/static/diet/day/2.png',
-						title:'周二',
-						food:[['xx','23','www','dds','dee']],
-					},
-					{
-						img_url:'/static/diet/day/3.png',
-						title:'周三',
-						food:[['xx','23','www','dds','dee']],
-					},
-					{
-						img_url:'/static/diet/day/4.png',
-						title:'周四',
-						food:[['xx','23','www','dds','dee']],
-					},
-					{
-						img_url:'/static/diet/day/5.png',
-						title:'周五',
-						food:[['xx','23','www','dds','dee']],
-					},
-					{
-						img_url:'/static/diet/day/6.png',
-						title:'周六',
-						food:[['xx','23','www','dds','dee']],
-					},
-					{
-						img_url:'/static/diet/day/7.png',
-						title:'周日',
-						food:[['xx','23','www','dds','dee']],
-					}
-					]
+				list:[]
+				// list:[
+				// 	{
+				// 		img_url:'/static/diet/day/1.png',
+				// 		title:'周一',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	},
+				// 	{
+				// 		img_url:'/static/diet/day/2.png',
+				// 		title:'周二',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	},
+				// 	{
+				// 		img_url:'/static/diet/day/3.png',
+				// 		title:'周三',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	},
+				// 	{
+				// 		img_url:'/static/diet/day/4.png',
+				// 		title:'周四',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	},
+				// 	{
+				// 		img_url:'/static/diet/day/5.png',
+				// 		title:'周五',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	},
+				// 	{
+				// 		img_url:'/static/diet/day/6.png',
+				// 		title:'周六',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	},
+				// 	{
+				// 		img_url:'/static/diet/day/7.png',
+				// 		title:'周日',
+				// 		food:[['xx','23','www','dds','dee']],
+				// 	}
+				// 	]
 			}
 		},
 		created(){
-			if (global.login==false){
+			// if (this.global.login==false){
 				
-				uni.redirectTo({
-				    url: '/pages/login/login'
-				});
-				return;
-			}
+			// 	uni.redirectTo({
+			// 	    url: '/pages/login/login'
+			// 	});
+			// 	return;
+			// }
 			var url=this.global.serive.url;
 				self=this;
 				
 				uni.request({
-						url: url+"/dailyfood/recommand/"+self.user.userid,
+						url: url+"/dailyfood/recommand/"+self.global.user.userId,
 				
 					 //    header: {
 						// 	'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
@@ -139,7 +128,7 @@
 							let code=res.data['code'];
 							if (code==200||code=='200'){
 
-								self.list=res.data.data
+								self.list=self.init(res.data.data)
 							}else{
 							uni.showToast({
 							    title: '加载失败',
@@ -159,25 +148,33 @@
 		},
 		methods: {
 			init(data){
-				dict={
-					'周一':'/static/diet/day/1.png',
-					'周二':'/static/diet/day/2.png',
-					'周三':'/static/diet/day/3.png',
-					'周四':'/static/diet/day/4.png',
-					'周五':'/static/diet/day/5.png',
-					'周六':'/static/diet/day/6.png',
-					'周日':'/static/diet/day/7.png'
+				let dict={
+					'星期一':'/static/diet/day/1.png',
+					'星期二':'/static/diet/day/2.png',
+					'星期三':'/static/diet/day/3.png',
+					'星期四':'/static/diet/day/4.png',
+					'星期五':'/static/diet/day/5.png',
+					'星期六':'/static/diet/day/6.png',
+					'星期日':'/static/diet/day/7.png'
 				};
-				items=[]
-				for (var key in dict) {
-				　　var item = dic[key];
-				    items.push({
-						img_url:'/static/diet/day/1.png',
-						title:'周一',
-						food:['xx','23','www','dds','dee'],
-					})
+				let items=[]
+				for (let key in dict) {
+					if (data.hasOwnProperty(key)){
+					　　let item = dict[key];
+				         
+					    let l=[]
+						for (let k in data[key]){
+							l.push(data[key][k][1])
+						}
+						items.push({
+							img_url:item,
+							title:key,
+							food:l,
+						})
+					}
 				
 				}
+				return items
 			},
             openDetail(index){
 				this.nowindex=index;
@@ -228,7 +225,7 @@
 	
 		border-radius: 20upx;
 		flex-wrap: wrap;
-		font-size: 35upx; 
+		font-size: 30upx; 
 	
 	}
 	.xx{

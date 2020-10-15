@@ -159,7 +159,7 @@
 							});
 							this.global.login=true;
 							_this.isRotate=false
-							this.global.user=res.data
+							this.global.user=res.data.data
 							setTimeout(function(){
 								
 								uni.redirectTo({
