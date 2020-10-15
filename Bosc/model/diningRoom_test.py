@@ -13,7 +13,7 @@ def read_file(filename):
     template = {}
     with open(filename, 'r', encoding='utf-8') as fin:
         for line in fin:
-            print(line)
+            # print(line)
             line = line.strip('\n').split('\t')
             template[line[0]] = line[1]
 
@@ -188,7 +188,7 @@ def get_category(sentence, res):
 
 # 6.返回菜名，如果未说具体菜名，并且是问菜单类的问题，则返回全部菜单 
 def get_menu(sentence, res):
-    if res['menu'] is 'None' and ('菜' in sentence or '菜单' in sentence):
+    if not res['menu'] and ('菜' in sentence or '菜单' in sentence):
         res['menu'] = '全部菜单'
     return res
 
