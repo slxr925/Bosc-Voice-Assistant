@@ -26,17 +26,17 @@ public class FoodVoiceAnsController {
     @Autowired
     private FoodVoiceAnsService fvaService;
 
-    @RequestMapping(value = "/getFoodPriceResult")
-    public String getFoodPriceResult() {
-        StringBuilder sb = new StringBuilder();
-        List<FoodMenuInfo> list = fvaService.getFoodPriceResult("绿豆汤", "None");
-        if (list.size() > 0) {
-            sb.append(list.get(0).getFoodPrice());
-        } else {
-            return "0";
-        }
-        return sb.toString();
-    }
+//    @RequestMapping(value = "/getFoodPriceResult")
+//    public String getFoodPriceResult() {
+//        StringBuilder sb = new StringBuilder();
+//        List<FoodMenuInfo> list = fvaService.getFoodPriceResult("绿豆汤", "None");
+//        if (list.size() > 0) {
+//            sb.append(list.get(0).getFoodPrice());
+//        } else {
+//            return "0";
+//        }
+//        return sb.toString();
+//    }
 
 //    @RequestMapping(value = "/getFoodTimeResult")
 //    public String getFoodTimeResult() throws ParseException {
@@ -72,23 +72,23 @@ public class FoodVoiceAnsController {
 //        }
 //    }
 
-    @RequestMapping(value = "/getFoodMenuResult")
-    public String getFoodMenuResult() throws ParseException {
-        Date resultDate = fvaService.stringToDate("2020-09-18");
-        List<FoodMenuInfo> list1 = fvaService.getFoodMenuResult(resultDate, resultDate, "午餐", "None");
-        StringBuilder sb = new StringBuilder();
-        if (list1.size() > 0) {
-            if (list1.size() > 1) {
-                for (int i = 0; i < list1.size() - 1; i++) {
-                    sb.append(list1.get(i).getFoodName() + ", ");
-                }
-                sb.append(list1.get(list1.size() - 1).getFoodName());
-            } else {
-                sb.append(list1.get(0));
-            }
-        } else {
-            return null;
-        }
-        return sb.toString();
-    }
+//    @RequestMapping(value = "/getFoodMenuResult")
+//    public String getFoodMenuResult() throws ParseException {
+//        Date resultDate = fvaService.stringToDate("2020-10-15");
+//        List<FoodMenuInfo> list1 = fvaService.getFoodMenuResult(resultDate, resultDate, "午餐", "None");
+//        StringBuilder sb = new StringBuilder();
+//        if (list1.size() > 0) {
+//            if (list1.size() > 1) {
+//                for (int i = 0; i < list1.size() - 1; i++) {
+//                    sb.append(list1.get(i).getFoodName() + ", ");
+//                }
+//                sb.append(list1.get(list1.size() - 1).getFoodName());
+//            } else {
+//                sb.append(list1.get(0));
+//            }
+//        } else {
+//            return null;
+//        }
+//        return sb.toString();
+//    }
 }
