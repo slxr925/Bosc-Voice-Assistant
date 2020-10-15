@@ -26,20 +26,20 @@ public class UserController {
     private IUserService userService;
 
     @RequestMapping(value = "/getUserByEmail/{email}", method = RequestMethod.GET)
-    public UserInfo getUserByEmail(@PathVariable(value = "email") String email) {
-        return userService.getUserByEmail(email);
+    public Result<UserInfo> getUserByEmail(@PathVariable(value = "email") String email) {
+        return new Result<>(userService.getUserByEmail(email));
     }
 
     @RequestMapping(path = "/getUserByUserId/{userId}", method = RequestMethod.GET)
     @ApiOperation("/根据id找用户")
     //@ApiImplicitParam(name = "userId",value = "userId",required = true,paramType = "path",dataType = "int")
-    public UserInfo getUserByUserId(@PathVariable(value = "userId") Integer userId) {
-        return userService.getUserById(userId);
+    public Result<UserInfo> getUserByUserId(@PathVariable(value = "userId") Integer userId) {
+        return new Result<>(userService.getUserById(userId));
     }
 
     @RequestMapping(value = "/getUserByUserName/{userName}", method = RequestMethod.GET)
-    public UserInfo getUserByUserName(@PathVariable(value = "userName") String userName) {
-        return userService.getUserByUserName(userName);
+    public Result<UserInfo> getUserByUserName(@PathVariable(value = "userName") String userName) {
+        return new Result<>(userService.getUserByUserName(userName));
     }
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
@@ -51,18 +51,21 @@ public class UserController {
     }
 
     @RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
-    public UserInfo updateUser(UserInfo userInfo) {
-        return userService.updateUser(userInfo);
+    public Result<UserInfo> updateUser(UserInfo userInfo) {
+        return new Result<>(userService.updateUser(userInfo));
     }
 
     @RequestMapping(value = "/deleteUser", method = RequestMethod.DELETE)
-    public void deleteUser(UserInfo userInfo) {
+    public Result deleteUser(UserInfo userInfo) {
         userService.deleteUser(userInfo);
+        if (userInfo.getUserName() == null) {
+            return new Result(200, "删除成功！");
+        } else return new Result(400, "删除失败！");
     }
 
     @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
-    public List<UserInfo> getAllUsers() {
-        return userService.getAllUsers();
+    public Result<List<UserInfo>> getAllUsers() {
+        return new Result<>(userService.getAllUsers());
     }
 
     @RequestMapping(value = "/login/{email}/{password}", method = RequestMethod.POST)

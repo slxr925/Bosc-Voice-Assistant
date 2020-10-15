@@ -2,7 +2,6 @@ package com.bosc.voiceassistant.aba.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bosc.voiceassistant.aba.entity.FoodMenuInfo;
-import com.bosc.voiceassistant.aba.entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Service;
@@ -31,16 +30,15 @@ public class FoodVoiceAnsService {
         StringBuilder sb = new StringBuilder();
         String startDate = jsonObject.get("start_date").toString();
         String endDate = jsonObject.get("end_date").toString();
-        String menu = jsonObject.get("menu").toString();
+        List<?> tempList1 = List.class.cast(jsonObject.get("menu"));
+        List<String> menuList = tempList1.stream().map(e -> (String) e).collect(Collectors.toList());
         String brunch = jsonObject.get("brunch").toString();
-        List<?> tempList = List.class.cast(jsonObject.get("category"));
-        List<String> listCategory = tempList.stream().map(e -> (String) e).collect(Collectors.toList());
-        Date startDateSql = stringToDate(startDate);
-        Date endDateSql = stringToDate(endDate);
+        List<?> tempList2 = List.class.cast(jsonObject.get("category"));
+        List<String> categoryList = tempList2.stream().map(e -> (String) e).collect(Collectors.toList());
         Double price = (Double) jsonObject.get("price");
         if (jsonObject.get("type").equals("1")) {
             //问菜单问题
-            List<FoodMenuInfo> list1 = getFoodMenuResult(startDateSql, endDateSql, brunch, listCategory);
+            List<FoodMenuInfo> list1 = getFoodMenuResult(stringToDate(startDate), stringToDate(endDate), brunch, categoryList);
             if (list1.size() > 0) {
                 if (list1.size() > 1) {
                     sb.append("您所询问日期的菜品有：");
@@ -52,30 +50,37 @@ public class FoodVoiceAnsService {
                     sb.append("有：" + list1.get(0).getFoodName());
                 }
             } else {
-                return "";
+                return "对不起，您查询的日期没有任何菜，请核对日期！";
             }
         } else if (jsonObject.get("type").equals("2")) {
             //价格类问题
-            List<FoodMenuInfo> list2 = getFoodPriceResult(menu, listCategory);
+            List<FoodMenuInfo> list2 = getFoodPriceResult(menuList, categoryList);
             if (list2.size() > 0) {
-                sb.append(list2.get(0).getFoodPrice());
+                double resPrice = 0.0;
+                for (FoodMenuInfo fmi : list2) {
+                    resPrice += fmi.getFoodPrice();
+                }
+                sb.append("价格为：" + resPrice);
+                return sb.toString();
             } else {
-                return "0";
+                return "无法查询价格，请核对您询问的菜名或类别！";
             }
         } else if (jsonObject.get("type").equals("3")) {
             //是否类问题
-            List<FoodMenuInfo> list3 = getFoodTrueFalseResult(startDateSql, endDateSql, menu, brunch, listCategory, price);
-            if (price > 0 && price.equals(list3.get(0).getFoodPrice())) {
+            List<FoodMenuInfo> list3 = getFoodTrueFalseResult(stringToDate(startDate), stringToDate(endDate), menuList,
+                    brunch,
+                    categoryList, price);
+            if (price.equals(list3.get(0).getFoodPrice())) {
                 return "是的";
-            } else if (price > 0 && !price.equals(list3.get(0).getFoodPrice())) {
-                return "不是";
+            } else if (!price.equals(list3.get(0).getFoodPrice())) {
+                return "不是, 价格应该是" + price + "元";
             } else {
                 if (list3.size() > 0) return "有";
                 else return "没有";
             }
         } else if (jsonObject.get("type").equals("4")) {
             //时间问题
-            List<FoodMenuInfo> list4 = getFoodTimeResult(menu);
+            List<FoodMenuInfo> list4 = getFoodTimeResult(menuList);
             List<Date> dateList = new ArrayList<>();
             for (FoodMenuInfo food : list4) {
                 dateList.add(food.getDate());
@@ -83,7 +88,7 @@ public class FoodVoiceAnsService {
             dateList.sort(Date::compareTo);
             for (Date date : dateList) {
                 if (date.after(convertToDate())) {
-                    sb.append(date.toString());
+                    sb.append("在" + date.toString() + "有您询问的菜！");
                     break;
                 }
             }
@@ -106,6 +111,7 @@ public class FoodVoiceAnsService {
                 sb.append(" and fm.date = '" + startDate + "'");
             }
             sb.append(" and 2 = 2");
+            System.out.println(sb.toString());
             EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
             em.getTransaction().begin();
             Query query = em.createNativeQuery(sb.toString(), FoodMenuInfo.class);
@@ -151,17 +157,22 @@ public class FoodVoiceAnsService {
     }
 
     //价格类问题
-    public List<FoodMenuInfo> getFoodPriceResult(String menu, List<String> category) {
+    public List<FoodMenuInfo> getFoodPriceResult(List<String> menu, List<String> category) {
         List<FoodMenuInfo> resList = new ArrayList<>();
-        for (String s : category) {
+        if (category.size() == 0) {
+            for (String m : menu) {
+                StringBuilder sb = new StringBuilder("select * from foodmenu as fm where 1 = 1");
+                sb.append(" and fm.food_name = '" + m + "'");
+                sb.append(" and 2 = 2 LIMIT 1");
+                EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
+                em.getTransaction().begin();
+                Query query = em.createNativeQuery(sb.toString(), FoodMenuInfo.class);
+                resList.addAll(query.getResultList());
+            }
+        } else {
             StringBuilder sb = new StringBuilder("select * from foodmenu as fm where 1 = 1");
-            if (!menu.equals("None")) {
-                sb.append(" and fm.food_name = '" + menu + "'");
-            }
-            if (!(category.size() == 0)) {
-                sb.append(" and fm.category = '" + s + "'");
-            }
-            sb.append(" and 2 = 2");
+            sb.append(" and fm.category = '" + category.get(0) + "'");
+            sb.append(" and 2 = 2 LIMIT 1");
             EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
             em.getTransaction().begin();
             Query query = em.createNativeQuery(sb.toString(), FoodMenuInfo.class);
@@ -171,49 +182,46 @@ public class FoodVoiceAnsService {
     }
 
     //是否类问题
-    public List<FoodMenuInfo> getFoodTrueFalseResult(Date startDate, Date endDate, String menu, String brunch,
+    public List<FoodMenuInfo> getFoodTrueFalseResult(Date startDate, Date endDate, List<String> menuList, String brunch,
                                                      List<String> category, Double price) {
-        List<FoodMenuInfo> resList = new ArrayList<>();
-        for (String s : category) {
-            StringBuilder sb = new StringBuilder("select * from foodmenu as fm where 1 = 1");
-            if (price > 0) {
-                sb.append(" and fm.food_name = '" + menu + "'");
-            } else {
-                if (!menu.equals("None")) {
-                    sb.append(" and fm.food_name = '" + menu + "'");
-                }
-                if (!brunch.equals("None")) {
-                    sb.append(" and fm.brunch = '" + brunch + "'");
-                }
-                if (!(category.size() == 0)) {
-                    sb.append(" and fm.category = '" + s + "'");
-                }
-                if (!startDate.equals(endDate)) {
-                    sb.append(" and (fm.date between '" + startDate + "' and '" + endDate + "')");
-                } else {
-                    sb.append(" and fm.date = '" + startDate + "'");
-                }
-                sb.append(" and 2 = 2");
-            }
-            EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
-            em.getTransaction().begin();
-            Query query = em.createNativeQuery(sb.toString(), FoodMenuInfo.class);
-            resList.addAll(query.getResultList());
-        }
-        return resList;
-    }
-
-    //时间问题
-    public List<FoodMenuInfo> getFoodTimeResult(String menu) {
         StringBuilder sb = new StringBuilder("select * from foodmenu as fm where 1 = 1");
-        if (!menu.equals("None")) {
-            sb.append(" and fm.food_name = '" + menu + "'");
+        if (price > 0) {
+            if (menuList.size() > 0) {
+                sb.append(" and fm.food_name = '" + menuList.get(0) + "'");
+            } else {
+                sb.append(" and fm.cagetory = '" + category.get(0) + "'");
+            }
+        } else {
+            if (menuList.size() != 0) {
+                sb.append(" and fm.food_name = '" + menuList.get(0) + "'");
+            }
+            if (!brunch.equals("None")) {
+                sb.append(" and fm.brunch = '" + brunch + "'");
+            }
+            if (!startDate.equals(endDate)) {
+                sb.append(" and (fm.date between '" + startDate + "' and '" + endDate + "')");
+            } else {
+                sb.append(" and fm.date = '" + startDate + "'");
+            }
         }
         sb.append(" and 2 = 2");
         EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
         em.getTransaction().begin();
         Query query = em.createNativeQuery(sb.toString(), FoodMenuInfo.class);
-        List<FoodMenuInfo> list = query.getResultList();
-        return list;
+        return query.getResultList();
+    }
+
+    //时间问题
+    public List getFoodTimeResult(List<String> menuList) {
+        StringBuilder sb = new StringBuilder("select * from foodmenu as fm where 1 = 1");
+        if (menuList.size() == 1) {
+            sb.append(" and fm.food_name = '" + menuList.get(0) + "'");
+        }
+        sb.append(" and 2 = 2");
+        EntityManager em = entityManagerFactory.getNativeEntityManagerFactory().createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createNativeQuery(sb.toString(), FoodMenuInfo.class);
+        return query.getResultList();
+
     }
 }
