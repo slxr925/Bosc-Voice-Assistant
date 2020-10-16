@@ -55,5 +55,4 @@ public class DailyFoodController {
         }
         return new Result("500", "推荐解析失败！");
     }
-
 }
